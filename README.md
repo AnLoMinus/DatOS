@@ -6,8 +6,9 @@
 </div>  	      
 
 ---
-
+<h2 align="center">
 ⫸ <a id="link1" href="https://kodesh.snunit.k12.il/i/tr/t0101.htm">בראשית</a> ⫸ <a id="link2" href="https://kodesh.snunit.k12.il/i/tr/t0201.htm">שמות</a> ⫸ <a id="link3" href="https://kodesh.snunit.k12.il/i/tr/t0301.htm">ויקרא</a> ⫸ <a id="link4" href="https://kodesh.snunit.k12.il/i/tr/t0401.htm">במדבר</a> ⫸ <a id="link5" href="https://kodesh.snunit.k12.il/i/tr/t0501.htm">דברים</a> 
+</h2>
 <br>
 <h4>
 <a id="link6" href="https://tehilim.co/">תהילים</a> <br>
