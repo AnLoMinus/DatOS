@@ -7,12 +7,9 @@
 
 ---
 
-<a id="link1" href="https://kodesh.snunit.k12.il/i/tr/t0101.htm">בראשית</a>       
-<a id="link2" href="https://kodesh.snunit.k12.il/i/tr/t0201.htm">שמות</a> <br>
-<a id="link3" href="https://kodesh.snunit.k12.il/i/tr/t0301.htm">ויקרא</a> <br>
-<a id="link4" href="https://kodesh.snunit.k12.il/i/tr/t0401.htm">במדבר</a> <br>
-<a id="link5" href="https://kodesh.snunit.k12.il/i/tr/t0501.htm">דברים</a> <br>
+⫸ <a id="link1" href="https://kodesh.snunit.k12.il/i/tr/t0101.htm">בראשית</a> ⫸ <a id="link2" href="https://kodesh.snunit.k12.il/i/tr/t0201.htm">שמות</a> ⫸ <a id="link3" href="https://kodesh.snunit.k12.il/i/tr/t0301.htm">ויקרא</a> ⫸ <a id="link4" href="https://kodesh.snunit.k12.il/i/tr/t0401.htm">במדבר</a> ⫸ <a id="link5" href="https://kodesh.snunit.k12.il/i/tr/t0501.htm">דברים</a> 
 <br>
+<h4>
 <a id="link6" href="https://tehilim.co/">תהילים</a> <br>
 <a id="link6" href="https://oraita.net/avot/">פרקי אבות</a> <br>
 <a id="link6" href="https://oraita.net/tikun-haclali/">תיקון הכללי</a> <br>
@@ -20,12 +17,16 @@
 <a id="link6" href="https://mikve.net/">מקווה.נט</a> <br>
 <br>
 <a id="link6" href="https://beitel.info/birkat-hamazon">ברכת המזון</a> <br>
+</h4>
 
 ---
+
+<h3 align="center">
 
 מי שאין לו אמונה, אין בו אמונה!
 
 תפילת הודיה לבורא עולם
+</h3>
 <h3 align="center">
 
 
