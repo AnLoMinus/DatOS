@@ -1,0 +1,2211 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספר דברים - חומש דברים</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2d3748;
+            --secondary-color: #4a5568;
+            --background-color: #f7fafc;
+            --accent-color: #2b6cb0;
+            --gold: #d4af37;
+            --scroll-color: #cbd5e0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Heebo', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--background-color), #e2e8f0);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 10px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--gold), #ffd700);
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 12px;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .description,
+        .general-stats,
+        .key-scenes,
+        .enrichment-content,
+        .audio-section,
+        .quiz-section,
+        .lessons-section {
+            padding: 15px;
+            margin: 10px 0;
+        }
+
+        .stats-grid,
+        .scenes-grid,
+        .lessons-grid {
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .stat-card,
+        .scene-card,
+        .lesson-card {
+            padding: 15px;
+        }
+
+        .commandment-cards {
+            gap: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        }
+
+        .verse-cards {
+            gap: 15px;
+        }
+
+        .story-cards {
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        }
+
+        .audio-grid {
+            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+
+        .description {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            padding: 35px;
+            margin: 20px auto;
+            max-width: 900px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .description::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold), var(--accent-color));
+        }
+
+        .description h2 {
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .description h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .description p {
+            color: var(--secondary-color);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            text-align: justify;
+            padding: 0 20px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .description p:last-child {
+            margin-bottom: 0;
+        }
+
+        .description::after {
+            content: '📜';
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            font-size: 6em;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        /* אנימציה בטעינה */
+        @keyframes descriptionFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .description {
+            animation: descriptionFadeIn 1s ease-out;
+        }
+
+        /* הוספת אפקט hover */
+        .description:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        /* התאמה למסכים קטנים */
+        @media (max-width: 768px) {
+            .description {
+                padding: 25px;
+                margin: 15px;
+            }
+
+            .description p {
+                font-size: 1em;
+                padding: 0 10px;
+            }
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            padding: 15px;
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .chapter-list {
+            list-style: none;
+            max-height: 500px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+
+        .chapter-list::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .chapter-list::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        .chapter-list::-webkit-scrollbar-thumb {
+            background: var(--scroll-color);
+            border-radius: 4px;
+        }
+
+        .chapter-item {
+            padding: 10px;
+            border-bottom: 1px solid #edf2f7;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            margin-bottom: 3px;
+            display: flex;
+            align-items: center;
+        }
+
+        .chapter-item:hover {
+            background-color: #edf2f7;
+            padding-right: 20px;
+        }
+
+        .emoji {
+            margin-left: 12px;
+            font-size: 1.2em;
+            transition: transform 0.3s ease;
+        }
+
+        .chapter-item:hover .emoji {
+            transform: scale(1.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 600px;
+            width: 90%;
+            position: relative;
+            animation: modalShow 0.3s ease;
+        }
+
+        @keyframes modalShow {
+            from {
+                transform: scale(0.7);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: var(--secondary-color);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 8px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .bsd {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.2em;
+            color: var(--primary-color);
+        }
+
+        .main-layout {
+            grid-template-columns: 300px 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .sidebar {
+            padding: 15px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .chapters-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        .chapter-section {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .chapter-section h3 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 5px;
+        }
+
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin: 12px 0;
+            padding: 8px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .quick-nav-item {
+            padding: 8px 15px;
+            border-radius: 20px;
+            background: var(--background-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .quick-nav-item:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--accent-color);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+            padding: 10px;
+            width: 100%;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 1em;
+        }
+
+        .modal-chapter-content {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .modal-button {
+            padding: 8px 15px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .modal-button.primary {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .modal-button.secondary {
+            background: var(--background-color);
+            color: var(--primary-color);
+        }
+
+        .lessons-section {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lessons-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent-color), var(--gold));
+        }
+
+        .lessons-section h2 {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            text-align: center;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .lessons-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 2px;
+        }
+
+        .lessons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .lesson-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .lesson-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-color);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .lesson-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .lesson-card:hover::before {
+            opacity: 1;
+        }
+
+        .lesson-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .lesson-title span {
+            font-size: 1.8em;
+            background: linear-gradient(135deg, var(--accent-color), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .lesson-card:hover .lesson-title span {
+            transform: scale(1.1);
+        }
+
+        .lesson-card p {
+            color: var(--secondary-color);
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .lesson-card:hover p {
+            color: var(--primary-color);
+        }
+
+        .chapter-info {
+            flex: 1;
+        }
+
+        .chapter-stats {
+            font-size: 0.9em;
+            color: #666;
+            margin-top: 5px;
+        }
+
+        .stats-summary {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .total-stats {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-top: 10px;
+        }
+
+        .general-stats {
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: var(--accent-color);
+        }
+
+        .stat-title {
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+
+        .stat-value {
+            color: var(--primary-color);
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .stat-subtitle {
+            font-size: 0.8em;
+            color: var(--secondary-color);
+            margin-top: 5px;
+        }
+
+        .key-scenes {
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .scene-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .scene-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .scene-icon {
+            font-size: 3em;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        /* אנימציה למעבר הירדן */
+        .jordan-crossing .scene-icon {
+            animation: waterParting 3s infinite;
+        }
+
+        @keyframes waterParting {
+            0% {
+                transform: scaleX(1);
+            }
+
+            50% {
+                transform: scaleX(1.3);
+            }
+
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        /* אנימציה לברכות ולקללות */
+        .blessings-curses .scene-icon {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* אנימציה למשה בהר */
+        .moses-mountain .scene-icon {
+            animation: climb 4s infinite;
+        }
+
+        @keyframes climb {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .scene-title {
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .scene-description {
+            color: var(--secondary-color);
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+
+        /* אנימציה לעשרת הדיברות */
+        .ten-commandments .scene-icon {
+            animation: glow 2s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #fff;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #fff, 0 0 30px var(--accent-color);
+            }
+
+            100% {
+                text-shadow: 0 0 5px #fff;
+            }
+        }
+
+        /* אנימציה לשירת האזינו */
+        .final-song .scene-icon {
+            animation: musicNote 3s infinite;
+        }
+
+        @keyframes musicNote {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            25% {
+                transform: rotate(10deg) scale(1.1);
+            }
+
+            75% {
+                transform: rotate(-10deg) scale(1.1);
+            }
+
+            100% {
+                transform: rotate(0deg) scale(1);
+            }
+        }
+
+        .enrichment-content {
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .enrichment-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: var(--background-color);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tab-button.active {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .commandments-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .commandment-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .commandment-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .commandment-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .commandment-number {
+            font-size: 1.5em;
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+
+        .commandment-icon {
+            font-size: 2em;
+            margin: 10px 0;
+        }
+
+        .verse-cards {
+            display: grid;
+            gap: 20px;
+        }
+
+        .verse-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .verse-text {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .verse-source {
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .story-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .story-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .story-image {
+            font-size: 3em;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .read-more-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* סגנונות לקטעים מוקראים */
+        .audio-section {
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .audio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .audio-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .audio-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .audio-title {
+            font-size: 1.2em;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .audio-icon {
+            font-size: 1.5em;
+        }
+
+        .audio-text {
+            font-size: 1.1em;
+            margin: 15px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .audio-player {
+            margin: 15px 0;
+        }
+
+        .audio-player audio {
+            width: 100%;
+        }
+
+        /* סגנונות לחידון */
+        .quiz-section {
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-question {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .quiz-option {
+            padding: 15px;
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .quiz-option:hover {
+            background: #f8f9fa;
+            transform: translateX(-5px);
+        }
+
+        .quiz-option.correct {
+            background: #c6f6d5;
+            border-color: #48bb78;
+        }
+
+        .quiz-option.wrong {
+            background: #fed7d7;
+            border-color: #f56565;
+        }
+
+        .quiz-button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            transition: all 0.3s;
+        }
+
+        .quiz-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-feedback {
+            text-align: center;
+            margin: 15px 0;
+            font-weight: bold;
+        }
+
+        .quiz-results {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        /* הוספת סגנון חדש למרווחים בין כותרות לתוכן */
+        h1,
+        h2,
+        h3 {
+            margin-bottom: 12px;
+        }
+
+        /* עדכון המרווחים בסייד-בר */
+        .sidebar {
+            padding: 15px;
+        }
+
+        .section {
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        /* עדכון המרווחים בניווט המהיר */
+        .quick-nav {
+            gap: 12px;
+            margin: 12px 0;
+            padding: 8px;
+        }
+
+        /* עדכון המרווחים ברשימת הפרקים */
+        .chapter-section {
+            padding: 15px;
+            margin-bottom: 12px;
+        }
+
+        .chapter-item {
+            padding: 10px;
+            margin-bottom: 3px;
+        }
+
+        /* הוספת גריד מותאם לתצוגה רחבה */
+        @media (min-width: 1200px) {
+            .main-content {
+                display: grid;
+                grid-template-columns: 3fr 1fr;
+                /* יחס של 75%-25% */
+                gap: 15px;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .scenes-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        /* התאמה למסכים קטנים */
+        @media (max-width: 768px) {
+            .container {
+                padding: 8px;
+            }
+
+            .description,
+            .general-stats,
+            .key-scenes,
+            .enrichment-content,
+            .audio-section,
+            .quiz-section,
+            .lessons-section {
+                padding: 12px;
+                margin: 8px 0;
+            }
+        }
+
+        .credits {
+            margin-top: 40px;
+            padding: 20px;
+            border-top: 2px solid var(--gold);
+            background: linear-gradient(to right, #f8f9fa, #ffffff);
+            border-radius: 0 0 12px 12px;
+        }
+
+        .credits-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .credit-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--secondary-color);
+            font-size: 0.9em;
+        }
+
+        .credit-icon {
+            font-size: 1.2em;
+        }
+
+        .credit-divider {
+            color: #cbd5e0;
+            font-weight: 300;
+        }
+
+        .credit-text {
+            transition: color 0.3s ease;
+        }
+
+        .credit-item:hover .credit-text {
+            color: var(--accent-color);
+        }
+
+        @media (max-width: 768px) {
+            .credits-content {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .credit-divider {
+                display: none;
+            }
+        }
+
+        .did-you-know {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .facts-carousel {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .fact-card {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: all 0.5s ease;
+            display: flex;
+            align-items: center;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .fact-card.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fact-icon {
+            font-size: 3em;
+            margin-right: 20px;
+            color: var(--accent-color);
+        }
+
+        .fact-content h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .facts-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .facts-nav button {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .facts-nav button:hover {
+            transform: scale(1.1);
+        }
+
+        /* להסיר את הסגנונות האלה */
+        .mitzvot-breakdown {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .mitzvot-chart {
+            display: flex;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .chart-container {
+            flex: 1;
+            height: 200px;
+        }
+
+        .mitzvot-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-box {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        .color-box.positive {
+            background: #4CAF50;
+        }
+
+        .color-box.negative {
+            background: #F44336;
+        }
+
+        .mitzvot-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.03);
+            border-radius: 8px;
+        }
+
+        .mitzvot-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+        }
+
+        .mitzvot-label {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .mitzvot-value {
+            background: var(--accent-color);
+            color: white;
+            padding: 2px 10px;
+            border-radius: 15px;
+        }
+
+        .mitzvot-total {
+            text-align: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bsd">בס״ד</div>
+        <h1>📜 ספר דברים</h1>
+
+        <div class="description">
+            <h2>תיאור כללי</h2>
+            <p>ספר דברים, החומש החמישי והאחרון בתורה, מכיל את נאומיו האחרונים של משה רבנו לעם ישראל לפני מותו. הספר
+                מהווה סיכום וחזרה על אירועי יציאת מצרים והמסע במדבר, תוך מתן דגש מיוחד על המצוות והחוקים.</p>
+            <p>בספר זה משה מכין את העם לקראת הכניסה לארץ ישראל, מחדש את הברית בין ה' לעמו, ומלמד את הדור החדש את כל
+                החוקים והמצוות שיצטרכו לקיים בארץ המובטחת.</p>
+            <p>הספר מסתיים בברכותיו האחרונות של משה לשבטי ישראל ובתיאור מותו בהר נבו, כשהוא צופה אל הארץ המובטחת אליה לא
+                יזכה להיכנס.</p>
+        </div>
+
+        <div class="general-stats">
+            <h2>סטטיסטיקות כלליות</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-title">סך הכל פרקים</div>
+                    <div class="stat-value" id="totalChapters">34</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📜</div>
+                    <div class="stat-title">סך הכל פסוקים</div>
+                    <div class="stat-value" id="totalVerses">959</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-title">ממוצע פסוקים לפרק</div>
+                    <div class="stat-value" id="averageVerses">28.2</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔤</div>
+                    <div class="stat-title">מספר מילים</div>
+                    <div class="stat-value" id="totalWords">14,294</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-title">מספר אותיות</div>
+                    <div class="stat-value" id="totalLetters">54,892</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-title">מספר מצוות</div>
+                    <div class="stat-value">200</div>
+                    <div class="stat-subtitle">מתוכן: 77 מצוות עשה, 123 מצוות לא תעשה</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="did-you-know">
+            <h2>הידעת? 💡</h2>
+            <div class="facts-carousel">
+                <div class="fact-card active">
+                    <div class="fact-icon">👑</div>
+                    <div class="fact-content">
+                        <h3>משנה תורה</h3>
+                        <p>ספר דברים נקרא גם "משנה תורה" כי הוא חוזר ומבאר מצוות רבות שכבר נזכרו בחומשים הקודמים</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">📖</div>
+                    <div class="fact-content">
+                        <h3>פילוח המצוות</h3>
+                        <div class="mitzvot-stats">
+                            <div class="mitzvot-item">
+                                <span class="mitzvot-label">מצוות עשה:</span>
+                                <span class="mitzvot-value">77</span>
+                            </div>
+                            <div class="mitzvot-item">
+                                <span class="mitzvot-label">מצוות לא תעשה:</span>
+                                <span class="mitzvot-value">123</span>
+                            </div>
+                            <div class="mitzvot-total">
+                                סך הכל: 200 מצוות - כשליש מתרי"ג המצוות!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">📜</div>
+                    <div class="fact-content">
+                        <h3>נאום הפרידה</h3>
+                        <p>רוב הספר הוא נאום פרידה של משה רבנו שנמשך 36 ימים, מא' בשבט עד ז' באדר</p>
+                    </div>
+                </div>
+            </div>
+            <div class="facts-nav">
+                <button onclick="prevFact()">❮</button>
+                <button onclick="nextFact()">❯</button>
+            </div>
+        </div>
+
+        <div class="key-scenes">
+            <h2>סצנות מרכזיות 🎬</h2>
+            <div class="scenes-grid">
+                <div class="scene-card jordan-crossing">
+                    <div class="scene-icon">🌊</div>
+                    <div class="scene-title">מעבר הירדן</div>
+                    <div class="scene-description">
+                        ההכנות למעבר נהר הירדן והכניסה לארץ המובטחת
+                        <span class="emoji-group">🏃‍♂️ 🌿 💫</span>
+                    </div>
+                </div>
+
+                <div class="scene-card blessings-curses">
+                    <div class="scene-icon">⚖️</div>
+                    <div class="scene-title">הברכות והקללות</div>
+                    <div class="scene-description">
+                        טקס הברכות והקללות בהר גריזים ובהר עיבל
+                        <span class="emoji-group">🙏 📜 ✨</span>
+                    </div>
+                </div>
+
+                <div class="scene-card moses-mountain">
+                    <div class="scene-icon">⛰️</div>
+                    <div class="scene-title">משה בהר נבו</div>
+                    <div class="scene-description">
+                        משה עולה להר נבו לראות את הארץ המובטחת
+                        <span class="emoji-group">👨‍🦳 🗺️ 🌅</span>
+                    </div>
+                </div>
+
+                <div class="scene-card">
+                    <div class="scene-icon">📜</div>
+                    <div class="scene-title">כתיבת התורה</div>
+                    <div class="scene-description">
+                        משה כותב את התורה ומוסר אותה לכהנים
+                        <span class="emoji-group">✍️ 📖 👨‍👦‍👦</span>
+                    </div>
+                </div>
+
+                <div class="scene-card ten-commandments">
+                    <div class="scene-icon">💫</div>
+                    <div class="scene-title">חזרת עשרת הדיברות</div>
+                    <div class="scene-description">
+                        משה חוזר על עשרת הדיברות ומחדש את הברית
+                        <span class="emoji-group">📋 🗣️ ✨</span>
+                    </div>
+                </div>
+
+                <div class="scene-card final-song">
+                    <div class="scene-icon">🎵</div>
+                    <div class="scene-title">שירת האזינו</div>
+                    <div class="scene-description">
+                        שירתו האחרונה של משה לעם ישראל
+                        <span class="emoji-group">📜 🎼 💖</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="enrichment-content">
+            <h2>תכני העשרה 📚</h2>
+            <div class="enrichment-tabs">
+                <button class="tab-button active" onclick="showTab('visual')">סיכום חזותי</button>
+                <button class="tab-button" onclick="showTab('original')">טקסטים מקוריים</button>
+                <button class="tab-button" onclick="showTab('kids')">לילדים</button>
+            </div>
+
+            <div id="visual" class="tab-content active">
+                <div class="commandments-grid">
+                    <h3>עשרת הדיברות 📜</h3>
+                    <div class="commandment-cards">
+                        <div class="commandment-card">
+                            <div class="commandment-number">א</div>
+                            <div class="commandment-icon">👑</div>
+                            <div class="commandment-text">אנכי ה' אלוקיך</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ב</div>
+                            <div class="commandment-icon">🚫</div>
+                            <div class="commandment-text">לא יהיה לך אלהים אחרים</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ג</div>
+                            <div class="commandment-icon">🗣️</div>
+                            <div class="commandment-text">לא תשא את שם ה' לשוא</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ד</div>
+                            <div class="commandment-icon">✨</div>
+                            <div class="commandment-text">זכור את יום השבת</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ה</div>
+                            <div class="commandment-icon">👨‍👩‍👦</div>
+                            <div class="commandment-text">כבד את אביך ואת אמך</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ו</div>
+                            <div class="commandment-icon">❤️</div>
+                            <div class="commandment-text">לא תרצח</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ז</div>
+                            <div class="commandment-icon">💑</div>
+                            <div class="commandment-text">לא תנאף</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ח</div>
+                            <div class="commandment-icon">🤝</div>
+                            <div class="commandment-text">לא תגנוב</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ט</div>
+                            <div class="commandment-icon">🗣️</div>
+                            <div class="commandment-text">לא תענה ברעך עד שר</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">י</div>
+                            <div class="commandment-icon">💭</div>
+                            <div class="commandment-text">לא תחמוד</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="original" class="tab-content">
+                <div class="original-text">
+                    <h3>פסוקים נבחרים עם פרשנות 📖</h3>
+                    <div class="verse-cards">
+                        <div class="verse-card">
+                            <div class="verse-text">"שְׁמַע יִשְׂרָאֵל ה' אֱלֹהֵינוּ ה' אֶחָד"</div>
+                            <div class="verse-source">דברים ו:ד</div>
+                            <div class="verse-commentary">
+                                הפסוק המרכזי בתורה המבטא את אחדות ה'. מהווה את הבסיס לאמונה היהודית.
+                            </div>
+                        </div>
+                        <div class="verse-card">
+                            <div class="verse-text">"וְאָהַבְתָּ אֵת ה' אֱלֹהֶיךָ בְּכָל-לְבָבְךָ וּבְכָל-נַפְשְׁךָ
+                                וּבְכָל-מְאֹדֶךָ"</div>
+                            <div class="verse-source">דברים ו:ה</div>
+                            <div class="verse-commentary">
+                                מצוות אהבת ה' - חובת האדם לאהוב את בוראו בכל ליבו ונפשו.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="kids" class="tab-content">
+                <div class="kids-content">
+                    <h3>סיפורים לילדים 🎈</h3>
+                    <div class="story-cards">
+                        <div class="story-card">
+                            <div class="story-image">👨‍🦳</div>
+                            <h4>משה רבנו מלמד את העם</h4>
+                            <p>
+                                לפני שנכנסו לארץ ישראל, משה רבנו כינס את כל העם. הוא רצה ללמד אותם את כל מה שה' ציווה,
+                                כדי שיזכרו תמיד להיות טובים וישרים.
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(1)">קרא עוד</button>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-image">🗺️</div>
+                            <h4>המסע לארץ ישראל</h4>
+                            <p>
+                                אחרי מסע ארוך במדבר, העם עמד להיכנס לארץ המובטחת. משה סיפר להם על הארץ המיוחדת
+                                שה' הבטיח להם.
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(2)">קרא עוד</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="audio-section">
+            <h2>קטעים מוקראים 🎧</h2>
+            <div class="audio-grid">
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">🎵</span>
+                        שירת האזינו
+                    </div>
+                    <div class="audio-text">
+                        "הַאֲזִינוּ הַשָּׁמַיִם וַאֲדַבֵּרָה וְתִשְׁמַע הָאָרֶץ אִמְרֵי פִי"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/haazinu.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק לב - שירתו האחרונה של משה רבנו
+                    </div>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">🗣️</span>
+                        נאום משה
+                    </div>
+                    <div class="audio-text">
+                        "שְׁמַע יִשְׂרָאֵל ה' אֱלֹהֵינוּ ה' אֶחָד"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/shema.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק ו - קריאת שמע ואהבת ה'
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>חיון מצוות </h2>
+            <div class="quiz-container">
+                <div id="quiz-question" class="quiz-question">
+                    <h3>שאלה <span id="question-number">1</span>/5</h3>
+                    <p id="question-text"></p>
+                </div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <div id="quiz-feedback" class="quiz-feedback"></div>
+                <button id="next-question" class="quiz-button" onclick="nextQuestion()" style="display: none;">
+                    לשאלה הבאה ⏭️
+                </button>
+                <button id="start-quiz" class="quiz-button" onclick="startQuiz()">
+                    התחל חידון 🎮
+                </button>
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <h3>סיכום תוצאות</h3>
+                    <p>הצלחת לענות נכון על <span id="correct-answers">0</span> מתוך 5 שאלות!</p>
+                    <button onclick="startQuiz()" class="quiz-button">נסה שוב 🔄</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="lessons-section">
+            <h2>🎯 לקחים נלמדים מספר דברים</h2>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🗣️</span>
+                        אומים אחרונים
+                    </div>
+                    <p>חשיבות החזרה על הערכים והמצוות, והכנה מעמיקה לקראת עתיד לא ידוע. דברי משה מלמדים אותנו על חשיבות
+                        העברת המסורת והערכים לדורות הבאים.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>📚</span>
+                        סקירה היסטורית
+                    </div>
+                    <p>תובנות מהעבר והשפעתן על העתיד, והבנת ההיסטוריה כבסיס להחלטות נכונות. למידה מניסיון העבר מאפשרת
+                        התפתחות וצמיחה בעתיד.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🏛️</span>
+                        הוראות לכניסה
+                    </div>
+                    <p>הנחיות מעשיות להתכוננות למעבר למצב חדש ובניית חברה על יסודות של צדק, אמונה וערבות הדדית. חשיבות
+                        ההכנה לשינויים משמעותיים.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>⚖️</span>
+                        חוקים ומשפטים
+                    </div>
+                    <p>מערכת חוקים מקיפה המבססת חברה צודקת ומוסרית, תוך שמירה על זכויות הפרט והכלל. יצירת מסגרת חברתית
+                        המאזנת בין צרכים שונים.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-nav">
+            <div class="quick-nav-item" onclick="scrollToSection('intro')">הקדמה והיסטוריה</div>
+            <div class="quick-nav-item" onclick="scrollToSection('laws')">מצוות ודינים</div>
+            <div class="quick-nav-item" onclick="scrollToSection('ending')">סיום וברכות</div>
+        </div>
+
+        <div class="main-layout">
+
+
+            <div class="chapters-container">
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="חיפוש בפרקים..."
+                        onkeyup="searchChapters(this.value)">
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי הקדמה והיסטוריה (פרקים א-ג)</h3>
+                    <ul class="chapter-list" id="chapterList1"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי מצוות ודינים (פרקים ד-כו)</h3>
+                    <ul class="chapter-list" id="chapterList2"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי סיום וברכות (פרקים כז-לד)</h3>
+                    <ul class="chapter-list" id="chapterList3"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="back-to-top" onclick="scrollToTop()">↑</div>
+
+    <script>
+        const chapters = [
+            { title: "דברי משה – סקירה של מסע בני ישראל", verses: 46 },
+            { title: "סיפור נדודים במדבר ותחילת כיבוש ארץ סיחון ועוג", verses: 37 },
+            { title: "כיבוש ארץ הבשן, ענייני נחלת בני גד, ראובן וחצי שבט מנשה", verses: 29 },
+            { title: "קריאה לשמירה על התורה והציווי על עבודת אלים", verses: 49 },
+            { title: "חזרת עשרת הדיברות על פי משה", verses: 33 },
+            { title: "אהבת ה' והחובה לשמור את מצוותיו, קריאת שמע", verses: 25 },
+            { title: "מצוות למלחמה עם עמים בארץ ותחייבותם", verses: 26 },
+            { title: "זיכרון נסים במדבר והציווי על ציות  ה' בכניסת ארץ ישראל", verses: 20 },
+            { title: "עמידת בני ישראל נגד העמים בארץ ומלחמה לשם ה'", verses: 29 },
+            { title: "חידוש לוחות הברית, חוב הכהנים והלוויים", verses: 22 },
+            { title: "עידוד לשמירה על מצוות ה' ותחייבות ההטבות על שמירה", verses: 32 },
+            { title: "הוראות על פולחן ואי עבודת אלים זרים", verses: 31 },
+            { title: "אזהרה נגד נביאים שקר ותופעות עבודה זרה", verses: 19 },
+            { title: "חוקי כשרות, מצוות העניים וחובת מעשרות", verses: 29 },
+            { title: "שמיטת כספים, חובות ואי עוולות", verses: 23 },
+            { title: "חובות החגים, ימי חג הפסח ושבועות", verses: 22 },
+            { title: "חוקי משפטים, מלוכה וניהול מערכת שיפוט", verses: 20 },
+            { title: "זכויות כהנים, נביאים והוראות עבודה", verses: 22 },
+            { title: "ערי מקלט והוראות הוצאות משפט", verses: 21 },
+            { title: "חובות למלחמה – מה לעשות עם ערים וכיצד לנהוג בקרב", verses: 20 },
+            { title: "הוראות חוקי נדרים, רצח ותחייבות להליכים משטיים", verses: 23 },
+            { title: "חוקי חיים יומיומיים – רכוש, חובות וחובות ציבוריות", verses: 29 },
+            { title: "חובות ומצוות באירועים ציבוריים, חוקי עובדים", verses: 26 },
+            { title: "חובות נדרים, גירוש נשים ודיני רכוש", verses: 22 },
+            { title: "חוקי עונשין, משפטים וזכויות אישיות", verses: 19 },
+            { title: "מצוות התורה ושמירת מצוות – מעשרות ומעשה ברכות", verses: 19 },
+            { title: "הברכות והקללות בהר עיבל וגריזים", verses: 26 },
+            { title: "ברכות וקללות – השלכות על שמירה ושבירת מצוות", verses: 69 },
+            { title: "הסכם הברית בין ה' לבני ישראל", verses: 29 },
+            { title: "תשובה וחזרה בתשובה, ברכות וקללות נוספות", verses: 20 },
+            { title: "כתיבת התורה, מצוות קיום וליווי הכוהנים", verses: 30 },
+            { title: "שירת משה – שירה על התראות והפצרות", verses: 52 },
+            { title: "ברכות משה לשבטים לפני מותו", verses: 29 },
+            { title: "מותו של משה ותחילת הנהגת יהושע", verses: 12 }
+        ];
+
+        const chapterList1 = document.getElementById('chapterList1');
+        const chapterList2 = document.getElementById('chapterList2');
+        const chapterList3 = document.getElementById('chapterList3');
+
+        chapters.forEach((chapter, index) => {
+            const li = document.createElement('li');
+            li.className = 'chapter-item';
+            li.innerHTML = `
+                <span class="emoji">📖</span>
+                <div class="chapter-info">
+                    <div>פרק ${index + 1}: ${chapter.title}</div>
+                    <div class="chapter-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+            `;
+            li.addEventListener('click', () => {
+                showChapterDetails(index + 1, chapter);
+            });
+
+            if (index < 3) {
+                chapterList1.appendChild(li);
+            } else if (index < 26) {
+                chapterList2.appendChild(li);
+            } else {
+                chapterList3.appendChild(li);
+            }
+        });
+
+        function showChapterDetails(number, chapter) {
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📖</span> פרק ${number}`;
+            modalContent.innerHTML = `
+                <h3>${chapter.title}</h3>
+                <div class="stats-summary">
+                    <div>סטטיסטיקות הפרק:</div>
+                    <div class="total-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+                <p style="margin-top: 15px;">לחץ על הכפתור למטה לקריאת הפרק המלא</p>
+                <button onclick="readFullChapter(${number})" 
+                        style="margin-top: 20px; padding: 10px 20px; 
+                               background: var(--accent-color); color: white; 
+                               border: none; border-radius: 5px; 
+                               cursor: pointer;">
+                    קרא את הפרק המלא
+                </button>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('chapterModal').style.display = 'none';
+        }
+
+        function readFullChapter(number) {
+            // כאן אפשר להוסיף פונקציונליות לקריאת הפרק המלא
+            alert(`טוען את הפרק המלא ${number}...`);
+        }
+
+        // סגירת המודל בלחיצה מחוץ לתוכן
+        window.onclick = function (event) {
+            const modal = document.getElementById('chapterModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // אנימציה לכותרות בטעינה
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(`[data-section="${sectionId}"]`);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // הצגת/הסתרת כפתור חזרה למעלה
+        window.onscroll = function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        };
+
+        function searchChapters(query) {
+            query = query.toLowerCase();
+            const items = document.querySelectorAll('.chapter-item');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // הוספת אנימציות לטעינת התוכן
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.chapter-section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // חישוב סטטיסטיקות כלליות
+        function calculateTotalStats() {
+            const totalVerses = chapters.reduce((sum, chapter) => sum + chapter.verses, 0);
+            const averageVerses = (totalVerses / chapters.length).toFixed(1);
+
+            document.getElementById('totalChapters').textContent = chapters.length;
+            document.getElementById('totalVerses').textContent = totalVerses;
+            document.getElementById('averageVerses').textContent = averageVerses;
+        }
+
+        // הפעלת החישוב בטעינת הדף
+        document.addEventListener('DOMContentLoaded', calculateTotalStats);
+
+        // אנימציה לסצנות בעת גלילה
+        function animateOnScroll() {
+            const scenes = document.querySelectorAll('.scene-card');
+
+            scenes.forEach(scene => {
+                const scenePosition = scene.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (scenePosition < screenPosition) {
+                    scene.style.opacity = '1';
+                    scene.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // הוספת האזנה לאירוע גלילה
+        window.addEventListener('scroll', animateOnScroll);
+
+        // אתחול הסצנות בטעינה
+        document.addEventListener('DOMContentLoaded', () => {
+            const scenes = document.querySelectorAll('.scene-card');
+            scenes.forEach((scene, index) => {
+                scene.style.opacity = '0';
+                scene.style.transform = 'translateY(20px)';
+                scene.style.transition = 'all 0.5s ease';
+                scene.style.transitionDelay = `${index * 0.2}s`;
+            });
+
+            animateOnScroll();
+        });
+
+        function showTab(tabId) {
+            // הסרת הקלאס active מכל הכפתורים והתוכן
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // הוספת הקלאס active לכפתור ולתוכן הנבחר
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function showFullStory(storyId) {
+            const stories = {
+                1: {
+                    title: "משה רבנו מלמד את העם",
+                    content: "משה רבנו, המנהיג האהוב, ידע שהוא לא יכנס לארץ ישראל. לכן, הוא רצה ללמד את העם את כל הדברים החשובים שה' ציווה. הוא לימד אותם על המצוות, על אהבת ה', ועל איך להיות אנשים טובים וישרים..."
+                },
+                2: {
+                    title: "המסע לארץ ישראל",
+                    content: "אחרי ארבעים שנה במדבר, העם עמד להיכנס לארץ המובטחת! משה סיפר להם על הארץ המיוחדת - ארץ זבת חלב ודבש. הוא הסביר להם איך לחיות בה בדרך טובה..."
+                }
+            };
+
+            const story = stories[storyId];
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📚</span> ${story.title}`;
+            modalContent.innerHTML = `
+                <div class="story-full">
+                    <p>${story.content}</p>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // שאלות החידן
+        const quizQuestions = [
+            {
+                question: "איזו מצווה מופיעה בפרשת 'שמע'?",
+                options: [
+                    "אהבת ה' בכל לבבך",
+                    "איסור אכילת חמץ",
+                    "שמירת השבת",
+                    "כיבוד הורים"
+                ],
+                correct: 0
+            },
+            {
+                question: "מה המצווה הראשונה מעשרת הדיברות בספר דברים?",
+                options: [
+                    "לא תרצח",
+                    "אנכי ה' אלוקיך",
+                    "לא תגנוב",
+                    "כבד את אביך"
+                ],
+                correct: 1
+            },
+            {
+                question: "איזו מצווה קשורה לערי מקלט?",
+                options: [
+                    "הקרבת קורבנות",
+                    "לימוד תורה",
+                    "הגנה על רוצח בשגגה",
+                    "שמירת השבת"
+                ],
+                correct: 2
+            },
+            {
+                question: "מה המצווה המרכזית בשמיטת כספים?",
+                options: [
+                    "לתת צדקה",
+                    "להשמיט חובות",
+                    "לשמור שבת",
+                    "לכבד הורים"
+                ],
+                correct: 1
+            },
+            {
+                question: "איזו מצווה קשורה למלך?",
+                options: [
+                    "לאכול מצה",
+                    "לכתוב ספר תורה",
+                    "להניח תפילין",
+                    "לשמור שבת"
+                ],
+                correct: 1
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('start-quiz').style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('question-number').textContent = currentQuestion + 1;
+            document.getElementById('question-text').textContent = question.question;
+
+            const optionsHtml = question.options.map((option, index) => `
+                <div class="quiz-option" onclick="checkAnswer(${index})">
+                    ${option}
+                </div>
+            `).join('');
+
+            document.getElementById('quiz-options').innerHTML = optionsHtml;
+            document.getElementById('quiz-feedback').innerHTML = '';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        function checkAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach(option => option.style.pointerEvents = 'none');
+
+            if (selectedIndex === question.correct) {
+                options[selectedIndex].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = ' כל הכבוד! תשובה נכונה!';
+                score++;
+            } else {
+                options[selectedIndex].classList.add('wrong');
+                options[question.correct].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = '❌ לא נכון. נסה שוב בשאלה הבאה!';
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                document.getElementById('next-question').style.display = 'block';
+            } else {
+                showResults();
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('correct-answers').textContent = score;
+            document.getElementById('quiz-question').style.display = 'none';
+            document.getElementById('quiz-options').style.display = 'none';
+            document.getElementById('quiz-feedback').style.display = 'none';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        let currentFactIndex = 0;
+        const facts = document.querySelectorAll('.fact-card');
+
+        function showFact(index) {
+            facts.forEach(fact => fact.classList.remove('active'));
+            facts[index].classList.add('active');
+        }
+
+        function nextFact() {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        function prevFact() {
+            currentFactIndex = (currentFactIndex - 1 + facts.length) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        // אוטומציה להחלפת עובדות
+        setInterval(nextFact, 5000);
+    </script>
+</body>
+<footer>
+
+    <div class="credits">
+        <div class="credits-content">
+            <div class="credit-item">
+                <span class="credit-icon">🇮🇱</span>
+                <a href="https://www.gov.il/" class="credit-text">מדינת ישראל</a>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">👨‍💻</span>
+                <span class="credit-text">פיתוח: <a href="https://www.github.com/anlominus" class="credit-text">לאון
+                        יעקובוב</a></span>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">🤖</span>
+                <span class="credit-text">בשיתוף: <a href="https://www.openai.com/" class="credit-text">Claude
+                        AI</a></span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
