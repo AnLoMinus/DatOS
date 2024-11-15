@@ -1,0 +1,98 @@
+.daily-times-section {
+  background: #f8f9fa;
+  padding: 2rem;
+  margin: 2rem 0;
+  border-radius: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.times-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.times-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.times-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.time-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.time-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.time-value {
+  font-family: "Heebo", sans-serif;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.shabbat-times {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.shabbat-times h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.shabbat-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.parasha {
+  text-align: center;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.parasha-label {
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.parasha-value {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.shabbat-times-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .times-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .shabbat-times-grid {
+    grid-template-columns: 1fr;
+  }
+}

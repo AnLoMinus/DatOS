@@ -427,3 +427,304 @@ h3 {
 .description p:nth-child(7) {
   animation-delay: 0.6s;
 }
+
+/* Special Prayer Cards Styling */
+.special-prayers .section-card {
+  transition: all 0.3s ease;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-prayers .section-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Shabbat Theme - תיקון הקו הארוך */
+[data-section="shabbat"] .book-card-mini {
+  background: linear-gradient(135deg, #0a1128 0%, #1a237e 100%);
+  color: white;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid rgba(227, 242, 253, 0.3);
+}
+
+/* אפקט זוהר לכותרת */
+[data-section="shabbat"] .book-title-mini {
+  font-size: 2em;
+  background: linear-gradient(90deg, #fff, #e3f2fd, #fff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 15px rgba(227, 242, 253, 0.5);
+  animation: titleGlow 3s infinite;
+}
+
+@keyframes titleGlow {
+  0%,
+  100% {
+    filter: brightness(1) blur(0px);
+  }
+  50% {
+    filter: brightness(1.2) blur(1px);
+  }
+}
+
+/* עיצוב מיוחד לפסקת התיאור */
+[data-section="shabbat"] .book-details p {
+  color: #bbdefb;
+  font-size: 1.1em;
+  text-shadow: 0 0 8px rgba(187, 222, 251, 0.5);
+  letter-spacing: 0.5px;
+  animation: textPulse 4s infinite;
+}
+
+@keyframes textPulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* עיצוב מיוחד לכותרות משנה */
+[data-section="shabbat"] h4 {
+  color: #e3f2fd;
+  font-size: 1.3em;
+  text-shadow: 0 0 10px rgba(227, 242, 253, 0.6);
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+/* קו זוהר מתחת לכותרות משנה */
+[data-section="shabbat"] h4::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #e3f2fd,
+    #bbdefb,
+    #e3f2fd,
+    transparent
+  );
+  animation: lineGlow 3s infinite;
+}
+
+@keyframes lineGlow {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* עיצוב משופר לרשימת הצעדים */
+[data-section="shabbat"] .prayer-steps li {
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid #bbdefb;
+  margin: 10px 0;
+  padding: 12px 15px;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(5px);
+}
+
+[data-section="shabbat"] .prayer-steps li:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: translateX(5px);
+  border-left-color: #e3f2fd;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+}
+
+/* עיצוב מספרי הצעדים עם אפקט זוהר */
+[data-section="shabbat"] .step-number {
+  background: linear-gradient(135deg, #1a237e, #3949ab);
+  color: #e3f2fd;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(227, 242, 253, 0.3);
+  text-shadow: 0 0 5px rgba(227, 242, 253, 0.5);
+}
+
+/* שיפור כפתור הקישור */
+[data-section="shabbat"] .book-page-link {
+  background: linear-gradient(45deg, #1a237e, #3949ab);
+  color: #e3f2fd;
+  border: 1px solid rgba(227, 242, 253, 0.3);
+  padding: 12px 25px;
+  border-radius: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  text-shadow: 0 0 8px rgba(227, 242, 253, 0.5);
+  box-shadow: 0 0 15px rgba(26, 35, 126, 0.5);
+}
+
+/* אפקט זוהר משופר לכפתור */
+[data-section="shabbat"] .book-page-link::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(227, 242, 253, 0.3) 0%,
+    transparent 70%
+  );
+  transform: rotate(45deg);
+  animation: shabbatButtonGlow 4s infinite;
+}
+
+/* אפקט נרות משופר */
+[data-section="shabbat"] .candle-left,
+[data-section="shabbat"] .candle-right {
+  font-size: 1.8em;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  animation: candleFlicker 3s infinite alternate;
+}
+
+@keyframes candleFlicker {
+  0%,
+  100% {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(255, 215, 0, 0.6));
+  }
+  50% {
+    opacity: 0.8;
+    filter: drop-shadow(0 0 12px rgba(255, 215, 0, 0.8));
+  }
+}
+
+/* Rosh Hashana Theme */
+[data-section="rosh-hashana"] .book-card-mini {
+  background: linear-gradient(135deg, #c62828 0%, #ef5350 100%);
+  color: white;
+}
+
+[data-section="rosh-hashana"] .book-page-link {
+  background: #ef5350;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Yom Kippur Theme */
+[data-section="yom-kippur"] .book-card-mini {
+  background: linear-gradient(135deg, #b0bec5 0%, #eceff1 100%);
+  color: #37474f;
+}
+
+[data-section="yom-kippur"] .book-page-link {
+  background: #b0bec5;
+  color: #37474f;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Sukkot Theme */
+[data-section="sukkot"] .book-card-mini {
+  background: linear-gradient(135deg, #2e7d32 0%, #66bb6a 100%);
+  color: white;
+}
+
+[data-section="sukkot"] .book-page-link {
+  background: #66bb6a;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Chanukah Theme */
+[data-section="chanukah"] .book-card-mini {
+  background: linear-gradient(135deg, #f57f17 0%, #ffd54f 100%);
+  color: #4a4a4a;
+}
+
+[data-section="chanukah"] .book-page-link {
+  background: #ffd54f;
+  color: #4a4a4a;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Shavuot Theme */
+[data-section="shavuot"] .book-card-mini {
+  background: linear-gradient(135deg, #4a148c 0%, #7e57c2 100%);
+  color: white;
+}
+
+[data-section="shavuot"] .book-page-link {
+  background: #7e57c2;
+  color: white;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Common styles for all special prayer cards */
+.special-prayers .book-card-mini {
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.special-prayers .prayer-steps li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 8px 12px;
+  margin: 5px 0;
+  border-radius: 6px;
+  backdrop-filter: blur(5px);
+}
+
+.special-prayers .book-page-link {
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.special-prayers .book-page-link:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.special-prayers .book-icon-mini {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.special-prayers .book-title-mini {
+  font-size: 1.5em;
+  margin: 10px 0;
+  font-weight: 600;
+}
+
+/* עדכון מיקום הנרות */
+[data-section="shabbat"] .book-title-mini {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-section="shabbat"] .candle-left,
+[data-section="shabbat"] .candle-right {
+  font-size: 2em;
+  animation: candleFlicker 3s infinite alternate;
+  position: relative;
+  top: -2px; /* התאמה עדינה של גובה הנרות */
+}

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>סידור תפילה</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/siddur.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="effects.css">
+    <script src="js/siddur.js" defer></script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <div class="bsd">בס״ד</div>
+                <a href="index.html" class="nav-link">
+                    <span class="icon">🏠</span>
+                    ראשי
+                </a>
+                <a href="siddur.html" class="nav-link active">
+                    <span class="icon">📖</span>
+                    סידור
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>📖 סידור תפילה</h1>
+
+        <div class="times-section">
+            <div class="time-card" id="sunrise">
+                <div class="time-icon">🌅</div>
+                <h4>הנץ החמה</h4>
+                <div class="time-value">טוען...</div>
+                <div class="time-details">זמן תפילת שחרית</div>
+            </div>
+            <div class="time-card" id="mincha-gedola">
+                <div class="time-icon">☀️</div>
+                <h4>מנחה גדולה</h4>
+                <div class="time-value">טוען...</div>
+                <div class="time-details">תחילת זמן מנחה</div>
+            </div>
+            <div class="time-card" id="mincha-ketana">
+                <div class="time-icon">🌤️</div>
+                <h4>מנחה קטנה</h4>
+                <div class="time-value">טוען...</div>
+                <div class="time-details">זמן מנחה מועדף</div>
+            </div>
+            <div class="time-card" id="plag">
+                <div class="time-icon">🌥️</div>
+                <h4>פלג המנחה</h4>
+                <div class="time-value">טוען...</div>
+                <div class="time-details">אפשר להתפלל ערבית</div>
+            </div>
+            <div class="time-card" id="sunset">
+                <div class="time-icon">🌇</div>
+                <h4>שקיעה</h4>
+                <div class="time-value">טוען...</div>
+                <div class="time-details">סוף זמן מנחה</div>
+            </div>
+            <div class="time-card" id="stars">
+                <div class="time-icon">🌠</div>
+                <h4>צאת הכוכבים</h4>
+                <div class="time-value">טוען...</div>
+                <div class="time-details">זמן ערבית</div>
+            </div>
+        </div>
+
+        <h2 class="section-title">
+            <span class="section-icon">🙏</span>
+            ברכות
+            <div class="section-divider"></div>
+        </h2>
+
+        <div class="prayer-sections">
+            <div class="section-card" data-section="food-blessings">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">🍞</div>
+                    <h3 class="book-title-mini">ברכות הנהנין</h3>
+                    <div class="book-details">
+                        <p>ברכות המזון • ברכות ראשונות • ברכות אחרונות</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סוגי ברכות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> המוציא וברכת המזון</li>
+                                    <li><span class="step-number">2</span> מזונות ועל המחיה</li>
+                                    <li><span class="step-number">3</span> הגפן ועל הגפן</li>
+                                    <li><span class="step-number">4</span> העץ ועל העץ</li>
+                                    <li><span class="step-number">5</span> האדמה ובורא נפשות</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="blessings/food.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לברכות הנהנין
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="life-blessings">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">✨</div>
+                    <h3 class="book-title-mini">ברכות חיים</h3>
+                    <div class="book-details">
+                        <p>ברכות ראייה • ברכות שמיעה • ברכות הודאה</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סוגי ברכות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> ברכות הראייה</li>
+                                    <li><span class="step-number">2</span> ברכות השמיעה</li>
+                                    <li><span class="step-number">3</span> ברכות ההודאה</li>
+                                    <li><span class="step-number">4</span> הטוב והמטיב</li>
+                                    <li><span class="step-number">5</span> שהחיינו</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="blessings/life.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לברכות חיים
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="mitzvot-blessings">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">📜</div>
+                    <h3 class="book-title-mini">ברכות מצוות</h3>
+                    <div class="book-details">
+                        <p>ברכות עשייה • ברכות הדלקה • ברכות הנחה</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סוגי ברכות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> נטילת ידיים</li>
+                                    <li><span class="step-number">2</span> הדלקת נרות</li>
+                                    <li><span class="step-number">3</span> הנחת תפילין</li>
+                                    <li><span class="step-number">4</span> ציצית</li>
+                                    <li><span class="step-number">5</span> מזוזה</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="blessings/mitzvot.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לברכות מצוות
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">
+            <span class="section-icon">⏰</span>
+            תפילות היום
+            <div class="section-divider"></div>
+        </h2>
+
+        <div class="prayer-sections">
+            <div class="section-card" data-section="shacharit">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">🌅</div>
+                    <h3 class="book-title-mini">תפילת שחרית</h3>
+                    <div class="book-details">
+                        <p>תפילת הבוקר • ברכות השחר • פסוקי דזמרה</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילה</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> ברכות השחר</li>
+                                    <li><span class="step-number">2</span> פסוקי דזמרה</li>
+                                    <li><span class="step-number">3</span> קריאת שמע וברכותיה</li>
+                                    <li><span class="step-number">4</span> תפילת העמידה</li>
+                                    <li><span class="step-number">5</span> תחנון ווידוי</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/shacharit.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילת שחרית
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="mincha">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">🌤️</div>
+                    <h3 class="book-title-mini">תפילת מנחה</h3>
+                    <div class="book-details">
+                        <p>תפילת הצהריים • אשרי • תפילת העמידה</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילה</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> אשרי</li>
+                                    <li><span class="step-number">2</span> תפילת העמידה</li>
+                                    <li><span class="step-number">3</span> תחנון</li>
+                                    <li><span class="step-number">4</span> עלינו לשבח</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/mincha.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילת מנחה
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="arvit">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">🌙</div>
+                    <h3 class="book-title-mini">תפילת ערבית</h3>
+                    <div class="book-details">
+                        <p>תפילת הערב • קריאת שמע • תפילת העמידה</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילה</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> ברכות קריאת שמע</li>
+                                    <li><span class="step-number">2</span> קריאת שמע</li>
+                                    <li><span class="step-number">3</span> תפילת העמידה</li>
+                                    <li><span class="step-number">4</span> ספירת העומר (בעונה)</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/arvit.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילת ערבית
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="section-title">
+            <span class="section-icon">✨</span>
+            תפילות מיוחדות
+            <div class="section-divider"></div>
+        </h2>
+
+        <div class="special-prayers books-row">
+            <div class="section-card" data-section="shabbat">
+                <div class="book-card-mini">
+                    <h3 class="">
+                        <span class="candle-left">🕯️</span>
+                        שבת
+                        <span class="candle-right">🕯️</span>
+                    </h3>
+                    <div class="book-details">
+                        <p>קבלת שבת • תפילות השבת • מוסף</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> קבלת שבת</li>
+                                    <li><span class="step-number">2</span> ערבית של שבת</li>
+                                    <li><span class="step-number">3</span> שחרית של שבת</li>
+                                    <li><span class="step-number">4</span> מוסף</li>
+                                    <li><span class="step-number">5</span> מנחה של שבת</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/shabbat.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילות שבת
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="rosh-hashana">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">🍎</div>
+                    <h3 class="book-title-mini">ראש השנה</h3>
+                    <div class="book-details">
+                        <p>תקיעת שופר • תפילות החג • תשליך</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> ערבית</li>
+                                    <li><span class="step-number">2</span> שחרית</li>
+                                    <li><span class="step-number">3</span> תקיעת שופר</li>
+                                    <li><span class="step-number">4</span> מוסף</li>
+                                    <li><span class="step-number">5</span> תשליך</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/rosh-hashana.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילות ראש השנה
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="yom-kippur">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">📿</div>
+                    <h3 class="book-title-mini">יום כיפור</h3>
+                    <div class="book-details">
+                        <p>כל נדרי • וידוי • נעילה</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> כל נדרי</li>
+                                    <li><span class="step-number">2</span> שחרית</li>
+                                    <li><span class="step-number">3</span> מוסף</li>
+                                    <li><span class="step-number">4</span> מנחה</li>
+                                    <li><span class="step-number">5</span> נעילה</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/yom-kippur.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילות יום כיפור
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="sukkot">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">🌿</div>
+                    <h3 class="book-title-mini">סוכות</h3>
+                    <div class="book-details">
+                        <p>הושענות • הלל • ארבעת המינים</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> שחרית</li>
+                                    <li><span class="step-number">2</span> הלל</li>
+                                    <li><span class="step-number">3</span> הושענות</li>
+                                    <li><span class="step-number">4</span> מוסף</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/sukkot.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילות סוכות
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="chanukah">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">🕎</div>
+                    <h3 class="book-title-mini">חנוכה</h3>
+                    <div class="book-details">
+                        <p>הדלקת נרות • על הניסים • הלל</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> שחרית והלל</li>
+                                    <li><span class="step-number">2</span> על הניסים</li>
+                                    <li><span class="step-number">3</span> קריאת התורה</li>
+                                    <li><span class="step-number">4</span> הדלקת נרות</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/chanukah.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילות חנוכה
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-card" data-section="shavuot">
+                <div class="book-card-mini">
+                    <div class="book-icon-mini">📜</div>
+                    <h3 class="book-title-mini">שבועות</h3>
+                    <div class="book-details">
+                        <p>תיקון ליל שבועות • אקדמות • מגילת רות</p>
+                        <div class="book-content">
+                            <div class="content-section">
+                                <h4>סדר התפילות</h4>
+                                <ul class="prayer-steps">
+                                    <li><span class="step-number">1</span> תיקון ליל שבועות</li>
+                                    <li><span class="step-number">2</span> שחרית והלל</li>
+                                    <li><span class="step-number">3</span> אקדמות</li>
+                                    <li><span class="step-number">4</span> קריאת עשרת הדברות</li>
+                                    <li><span class="step-number">5</span> מגילת רות</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="book-action">
+                            <a href="prayers/shavuot.html" class="book-page-link">
+                                <span class="icon">📖</span>
+                                לתפילות שבועות
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="credits">
+            <div class="creator-credit">
+                <span class="title">בורא עולם</span>
+                <div class="attributes">
+                    <span class="attribute">אס - אין סוף</span>
+                    <span class="attribute">אצילות</span>
+                    <span class="attribute">אהיה אשר אהיה</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

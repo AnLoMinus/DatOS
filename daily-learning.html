@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לימוד יומי - חמישה חומשי תורה</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datetime.css">
+    <link rel="stylesheet" href="daily-learning.css">
+    <link rel="stylesheet" href="daily-learning-page.css">
+    <script src="datetime.js" defer></script>
+    <script src="daily-learning.js" defer></script>
+    <script src="js/torah-chapters-highlighter.js" defer></script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <div class="bsd">בס״ד</div>
+                <a href="index.html" class="nav-link">
+                    <span class="icon">🏠</span>
+                    ראשי
+                </a>
+                <a href="daily-learning.html" class="nav-link active">
+                    <span class="icon">📚</span>
+                    לימוד יומי
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>📚 לימוד יומי</h1>
+
+        <div class="daily-learning-page">
+            <!-- סיכום יומי -->
+            <div class="daily-summary">
+                <h2>📊 סיכום יומי</h2>
+                <div class="summary-stats">
+                    <div class="stat">
+                        <span class="number">0</span>
+                        <span class="label">דפים נלמדו</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">0</span>
+                        <span class="label">דקות לימוד</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">0%</span>
+                        <span class="label">השלמת היעד</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- לוח זמנים יומי -->
+            <div class="daily-schedule">
+                <h2>⏰ לוח זמנים יומי</h2>
+                <div class="schedule-grid">
+                    <div class="time-slot morning">
+                        <h3>🌅 בוקר</h3>
+                        <ul>
+                            <li>✓ תפילת שחרית</li>
+                            <li>📖 דף יומי</li>
+                            <li>📚 פרשת השבוע</li>
+                        </ul>
+                    </div>
+                    <div class="time-slot afternoon">
+                        <h3>☀️ צהריים</h3>
+                        <ul>
+                            <li>⚖️ הלכה יומית</li>
+                            <li>📜 משניות</li>
+                            <li>🕯️ מוסר</li>
+                        </ul>
+                    </div>
+                    <div class="time-slot evening">
+                        <h3>🌇 ערב</h3>
+                        <ul>
+                            <li>✨ חסידות</li>
+                            <li>📖 תנ״ך</li>
+                            <li>🌟 סיכום יומי</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- תוכן הלימוד -->
+            <div class="learning-content">
+                <h2>📖 תוכן הלימוד להיום</h2>
+                <div class="content-sections">
+                    <!-- תורה -->
+                    <div class="content-section torah">
+                        <h3>🕊️ תורה</h3>
+                        <div class="section-content" id="torahContent">
+                            <div class="chapter-list">
+                                <div data-chapter="בראשית א-ו" class="chapter-item">פרשת בראשית - פרקים א-ו</div>
+                                <div data-chapter="תהילים א" class="chapter-item">תהילים פרק א</div>
+                                <div data-chapter="תהילים ב" class="chapter-item">תהילים פרק ב</div>
+                                <div data-chapter="ישעיהו מב" class="chapter-item">ישעיהו פרק מב</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- משנה -->
+                    <div class="content-section mishna">
+                        <h3>📚 משנה</h3>
+                        <div class="section-content" id="mishnaContent">
+                            טוען...
+                        </div>
+                    </div>
+
+                    <!-- גמרא -->
+                    <div class="content-section gemara">
+                        <h3>📜 גמרא</h3>
+                        <div class="section-content" id="gemaraContent">
+                            טוען...
+                        </div>
+                    </div>
+
+                    <!-- הלכה -->
+                    <div class="content-section halacha">
+                        <h3>⚖️ הלכה</h3>
+                        <div class="section-content" id="halachaContent">
+                            טוען...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- כפתורי פעולה -->
+            <div class="action-buttons">
+                <button class="start-learning">
+                    <span class="icon">▶️</span>
+                    התחל ללמוד
+                </button>
+                <button class="save-progress">
+                    <span class="icon">💾</span>
+                    שמור התקדמות
+                </button>
+                <button class="share-progress">
+                    <span class="icon">📤</span>
+                    שתף התקדמות
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="credits">
+            <div class="creator-credit">
+                <span class="title">בורא עולם</span>
+                <div class="attributes">
+                    <span class="attribute">אין סוף</span>
+                    <span class="attribute">אחד</span>
+                </div>
+            </div>
+            <div class="credits-content">
+                <div class="credit-item">
+                    <span class="credit-icon">🇮🇱</span>
+                    <span class="credit-text">מדינת ישראל</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

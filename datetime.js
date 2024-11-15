@@ -160,23 +160,43 @@ class DateTimeWidget {
 
   async updateDateTime() {
     const now = new Date();
+    const hour = now.getHours();
+
+    // קביעת האייקון והטקסט לפי שעות היום
+    let timeEmoji = "";
+    let timeOfDay = "";
+    if (hour >= 5 && hour < 12) {
+      timeEmoji = "🌅";
+      timeOfDay = "בוקר טוב";
+    } else if (hour >= 12 && hour < 17) {
+      timeEmoji = "☀️";
+      timeOfDay = "צהריים טובים";
+    } else if (hour >= 17 && hour < 20) {
+      timeEmoji = "🌇";
+      timeOfDay = "ערב טוב";
+    } else {
+      timeEmoji = "🌙";
+      timeOfDay = "לילה טוב";
+    }
 
     // Update Gregorian date with day of the week
     const dateValue = now.toLocaleDateString("he-IL", {
-      weekday: "long", // Add the weekday
+      weekday: "long",
       year: "numeric",
       month: "long",
       day: "numeric",
     });
     document.querySelector(".date-section .value").textContent = dateValue;
 
-    // Update time
+    // Update time with emoji
     const timeValue = now.toLocaleTimeString("he-IL", {
       hour: "2-digit",
       minute: "2-digit",
       second: "2-digit",
     });
-    document.querySelector(".time-section .value").textContent = timeValue;
+    document.querySelector(
+      ".time-section .value"
+    ).textContent = `${timeValue} ${timeEmoji} ${timeOfDay}`;
 
     // Update Hebrew date
     const hebrewDate = this.getHebrewDate();
@@ -213,7 +233,25 @@ class DateTimeWidget {
         (item) => item.category === "parashat" && new Date(item.date) >= today
       );
 
-      return parasha ? parasha.hebrew : "טוען...";
+      if (!parasha) return "טוען...";
+
+      // מציאת הספר לפי שם הפרשה
+      const parashaName = parasha.hebrew;
+      let bookName = "";
+
+      if (this.weeklyPortions.indexOf(parashaName) <= 11) {
+        bookName = "בראשית";
+      } else if (this.weeklyPortions.indexOf(parashaName) <= 22) {
+        bookName = "שמות";
+      } else if (this.weeklyPortions.indexOf(parashaName) <= 32) {
+        bookName = "ויקרא";
+      } else if (this.weeklyPortions.indexOf(parashaName) <= 42) {
+        bookName = "במדבר";
+      } else {
+        bookName = "דברים";
+      }
+
+      return `${parashaName} (${bookName})`;
     } catch (error) {
       console.error("Error fetching parasha:", error);
       return "לא זמין";

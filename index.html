@@ -4,31 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="פרויקט 'חמישה חומשי תורה' הוא פלטפורמה דיגיטלית מתקדמת ללימוד תורה, עם פרשנויות, חידונים, כלים חכמים ותמיכה מלאה במכשירים ניידים.">
-    <meta name="keywords" content="תורה, יהדות, חומש, פרשנות, לימוד תורה, חידונים, חומשי תורה, טכנולוגיה, פרויקט דיגיטלי, תורה דיגיטלית">
-    <meta name="author" content="לאון יעקובוב">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="חמישה חומשי תורה - פרויקט דיגיטלי ללימוד תורה">
-    <meta property="og:description" content="לימוד תורה מתקדם ואינטראקטיבי עם חידונים, פרשנויות וכלים חכמים - בכל מקום ובכל זמן.">
-    <meta property="og:image" content="https://anlominus.github.io/DatOS/assets/images/logo.png">
-    <meta property="og:url" content="https://anlominus.github.io/DatOS/">
-    <meta property="og:type" content="website">
-    <meta property="og:locale" content="he_IL">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="חמישה חומשי תורה - פרויקט דיגיטלי ללימוד תורה">
-    <meta name="twitter:description" content="לימוד תורה מתקדם ואינטראקטיבי עם חידונים, פרשנויות וכלים חכמים - בכל מקום ובכל זמן.">
-    <meta name="twitter:image" content="https://anlominus.github.io/DatOS/assets/images/logo.png">
-    <link rel="icon" href="https://anlominus.github.io/DatOS/assets/images/logo.png" type="image/png">
-    <title>חמישה חומשי תורה - פרויקט דיגיטלי ללימוד תורה</title>    <title>חמישה חומשי תורה</title>
+    <title>חמישה חומשי תורה</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="thanks-modal.css">
     <link rel="stylesheet" href="datetime.css">
     <link rel="stylesheet" href="tools.css">
     <link rel="stylesheet" href="effects.css">
+    <link rel="stylesheet" href="daily-learning.css">
+    <link rel="stylesheet" href="times.css">
     <script src="datetime.js" defer></script>
     <script src="https://unpkg.com/@hebcal/core"></script>
     <script src="tools.js" defer></script>
+    <script src="daily-learning.js" defer></script>
+    <script src="daily-times.js" defer></script>
 </head>
 
 <body>
@@ -59,6 +48,10 @@
                 <a href="dvarim.html" class="nav-link">
                     <span class="icon">📜</span>
                     דברים
+                </a>
+                <a href="siddur.html" class="nav-link">
+                    <span class="icon">📖</span>
+                    סידור
                 </a>
             </div>
 
@@ -94,7 +87,7 @@
             <p>
                 <strong>ספר שמות</strong>
                 <span class="emoji">🗽</span>
-                מתאר את יציאת מצרים, קריעת ים סוף, מתן תורה בהר סיני ובניית המשכן.
+                מתאר את יציאת מצרים, קריעת ים סוף, מתן תורה הר סיני ובניית המשכן.
                 הספר מלמד על גאולה, אמונה, והקשר המיוחד בין עם ישראל לקב״ה.
             </p>
 
@@ -204,7 +197,8 @@
                     <div class="book-content">
                         <div class="content-section">
                             <h4>תיאור הספר</h4>
-                            <p>מספר על שעבוד מצרים, הגאולה, מתן תורה והקמת המשכן. מגלות לגאולה ומעבדות לחירות.</p>
+                            <p>מספר על שעבוד מצרים, הגאולה, מתן תורה הר סיני ובניית המשכן. מגלות לגאולה ומעבדות לחירות.
+                            </p>
                         </div>
                         <div class="content-section">
                             <h4>מסרים מרכזיים</h4>
@@ -460,6 +454,130 @@
                 </div>
             </div>
         </div>
+
+        <!-- להוסיף אחרי div.total-stats -->
+        <div class="mitzvot-stats-section">
+            <h2 class="section-title">
+                <span class="section-icon">📜</span>
+                תרי״ג מצוות התורה
+                <div class="section-divider"></div>
+            </h2>
+
+            <div class="mitzvot-stats-container">
+                <div class="mitzvot-stats-content">
+                    <div class="mitzvot-intro">
+                        <p>
+                            <strong>תרי״ג (613) מצוות</strong> ניתנו לעם ישראל בהר סיני, המהוות את הבסיס להתנהלות חיי
+                            היהודי
+                            <span class="emoji">✨</span>
+                        </p>
+                    </div>
+                    <div class="mitzvot-numbers">
+                        <div class="mitzvah-type positive">
+                            <span class="number">248</span>
+                            <span class="label">מצוות עשה</span>
+                            <span class="description">כנגד איברי האדם</span>
+                        </div>
+                        <div class="mitzvah-type negative">
+                            <span class="number">365</span>
+                            <span class="label">מצוות לא תעשה</span>
+                            <span class="description">כנגד ימות החמה</span>
+                        </div>
+                        <div class="mitzvah-type total">
+                            <span class="number">613</span>
+                            <span class="label">סך הכל מצוות</span>
+                            <span class="description">תרי״ג מצוות התורה</span>
+                        </div>
+                    </div>
+                    <div class="mitzvot-action">
+                        <a href="mitzvot.html" class="mitzvot-link">
+                            <span class="icon">📜</span>
+                            לרשימת המצוות המלאה
+                            <span class="arrow">←</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- אחרי div.mitzvot-stats-section ולפני footer -->
+        <div class="daily-times-section">
+            <h2 class="section-title">
+                <span class="section-icon">⏰</span>
+                זמני היום
+                <div class="section-divider"></div>
+            </h2>
+
+            <div class="times-container">
+                <div class="times-grid">
+                    <div class="times-column">
+                        <div class="time-item">
+                            <span class="time-label">עלות השחר</span>
+                            <span class="time-value" id="alotHashachar">04:55</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">משיכיר</span>
+                            <span class="time-value" id="misheyakir">05:17</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">זריחה</span>
+                            <span class="time-value" id="sunrise">06:10</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">קריאת שמע</span>
+                            <span class="time-value" id="shema">08:48</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">תפילה</span>
+                            <span class="time-value" id="tefilla">09:40</span>
+                        </div>
+                    </div>
+                    <div class="times-column">
+                        <div class="time-item">
+                            <span class="time-label">חצות</span>
+                            <span class="time-value" id="chatzot">11:25</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">מנחה גדולה</span>
+                            <span class="time-value" id="minchaGedola">11:52</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">מנחה קטנה</span>
+                            <span class="time-value" id="minchaKtana">14:29</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">שקיעה</span>
+                            <span class="time-value" id="sunset">16:41</span>
+                        </div>
+                        <div class="time-item">
+                            <span class="time-label">צאת הכוכבים</span>
+                            <span class="time-value" id="tzeit">17:12</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- זמני שבת -->
+                <div class="shabbat-times">
+                    <h3>זמני כניסת שבת</h3>
+                    <div class="shabbat-details">
+                        <div class="parasha">
+                            <span class="parasha-label">פרשת השבוע:</span>
+                            <span class="parasha-value" id="currentParasha">פרשת וירא</span>
+                        </div>
+                        <div class="shabbat-times-grid">
+                            <div class="time-item">
+                                <span class="time-label">כניסת שבת</span>
+                                <span class="time-value" id="shabbatStart">16:22</span>
+                            </div>
+                            <div class="time-item">
+                                <span class="time-label">יציאת שבת</span>
+                                <span class="time-value" id="shabbatEnd">17:19</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- הוספת מודל התודות -->
@@ -509,14 +627,14 @@
                     </p>
                     <p>
                         על הטכנולוגיה והקדמה 💻<br>
-                        המאפשרת להפיץ תורה בכ פינה 🌍
+                        המאפשרת להפיץ תורה בכל פינה 🌍
                     </p>
                     <p class="blessing-highlight">
                         יהי רצון שנזכה להמשיך להגדיל תורה 📚<br>
                         ולהאיר את העולם באורה הקדוש ✨
                     </p>
                     <p>
-                        ונזכה לראות בגאולה השלמה 🌅<br>
+                        ונזכה לראות בגאולה השלמה ⭐<br>
                         במהרה במינו, אמן! 🙏
                     </p>
                 </div>

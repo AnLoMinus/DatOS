@@ -1,0 +1,657 @@
+:root {
+  --primary-color: #1a237e;
+  --secondary-color: #303f9f;
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --border-color: #ddd;
+  --hover-color: #3949ab;
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --transition-speed: 0.3s;
+  --time-gradient: linear-gradient(135deg, #2c3e50, #3498db);
+  --time-shadow: 0 0 15px rgba(44, 62, 80, 0.3);
+  --time-accent: #34495e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Heebo", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+.nav-bar {
+  background-color: var(--primary-color);
+  padding: 1rem 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: var(--hover-color);
+}
+
+.nav-link.active {
+  background-color: var(--secondary-color);
+}
+
+.bsd {
+  color: white;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.prayer-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.section-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-card h2 {
+  color: var(--primary-color);
+  margin-top: 0;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+.prayer-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.prayer-item {
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.prayer-item:hover {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+}
+
+.special-prayers {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.special-prayers h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.special-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.special-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.special-card h3 {
+  color: var(--primary-color);
+  margin-top: 0;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.5rem;
+}
+
+footer {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 1rem 0;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .prayer-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .special-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.book-card-mini {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--transition-speed);
+  height: 100%;
+}
+
+.book-card-mini:hover {
+  transform: translateY(-5px);
+}
+
+.book-icon-mini {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.book-title-mini {
+  color: var(--primary-color);
+  text-align: center;
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  color: var(--primary-color);
+}
+
+.section-icon {
+  font-size: 1.5rem;
+}
+
+.section-divider {
+  flex-grow: 1;
+  height: 2px;
+  background: var(--border-color);
+  margin-right: 1rem;
+}
+
+.book-action {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.book-page-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color var(--transition-speed);
+}
+
+.book-page-link:hover {
+  background: var(--hover-color);
+}
+
+.content-section h4 {
+  color: var(--primary-color);
+  margin: 1rem 0 0.5rem;
+}
+
+.content-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.content-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.content-section li:last-child {
+  border-bottom: none;
+}
+
+@media (max-width: 768px) {
+  .prayer-sections {
+    grid-template-columns: 1fr;
+  }
+
+  .special-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-card-mini {
+    margin-bottom: 1rem;
+  }
+}
+
+@keyframes prayerHighlight {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  }
+}
+
+.book-card-mini.current-prayer {
+  animation: prayerHighlight 2s infinite;
+  border: 2px solid #ffd700;
+  position: relative;
+  z-index: 1;
+}
+
+.book-card-mini.modern-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--time-shadow);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card-mini.modern-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--time-gradient);
+}
+
+.prayer-time-badge {
+  background: var(--time-gradient);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.book-icon-mini.animated-icon {
+  background: var(--time-gradient);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 2.5rem;
+  transition: transform 0.3s ease;
+}
+
+.book-icon-mini.animated-icon:hover {
+  transform: scale(1.1);
+}
+
+.book-page-link.modern-button {
+  background: var(--time-gradient);
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--time-shadow);
+  transition: all 0.3s ease;
+}
+
+.book-page-link.modern-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes prayerHighlight {
+  0% {
+    box-shadow: var(--time-shadow);
+  }
+  50% {
+    box-shadow: 0 0 20px var(--time-accent);
+  }
+  100% {
+    box-shadow: var(--time-shadow);
+  }
+}
+
+.book-card-mini.current-prayer {
+  animation: prayerHighlight 2s infinite;
+  border: 2px solid var(--time-accent);
+  position: relative;
+  z-index: 1;
+}
+
+/* עיצוב כרטיסיית שחרית */
+[data-section="shacharit"] .book-card-mini {
+  background: linear-gradient(135deg, #fff8e1, #fff);
+  border-left: 4px solid #ffd54f;
+}
+
+[data-section="shacharit"] .book-icon-mini {
+  color: #ffa000;
+}
+
+[data-section="shacharit"] .book-title-mini {
+  color: #f57f17;
+}
+
+/* עיצוב כרטיסיית מנחה */
+[data-section="mincha"] .book-card-mini {
+  background: linear-gradient(135deg, #e3f2fd, #fff);
+  border-left: 4px solid #64b5f6;
+}
+
+[data-section="mincha"] .book-icon-mini {
+  color: #1976d2;
+}
+
+[data-section="mincha"] .book-title-mini {
+  color: #0d47a1;
+}
+
+/* עיצוב כרטיסיית ערבית */
+[data-section="arvit"] .book-card-mini {
+  background: linear-gradient(135deg, #e8eaf6, #fff);
+  border-left: 4px solid #7986cb;
+}
+
+[data-section="arvit"] .book-icon-mini {
+  color: #3f51b5;
+}
+
+[data-section="arvit"] .book-title-mini {
+  color: #283593;
+}
+
+/* שיפור המראה הכללי של הכרטיסיות */
+.book-card-mini {
+  transition: all 0.3s ease;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.book-card-mini:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prayer-time-badge {
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* התאמת צבעי הכפתורים לכל כרטיסייה */
+[data-section="shacharit"] .book-page-link {
+  background: linear-gradient(135deg, #ffd54f, #f57f17);
+}
+
+[data-section="mincha"] .book-page-link {
+  background: linear-gradient(135deg, #64b5f6, #1976d2);
+}
+
+[data-section="arvit"] .book-page-link {
+  background: linear-gradient(135deg, #7986cb, #3f51b5);
+}
+
+/* עיצוב תפילות מיוחדות */
+[data-section="shabbat"] .book-card-mini {
+  background: linear-gradient(135deg, #ffecd2, #fff);
+  border-left: 4px solid #ffd700;
+}
+
+[data-section="shabbat"] .book-icon-mini {
+  color: #b8860b;
+}
+
+[data-section="shabbat"] .book-title-mini {
+  color: #8b4513;
+}
+
+[data-section="shabbat"] .book-page-link {
+  background: linear-gradient(135deg, #ffd700, #b8860b);
+}
+
+/* עיצוב ראש השנה */
+[data-section="rosh-hashana"] .book-card-mini {
+  background: linear-gradient(135deg, #fff0f0, #fff);
+  border-left: 4px solid #ff4d4d;
+}
+
+[data-section="rosh-hashana"] .book-icon-mini {
+  color: #cc0000;
+}
+
+[data-section="rosh-hashana"] .book-title-mini {
+  color: #990000;
+}
+
+[data-section="rosh-hashana"] .book-page-link {
+  background: linear-gradient(135deg, #ff4d4d, #cc0000);
+}
+
+/* עיצוב יום כיפור */
+[data-section="yom-kippur"] .book-card-mini {
+  background: linear-gradient(135deg, #ffffff, #f8f8f8);
+  border-left: 4px solid #c0c0c0;
+}
+
+[data-section="yom-kippur"] .book-icon-mini {
+  color: #696969;
+}
+
+[data-section="yom-kippur"] .book-title-mini {
+  color: #4a4a4a;
+}
+
+[data-section="yom-kippur"] .book-page-link {
+  background: linear-gradient(135deg, #808080, #4a4a4a);
+}
+
+/* עיצוב סוכות */
+[data-section="sukkot"] .book-card-mini {
+  background: linear-gradient(135deg, #f1f8e9, #fff);
+  border-left: 4px solid #7cb342;
+}
+
+[data-section="sukkot"] .book-icon-mini {
+  color: #33691e;
+}
+
+[data-section="sukkot"] .book-title-mini {
+  color: #1b5e20;
+}
+
+[data-section="sukkot"] .book-page-link {
+  background: linear-gradient(135deg, #7cb342, #33691e);
+}
+
+/* עיצוב חנוכה */
+[data-section="chanukah"] .book-card-mini {
+  background: linear-gradient(135deg, #fff8e1, #fff);
+  border-left: 4px solid #ffd54f;
+}
+
+[data-section="chanukah"] .book-icon-mini {
+  color: #ff8f00;
+}
+
+[data-section="chanukah"] .book-title-mini {
+  color: #e65100;
+}
+
+[data-section="chanukah"] .book-page-link {
+  background: linear-gradient(135deg, #ffd54f, #ff8f00);
+}
+
+/* עיצוב שבועות */
+[data-section="shavuot"] .book-card-mini {
+  background: linear-gradient(135deg, #e8f5e9, #fff);
+  border-left: 4px solid #66bb6a;
+}
+
+[data-section="shavuot"] .book-icon-mini {
+  color: #2e7d32;
+}
+
+[data-section="shavuot"] .book-title-mini {
+  color: #1b5e20;
+}
+
+[data-section="shavuot"] .book-page-link {
+  background: linear-gradient(135deg, #66bb6a, #2e7d32);
+}
+
+/* אנימציית הבהוב לחגים - מתוקנת */
+@keyframes holidayHighlight {
+  0% {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(0);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.5);
+    transform: translateY(-5px);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    transform: translateY(0);
+  }
+}
+
+.holiday-active {
+  animation: holidayHighlight 2s infinite;
+  border: 2px solid #ffd700 !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* עיצוב מקטע זמני היום */
+.times-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 1rem;
+  margin: 1rem 0 3rem 0;
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+}
+
+.time-card {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  padding: 1.2rem;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 1px solid #e9ecef;
+  position: relative;
+  overflow: hidden;
+  margin: 0.5rem;
+  min-width: 0;
+}
+
+.time-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--time-gradient);
+}
+
+.time-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.time-icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.time-card h4 {
+  color: var(--primary-color);
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.time-value {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin: 0.5rem 0;
+}
+
+.time-details {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-top: 0.5rem;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .times-section {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .times-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.current-time {
+  background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+  border: 2px solid #64b5f6;
+  transform: scale(1.05);
+}
+
+.current-time::before {
+  background: linear-gradient(135deg, #64b5f6, #1976d2);
+}
+
+.current-time .time-value {
+  color: #1565c0;
+}

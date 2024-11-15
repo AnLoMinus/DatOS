@@ -11,6 +11,8 @@
     <!-- <link rel="stylesheet" href="effects.css"> -->
     <script src="https://unpkg.com/@hebcal/core"></script>
     <script src="datetime.js" defer></script>
+    <script src="js/torah-chapters-highlighter.js" defer></script>
+
     <!-- Keep only unique styles for bereshit.html here if any -->
     <style>
         /* Add any bereshit-specific styles here */
@@ -142,7 +144,7 @@
                     <div class="scene-icon">🌍</div>
                     <div class="scene-title">בריאת העולם</div>
                     <div class="scene-description">
-                        תיאור ששת ימי הבריאה, בריאת האדם וחוה, גן עדן והחטא הקדמון.
+                        תיאור ששת ימי הבר��אה, בריאת האדם וחוה, גן עדן והחטא הקדמון.
                         <span class="emoji-group">🌟 🌿 👫</span>
                     </div>
                 </div>
@@ -420,7 +422,7 @@
                         <span>🌍</span>
                         בריאת העולם
                     </div>
-                    <p>הכרת גדלות הבריאה והאחריות על הטבע והסביבה. לימוד על מקור העולם וייחודו של האדם כנזר הבריאה.</p>
+                    <p>הכרת גדלות הבריאה והאחריות על הטבע והסביבה. לימוד על מקור העולם וייחודו של האדם כנזר הביאה.</p>
                 </div>
 
                 <div class="lesson-card">
@@ -483,17 +485,20 @@
                 </div>
 
                 <div class="chapter-section">
-                    <h3>פרקי הקדמה והיסטוריה (פרקים א-י)</h3>
+                    <h3>פרקי הקדמה והיסטוריה (פרקים א-י) - <span id="section1-chapters">0</span> פרקים, <span
+                            id="section1-verses">0</span> פסוקים</h3>
                     <ul class="chapter-list" id="chapterList1"></ul>
                 </div>
 
                 <div class="chapter-section">
-                    <h3>פרקי סיפורי האבות (פרקים יא-ל)</h3>
+                    <h3>פרקי סיפורי האבות (פרקים יא-ל) - <span id="section2-chapters">0</span> פרקים, <span
+                            id="section2-verses">0</span> פסוקים</h3>
                     <ul class="chapter-list" id="chapterList2"></ul>
                 </div>
 
                 <div class="chapter-section">
-                    <h3>פרקי סיום וברכות (פרקים לא-נ)</h3>
+                    <h3>פרקי סיום וברכות (פרקים לא-נ) - <span id="section3-chapters">0</span> פרקים, <span
+                            id="section3-verses">0</span> פסוקים</h3>
                     <ul class="chapter-list" id="chapterList3"></ul>
                 </div>
             </div>
@@ -563,13 +568,30 @@
         const chapterList2 = document.getElementById('chapterList2');
         const chapterList3 = document.getElementById('chapterList3');
 
+        // נוסיף פונקציה להמרת מספר לאות עברית
+        function numberToHebrewLetter(num) {
+            const letters = {
+                1: 'א', 2: 'ב', 3: 'ג', 4: 'ד', 5: 'ה',
+                6: 'ו', 7: 'ז', 8: 'ח', 9: 'ט', 10: 'י',
+                11: 'יא', 12: 'יב', 13: 'יג', 14: 'יד', 15: 'טו',
+                16: 'טז', 17: 'יז', 18: 'יח', 19: 'יט', 20: 'כ',
+                21: 'כא', 22: 'כב', 23: 'כג', 24: 'כד', 25: 'כה',
+                26: 'כו', 27: 'כז', 28: 'כח', 29: 'כט', 30: 'ל',
+                31: 'לא', 32: 'לב', 33: 'לג', 34: 'לד', 35: 'לה',
+                36: 'לו', 37: 'לז', 38: 'לח', 39: 'לט', 40: 'מ',
+                41: 'מא', 42: 'מב', 43: 'מג', 44: 'מד', 45: 'מה',
+                46: 'מו', 47: 'מז', 48: 'מח', 49: 'מט', 50: 'נ'
+            };
+            return letters[num] || num.toString();
+        }
+
         chapters.forEach((chapter, index) => {
             const li = document.createElement('li');
             li.className = 'chapter-item';
             li.innerHTML = `
                 <span class="emoji">📖</span>
                 <div class="chapter-info">
-                    <div>פרק ${index + 1}: ${chapter.title}</div>
+                    <div>פרק ${numberToHebrewLetter(index + 1)} (${index + 1}): ${chapter.title}</div>
                     <div class="chapter-stats">מספר פסוקים: ${chapter.verses}</div>
                 </div>
             `;
@@ -909,6 +931,38 @@
 
         // אוטומציה להחלפת עובדות
         setInterval(nextFact, 5000);
+
+        function calculateSectionVerses() {
+            let section1 = { chapters: 0, verses: 0 };
+            let section2 = { chapters: 0, verses: 0 };
+            let section3 = { chapters: 0, verses: 0 };
+
+            chapters.forEach((chapter, index) => {
+                if (index < 10) {
+                    section1.chapters++;
+                    section1.verses += chapter.verses;
+                } else if (index < 30) {
+                    section2.chapters++;
+                    section2.verses += chapter.verses;
+                } else {
+                    section3.chapters++;
+                    section3.verses += chapter.verses;
+                }
+            });
+
+            // עדכון מספר הפרקים
+            document.getElementById('section1-chapters').textContent = section1.chapters;
+            document.getElementById('section2-chapters').textContent = section2.chapters;
+            document.getElementById('section3-chapters').textContent = section3.chapters;
+
+            // עדכון מספר הפסוקים
+            document.getElementById('section1-verses').textContent = section1.verses;
+            document.getElementById('section2-verses').textContent = section2.verses;
+            document.getElementById('section3-verses').textContent = section3.verses;
+        }
+
+        // קריאה לפונקציה בטעינת הדף
+        document.addEventListener('DOMContentLoaded', calculateSectionVerses);
     </script>
 </body>
 <footer>
