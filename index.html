@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="effects.css">
     <link rel="stylesheet" href="daily-learning.css">
     <link rel="stylesheet" href="times.css">
+    <link rel="stylesheet" href="sections.css">
     <script src="datetime.js" defer></script>
     <script src="https://unpkg.com/@hebcal/core"></script>
     <script src="tools.js" defer></script>
@@ -319,7 +320,7 @@
                     <div class="book-content">
                         <div class="content-section">
                             <h4>תיאור הספר</h4>
-                            <p>מתאר את מסע בני ישראל במדבר, הניסיונות והאתגרים בדרך לארץ ישראל.</p>
+                            <p>מתאר את מסע בני ישראל במדבר, הניסיונות והאתגרים בדרך לארץ ישאל.</p>
                         </div>
                         <div class="content-section">
                             <h4>מסרים מרכזיים</h4>
@@ -434,28 +435,168 @@
             </div>
         </div>
 
-        <!-- הוספת סיכום סטטיסטי כללי אחרי div.books-row -->
+        <!-- מחליף את div.total-stats הקיים -->
         <div class="total-stats">
-            <div class="total-stats-content">
-                <h3>סיכום כללי - חמישה חומשי תורה</h3>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-number">187</span>
-                        <span class="stat-label">פרקים</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">5,849</span>
-                        <span class="stat-label">פסוקים</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">54</span>
-                        <span class="stat-label">פרשיות</span>
+            <div class="total-stats-header">
+                <h2 class="total-stats-title">
+                    <span class="icon">📊</span>
+                    סיכום כללי - תוכן האתר
+                </h2>
+                <p class="total-stats-subtitle">סקירה מקיפה של כל התוכן והמידע באתר</p>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item books">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-number">7</div>
+                    <div class="stat-label">ספרים</div>
+                    <div class="stat-description">חמישה חומשי תורה, סידור ומצוות</div>
+                </div>
+
+                <div class="stat-item chapters">
+                    <div class="stat-icon">📑</div>
+                    <div class="stat-number">187</div>
+                    <div class="stat-label">פרקים</div>
+                    <div class="stat-description">בחמישה חומשי תורה</div>
+                </div>
+
+                <div class="stat-item verses">
+                    <div class="stat-icon">📜</div>
+                    <div class="stat-number">5,849</div>
+                    <div class="stat-label">פסוקים</div>
+                    <div class="stat-description">סך כל הפסוקים בתורה</div>
+                </div>
+
+                <div class="stat-item letters">
+                    <div class="stat-icon">✍️</div>
+                    <div class="stat-number">304,805</div>
+                    <div class="stat-label">אותיות</div>
+                    <div class="stat-description">סך כל האותיות בתורה</div>
+
+                    <!-- הוספת מקטע החישובים -->
+                    <div class="letters-calculations">
+                        <div class="calculations-grid">
+                            <div class="calculation-item">
+                                <div class="calculation-title">
+                                    <span class="icon">⏱️</span>
+                                    זמן כתיבה יומי
+                                </div>
+                                <div class="calculation-value">~2.5 שנים</div>
+                                <div class="calculation-explanation">
+                                    בקצב של כתיבת 365 אותיות ביום
+                                </div>
+                            </div>
+
+                            <div class="calculation-item">
+                                <div class="calculation-title">
+                                    <span class="icon">📝</span>
+                                    קצב כתיבה מהיר
+                                </div>
+                                <div class="calculation-value">~10 חודשים</div>
+                                <div class="calculation-explanation">
+                                    בקצב של כתיבת 1,000 אותיות ביום
+                                </div>
+                            </div>
+
+                            <div class="calculation-item">
+                                <div class="calculation-title">
+                                    <span class="icon">📊</span>
+                                    ממוצע לחומש
+                                </div>
+                                <div class="calculation-value">60,961 אותיות</div>
+                                <div class="calculation-explanation">
+                                    ממוצע האותיות בכל חומש
+                                </div>
+                            </div>
+
+                            <div class="calculation-item">
+                                <div class="calculation-title">
+                                    <span class="icon">📖</span>
+                                    ממוצע לפרשה
+                                </div>
+                                <div class="calculation-value">5,855 אותיות</div>
+                                <div class="calculation-explanation">
+                                    ממוצע האותיות בכל פרשה (54 פרשיות)
+                                </div>
+                            </div>
+
+                            <div class="calculation-item">
+                                <div class="calculation-title">
+                                    <span class="icon">📜</span>
+                                    ממוצע לעמוד
+                                </div>
+                                <div class="calculation-value">~2,032 אותיות</div>
+                                <div class="calculation-explanation">
+                                    ממוצע האותיות בעמוד תורה (150 עמודים)
+                                </div>
+                            </div>
+
+                            <div class="calculation-item">
+                                <div class="calculation-title">
+                                    <span class="icon">⚡</span>
+                                    קריאה מהירה
+                                </div>
+                                <div class="calculation-value">~25 שעות</div>
+                                <div class="calculation-explanation">
+                                    בקצב קריאה של 200 מילים בדקה
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="stat-item mitzvot">
+                    <div class="stat-icon">⚖️</div>
+                    <div class="stat-number">613</div>
+                    <div class="stat-label">מצוות</div>
+                    <div class="stat-description">תרי״ג מצוות התורה</div>
+                    <div class="sub-stats">
+                        <div class="sub-stat">
+                            <div class="sub-stat-number">248</div>
+                            <div class="sub-stat-label">מצוות עשה</div>
+                        </div>
+                        <div class="sub-stat">
+                            <div class="sub-stat-number">365</div>
+                            <div class="sub-stat-label">מצוות לא תעשה</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-item prayers">
+                    <div class="stat-icon">🙏</div>
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">תפילות</div>
+                    <div class="stat-description">תפילות וברכות בסידור</div>
+                    <div class="sub-stats">
+                        <div class="sub-stat">
+                            <div class="sub-stat-number">50+</div>
+                            <div class="sub-stat-label">תפילות יומיות</div>
+                        </div>
+                        <div class="sub-stat">
+                            <div class="sub-stat-number">50+</div>
+                            <div class="sub-stat-label">ברכות מיוחדות</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stat-item times">
+                    <div class="stat-icon">⏰</div>
+                    <div class="stat-number">10</div>
+                    <div class="stat-label">זמני היום</div>
+                    <div class="stat-description">זמנים הלכתיים יומיים</div>
+                </div>
+
+                <div class="stat-item features">
+                    <div class="stat-icon">✨</div>
+                    <div class="stat-number">+100</div>
+                    <div class="stat-label">תכונות</div>
+                    <div class="stat-description">תכונות ואפשרויות באתר</div>
+                </div>
             </div>
+
         </div>
 
-        <!-- להוסיף אחרי div.total-stats -->
+        <!-- אחרי div.total-stats -->
         <div class="mitzvot-stats-section">
             <h2 class="section-title">
                 <span class="section-icon">📜</span>
@@ -495,6 +636,46 @@
                             לרשימת המצוות המלאה
                             <span class="arrow">←</span>
                         </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- אחרי div.mitzvot-stats-section ולפני div.daily-times-section -->
+        <div class="letters-stats-section">
+            <h2 class="section-title">
+                <span class="section-icon">✍️</span>
+                אותיות התורה
+                <div class="section-divider"></div>
+            </h2>
+
+            <div class="letters-stats-container">
+                <div class="letters-stats-content">
+                    <div class="letters-intro">
+                        <p>
+                            <strong>304,805 אותיות</strong> בחמשת חומשי התורה, מספר שנשמר בקפידה לאורך הדורות
+                            <span class="emoji">📜</span>
+                        </p>
+                    </div>
+
+                    <div class="letters-details">
+                        <div class="letters-info">
+                            <h3>הערות חשובות</h3>
+                            <ul>
+                                <li>המספר כולל את כל האותיות בכל חמשת הספרים: בראשית, שמות, ויקרא, במדבר ודברים</li>
+                                <li>סופרי סת"ם (ספרי תורה, תפילין ומזוזות) בודקים ומאמתים את מספר האותיות</li>
+                                <li>התורה כתובה ללא ניקוד, טעמי מקרא או סימנים מיוחדים</li>
+                            </ul>
+                        </div>
+
+                        <div class="letters-distribution">
+                            <h3>חלוקת האותיות</h3>
+                            <p>
+                                אין נתונים מדויקים לחלוקה לפי ספרים בתורה המסורתית, אך ידוע כי הספרים ארוכים יותר
+                                (כמו בראשית ושמות) מכילים יותר אותיות, ואילו ספרים קצרים יותר (כמו ויקרא) מכילים פחות
+                                אותיות.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -707,48 +888,6 @@
         </div>
     </footer>
 
-    <!-- הוספת סקריפט הפעלת המודל -->
-    <script>
-        function openThanksModal(event) {
-            event.preventDefault();
-            document.getElementById('thanksModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeThanksModal() {
-            document.getElementById('thanksModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        function openBlessingModal(event) {
-            event.preventDefault();
-            document.getElementById('blessingModal').classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeBlessingModal() {
-            document.getElementById('blessingModal').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // סגירת המודלים בלחיצה מחוץ לתוכן
-        document.addEventListener('click', function (event) {
-            if (event.target.classList.contains('thanks-modal')) {
-                closeThanksModal();
-            }
-            if (event.target.classList.contains('blessing-modal')) {
-                closeBlessingModal();
-            }
-        });
-
-        // סגירת המודלים בלחיצה על ESC
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                closeThanksModal();
-                closeBlessingModal();
-            }
-        });
-    </script>
 </body>
 
 

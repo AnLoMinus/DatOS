@@ -1,0 +1,888 @@
+/* עיצוב כללי לעמוד הניקוד */
+.nikud-categories {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.nikud-category {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nikud-category h2 {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8em;
+  position: relative;
+}
+
+.nikud-category h2::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.nikud-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* עיצוב כרטיסיות הניקוד */
+.nikud-card {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nikud-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nikud-symbol {
+  font-size: 3em;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.nikud-name {
+  font-size: 1.4em;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.nikud-sound {
+  color: var(--secondary-color);
+  font-size: 0.9em;
+  margin-bottom: 1rem;
+}
+
+.play-sound {
+  background: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.play-sound:hover {
+  background: #1a4971;
+  transform: scale(1.05);
+}
+
+/* עיצוב אזור התרגול */
+.practice-section {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 20px;
+  padding: 2rem;
+  margin: 3rem 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.practice-level {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* עיצוב תצוגת המילה */
+.word-display {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.current-word {
+  font-size: 3em;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.word-translation {
+  font-size: 1.2em;
+  color: var(--secondary-color);
+}
+
+/* אפשרויות ניקוד */
+.nikud-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.nikud-option {
+  font-size: 1.8em;
+  padding: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+}
+
+.nikud-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  background: var(--accent-color);
+  color: white;
+}
+
+.nikud-option.selected {
+  background: var(--accent-color);
+  color: white;
+  transform: scale(0.95);
+}
+
+/* ניקוד שנבחר */
+.selected-nikud {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem 0;
+}
+
+.selected-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.selected-item {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.9em;
+}
+
+/* כפתורי בדיקה והגשה */
+.check-answer,
+.submit-answer {
+  background: linear-gradient(45deg, var(--accent-color), #1a4971);
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 25px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem auto;
+  display: block;
+}
+
+.check-answer:hover,
+.submit-answer:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* משחק זיכרון */
+.memory-game {
+  margin: 3rem 0;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.memory-card {
+  aspect-ratio: 1;
+  background: var(--accent-color);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.memory-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+
+.card-back {
+  background: linear-gradient(135deg, var(--accent-color), #1a4971);
+  transform: rotateY(180deg);
+  color: white;
+}
+
+/* סיכום סטטיסטיקות */
+.practice-summary {
+  background: white;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-top: 3rem;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+}
+
+.stat-value {
+  font-size: 2em;
+  font-weight: bold;
+  color: var(--accent-color);
+}
+
+/* הישגים */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.achievement {
+  text-align: center;
+  padding: 1rem;
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 10px;
+  border: 2px solid var(--gold);
+}
+
+.achievement-icon {
+  font-size: 2em;
+  margin-bottom: 0.5rem;
+}
+
+.achievement.locked {
+  opacity: 0.5;
+  filter: grayscale(1);
+}
+
+/* עיצוב אזור הדוגמאות */
+.examples-section {
+  margin: 3rem 0;
+}
+
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.example-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.verse {
+  font-size: 1.8em;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.translation {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.nikud-explanation ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nikud-explanation li {
+  padding: 0.5rem 0;
+  color: var(--secondary-color);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* הוספה לקובץ הקיים - עיצובים חדשים */
+
+/* חוויות לימוד */
+.learning-experiences {
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 15px;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* משחק זיהוי */
+.game-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.game-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.game-word {
+  font-size: 3em;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.game-score {
+  font-size: 1.2em;
+  color: var(--accent-color);
+  margin-top: 1rem;
+}
+
+/* תרגול מילים מהתורה */
+.practice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.practice-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.practice-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.practice-card .word {
+  font-size: 2em;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.practice-card .translation {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.nikud-breakdown ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nikud-breakdown li {
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: var(--secondary-color);
+}
+
+/* השוואות */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.comparison-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-examples {
+  display: flex;
+  justify-content: space-around;
+  margin: 1rem 0;
+}
+
+.example {
+  text-align: center;
+}
+
+.example .nikud {
+  font-size: 2em;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.example .sound {
+  color: var(--secondary-color);
+  font-size: 0.9em;
+}
+
+/* תבניות */
+.patterns-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.pattern-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.pattern-examples .example {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pattern-examples .word {
+  font-size: 1.5em;
+  color: var(--primary-color);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.pattern-examples .translation {
+  color: var(--secondary-color);
+  font-size: 0.9em;
+}
+
+/* הוספת סגנונות לסידור שני הטורים */
+.nikud-categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.nikud-category {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+.nikud-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+/* טיפוגרפיה כללית */
+:root {
+  --font-primary: "Heebo", sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.6;
+
+  /* גדלי טקסט */
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+
+  /* הוספת משתנה צבע חדש להדגשה */
+  --highlight-color: rgba(255, 215, 0, 0.2); /* צבע זהב שקוף */
+  --accent-color-rgb: 26, 73, 113;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-base);
+  color: #333;
+}
+
+/* כותרות */
+h1 {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  text-align: center;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--secondary-color);
+  line-height: 1.4;
+}
+
+/* טקסט תיאורי */
+.description p {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+/* כרטיסיות ניקוד */
+.nikud-card {
+  /* עדכון הסגנונות הקיימים */
+  .nikud-symbol {
+    font-size: var(--text-4xl);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+  }
+
+  .nikud-name {
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .nikud-sound {
+    font-size: var(--text-base);
+    color: #666;
+  }
+}
+
+/* תרגול */
+.current-word {
+  font-size: var(--text-4xl);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.word-translation {
+  font-size: var(--text-lg);
+  color: #666;
+}
+
+/* דוגמאות */
+.example-card {
+  .verse {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  .translation {
+    font-size: var(--text-lg);
+    color: #555;
+  }
+
+  .nikud-explanation li {
+    font-size: var(--text-base);
+    line-height: 1.6;
+  }
+}
+
+/* משחק זיכרון */
+.memory-card {
+  .card-front,
+  .card-back {
+    font-size: var(--text-2xl);
+    font-weight: 600;
+  }
+}
+
+/* סטטיסטיקות */
+.stat-value {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+.stat-label {
+  font-size: var(--text-sm);
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+/* כפתורים */
+button {
+  font-family: var(--font-primary);
+  font-size: var(--text-base);
+  font-weight: 500;
+}
+
+.play-sound {
+  font-size: var(--text-lg);
+}
+
+/* השוואות והסברים */
+.comparison-card {
+  .nikud {
+    font-size: var(--text-3xl);
+    font-weight: 700;
+  }
+
+  .sound {
+    font-size: var(--text-sm);
+    color: #666;
+  }
+}
+
+/* תבניות */
+.pattern-examples {
+  .word {
+    font-size: var(--text-xl);
+    font-weight: 600;
+  }
+
+  .translation {
+    font-size: var(--text-base);
+    color: #666;
+  }
+}
+
+/* אנימציות טקסט */
+@keyframes textFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nikud-card,
+.example-card {
+  animation: textFadeIn 0.5s ease-out;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  :root {
+    --text-4xl: 2rem; /* 32px */
+    --text-3xl: 1.75rem; /* 28px */
+    --text-2xl: 1.375rem; /* 22px */
+    --text-xl: 1.125rem; /* 18px */
+  }
+
+  .description p {
+    font-size: var(--text-base);
+    text-align: right;
+  }
+
+  .nikud-card .nikud-symbol {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* הדגשות והבלטות */
+.highlight {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.emphasis {
+  font-style: italic;
+  color: #666;
+}
+
+/* מרווחים בין שורות */
+.nikud-explanation li,
+.pattern-examples .example,
+.comparison-examples .example {
+  margin-bottom: 0.5rem;
+  line-height: 1.8;
+}
+
+/* עיצוב מקטע הסטטיסטיקות */
+.nikud-stats {
+  background: linear-gradient(135deg, #f8f9fa, #ffffff);
+  border-radius: 12px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 20;
+}
+
+.nikud-stats h3 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.stat-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: var(--text-base);
+  color: var(--secondary-color);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* עיצוב בר סימני הניקוד - עם רוחב קבוע */
+.nikud-symbols-bar {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 200px; /* רוחב קבוע במקום 80px */
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  border-radius: 16px 0 0 16px;
+  padding: 1.5rem 1rem;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-right: none;
+  z-index: 10;
+}
+
+.nikud-symbols-bar h3 {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  margin: 1rem auto;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  background: white;
+  padding: 1rem 0.5rem;
+  border-radius: 8px 0 0 8px;
+}
+
+.symbols-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.nikud-symbol-item {
+  background: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  min-height: 70px; /* גובה מינימלי קבוע */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nikud-symbol-item.highlighted {
+  background: var(--highlight-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.nikud-symbol-item .symbol {
+  font-size: 1.6rem;
+  color: var(--primary-color);
+  margin-bottom: 0.3rem;
+}
+
+.nikud-symbol-item .name {
+  font-size: 0.9rem;
+  color: var(--secondary-color);
+  margin-bottom: 0.2rem;
+}
+
+.nikud-symbol-item .sound {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+/* עדכון מרווח לתוכן העיקרי */
+.container {
+  padding-right: 220px; /* מרווח גדול יותר עבור הסרגל הרחב */
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-right: 1rem;
+  }
+}

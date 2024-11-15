@@ -21,9 +21,9 @@ body {
 }
 
 .container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 100%;
+  padding: 10px;
+  margin: 0;
 }
 
 .bsd {
@@ -158,49 +158,29 @@ h1::after {
 .books-row {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 20px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.9),
-    rgba(255, 255, 255, 0.7)
-  );
-  border-radius: 20px;
-  padding: 30px;
-  margin: 30px 0;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  position: relative;
-  overflow: visible;
+  gap: 10px;
+  padding: 10px;
+  margin: 10px 0;
 }
 
-/* התאמת גודל הכרטיסיה */
 .book-card-mini {
-  flex: none;
-  width: 100%;
-  padding: 20px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 280px;
-}
-.book-card-mini:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  min-height: auto;
 }
 
 .book-icon-mini {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 1.5em;
+  margin-bottom: 5px;
 }
 
 .book-title-mini {
-  color: var(--primary-color);
-  font-size: 1.2em;
-  margin-bottom: 5px;
+  font-size: 0.9em;
+  margin: 3px 0;
+}
+
+.book-details p {
+  font-size: 0.8em;
+  margin: 2px 0;
 }
 
 .books-table {
@@ -239,7 +219,7 @@ h1::after {
   color: var(--primary-color);
   text-align: center;
   font-size: 2em;
-  margin: 1rem 0 1rem;
+  margin: 10px 0;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -257,7 +237,7 @@ h1::after {
   width: 80px;
   height: 3px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin-top: 10px;
+  margin: 5px 0;
   border-radius: 2px;
 }
 
@@ -325,7 +305,7 @@ h1::after {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  font-size: 0.95em;
+  font-size: 0.85em;
 }
 
 .nav-link:hover {
@@ -341,7 +321,7 @@ h1::after {
 }
 
 .nav-link .icon {
-  font-size: 1.2em;
+  font-size: 1em;
 }
 
 @media (max-width: 768px) {
@@ -517,17 +497,6 @@ h1::after {
 }
 
 .book-card-mini {
-  flex: none;
-  width: 100%;
-  padding: 20px;
-  background: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   flex: 0 0 220px;
   padding: 20px;
   text-decoration: none;
@@ -564,6 +533,18 @@ h1::after {
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.books-row {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
+  );
+  padding: 25px;
+  border-radius: 20px;
+  margin: 30px 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
 .book-card-mini:hover {
@@ -709,8 +690,8 @@ h1::after {
 }
 
 .credits {
-  margin-top: 40px;
-  padding: 30px 20px;
+  margin-top: 20px;
+  padding: 15px;
   border-top: 2px solid var(--gold);
   background: linear-gradient(to bottom, #ffffff, #f8f9fa);
   border-radius: 0 0 12px 12px;
@@ -721,9 +702,9 @@ h1::after {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   flex-wrap: wrap;
-  padding: 20px 0;
+  padding: 10px 0;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
 
@@ -732,7 +713,7 @@ h1::after {
   align-items: center;
   gap: 8px;
   color: var(--secondary-color);
-  font-size: 0.95em;
+  font-size: 0.8em;
   transition: all 0.3s ease;
 }
 
@@ -864,7 +845,7 @@ h1::after {
   border-radius: 20px;
   padding: 30px;
   margin: 30px auto;
-  max-width: 900px;
+  max-width: 100%;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: hidden;
@@ -888,23 +869,33 @@ h1::after {
 /* עיצוב מקטע הספרים */
 .books-row {
   display: grid;
-  margin: 0px 0px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
   background: linear-gradient(
     135deg,
     rgba(255, 255, 255, 0.9),
     rgba(255, 255, 255, 0.7)
   );
-  padding: 25px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  grid-template-columns: repeat(3, 1fr);
   border-radius: 20px;
+  padding: 25px;
   margin: 30px 0;
-  gap: 1rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   position: relative;
   overflow: visible;
-  grid-template-columns: repeat(5, 1fr);
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-  border-radius: 20px;
+}
+
+.book-card-mini {
+  flex: none;
+  width: 100%;
+  padding: 20px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .book-card-mini:hover {
@@ -921,6 +912,12 @@ h1::after {
   color: var(--primary-color);
   font-size: 1.2em;
   margin-bottom: 5px;
+}
+
+.book-details {
+  margin-top: 10px;
+  font-size: 0.9em;
+  color: var(--secondary-color);
 }
 
 .book-details p {
@@ -999,6 +996,12 @@ h1::after {
 .book-card-mini:hover .topic {
   background: rgba(43, 108, 176, 0.15);
   transform: translateX(-3px);
+}
+
+/* התאמת גודל הכרטיסיה */
+.book-card-mini {
+  padding: 25px;
+  min-height: 280px;
 }
 
 /* שיפור עיצוב הסטטיסטיקות */
@@ -1125,50 +1128,61 @@ h1::after {
 
 /* עיצוב סיכום סטטיסטי */
 .total-stats {
-  margin: 40px auto;
-  padding: 30px;
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.95),
-    rgba(255, 255, 255, 0.85)
-  );
-  border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  max-width: 800px;
+  width: 100%;
+  max-width: 100% !important;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.total-stats h3 {
-  color: var(--primary-color);
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  position: relative;
-  display: inline-block;
-}
-
-.total-stats h3::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 3px;
-  background: var(--gold);
-  border-radius: 2px;
+.total-stats-content {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 15px;
-  margin: 15px 0;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+/* התאמת הגריד למסכים גדולים */
+@media (min-width: 1400px) {
+  .stats-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
+/* התאמת הגריד למסכים בינוניים */
+@media (max-width: 1399px) and (min-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* התאמת הגריד למסכים קטנים */
+@media (max-width: 991px) and (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* התאמת הגריד למסכים מאוד קטנים */
+@media (max-width: 767px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .stat-card {
   background: white;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 12px;
   text-align: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
@@ -1243,7 +1257,6 @@ h1::after {
 
 .book-page-link:hover {
   background: #1a4971;
-  transform: translateY(-2px);
 }
 
 .book-page-link .icon {
@@ -1332,7 +1345,7 @@ h1::after {
   }
 }
 
-/* עיצוב לחלק החדש בפוטר */
+/* עיצוב לחלק חדש בפוטר */
 .additional-links {
   margin-top: 1.5rem;
   padding-top: 1rem;
@@ -1574,7 +1587,7 @@ h1::after {
   background: #f44336;
 }
 
-/* תוכן המצווה */
+/* תוכן המצוה */
 .mitzvah-content {
   flex: 1;
 }
@@ -1600,7 +1613,7 @@ h1::after {
   font-style: italic;
 }
 
-/* התאמה למסכים קטנים */
+/* תאמה למסכים קטנים */
 @media (max-width: 768px) {
   .mitzvot-columns {
     grid-template-columns: 1fr;
@@ -1696,4 +1709,353 @@ h1::after {
 
 .mitzvah-modal-content {
   animation: modalSlideIn 0.3s ease;
+}
+
+/* מקטע סטטיסטיקות המצוות */
+.mitzvot-stats-section {
+  margin: 4rem 0;
+  padding: 2rem 0;
+}
+
+.mitzvot-stats-container {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.mitzvot-stats-content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.mitzvot-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.mitzvot-numbers {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.mitzvah-type {
+  text-align: center;
+  padding: 1.5rem;
+  border-radius: 15px;
+  flex: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mitzvah-type:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.mitzvah-type.positive {
+  background: linear-gradient(
+    135deg,
+    rgba(76, 175, 80, 0.1) 0%,
+    rgba(76, 175, 80, 0.05) 100%
+  );
+  border: 2px solid #4caf50;
+}
+
+.mitzvah-type.negative {
+  background: linear-gradient(
+    135deg,
+    rgba(244, 67, 54, 0.1) 0%,
+    rgba(244, 67, 54, 0.05) 100%
+  );
+  border: 2px solid #f44336;
+}
+
+.mitzvah-type.total {
+  background: linear-gradient(
+    135deg,
+    rgba(33, 150, 243, 0.1) 0%,
+    rgba(33, 150, 243, 0.05) 100%
+  );
+  border: 2px solid #2196f3;
+}
+
+.mitzvah-type .number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.mitzvah-type .label {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #34495e;
+}
+
+.mitzvah-type .description {
+  display: block;
+  font-size: 0.9rem;
+  color: #7f8c8d;
+}
+
+.mitzvot-action {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.mitzvot-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mitzvot-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(52, 152, 219, 0.4);
+}
+
+.mitzvot-link .arrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.mitzvot-link:hover .arrow {
+  transform: translateX(-5px);
+}
+
+/* סגנונות לסקציית אותיות התורה */
+.letters-stats-section {
+  margin: 2rem 0;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.letters-stats-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.letters-stats-content {
+  padding: 1rem;
+}
+
+.letters-intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.letters-intro strong {
+  color: #2c3e50;
+  font-size: 1.4rem;
+}
+
+.letters-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.letters-info h3,
+.letters-distribution h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.letters-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.letters-info li {
+  margin-bottom: 0.8rem;
+  padding-right: 1.5rem;
+  position: relative;
+}
+
+.letters-info li:before {
+  content: "•";
+  position: absolute;
+  right: 0;
+  color: #3498db;
+}
+
+.letters-distribution p {
+  line-height: 1.6;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .letters-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* סגנון למקטע הסטטיסטיקות הכללי */
+.total-stats {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
+  border-radius: 15px;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.total-stats-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.total-stats-content h3 {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.total-stats-content h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #3498db;
+  margin: 0.5rem auto;
+  border-radius: 2px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-grid .stat-item {
+  background: white;
+  padding: 10px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.stats-grid .stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.stats-grid .stat-number {
+  display: block;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2980b9;
+  margin: 5px 0;
+}
+
+.stats-grid .stat-label {
+  display: block;
+  font-size: 0.8em;
+  color: #34495e;
+  font-weight: 500;
+  margin: 3px 0;
+}
+
+.stats-grid .stat-description {
+  display: block;
+  font-size: 0.7em;
+  color: #7f8c8d;
+  line-height: 1.4;
+  margin: 3px 0;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .stats-grid .stat-number {
+    font-size: 2rem;
+  }
+
+  .stats-grid .stat-label {
+    font-size: 1rem;
+  }
+
+  .stats-grid .stat-description {
+    font-size: 0.8rem;
+  }
+
+  .total-stats {
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  .total-stats-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
+/* אנימציות לסטטיסטיקות */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-grid .stat-item {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+/* דחיית אנימציה לכל פריט בנפרד */
+.stats-grid .stat-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stats-grid .stat-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stats-grid .stat-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stats-grid .stat-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stats-grid .stat-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stats-grid .stat-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.stats-grid .stat-item:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.stats-grid .stat-item:nth-child(8) {
+  animation-delay: 0.8s;
 }

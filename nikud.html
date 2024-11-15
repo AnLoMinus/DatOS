@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>לימוד ניקוד - חמישה חומשי תורה</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nikud.css">
+    <script src="nikud.js" defer></script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <div class="bsd">בס״ד</div>
+                <a href="index.html" class="nav-link">
+                    <span class="icon">🏠</span>
+                    ראשי
+                </a>
+                <a href="nikud.html" class="nav-link active">
+                    <span class="icon">📝</span>
+                    ניקוד
+                </a>
+                <a href="siddur.html" class="nav-link">
+                    <span class="icon">📖</span>
+                    סידור
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>📝 לימוד ניקוד</h1>
+
+        <div class="description">
+            <h2>מבוא לניקוד העברי</h2>
+            <p>מערכת הניקוד העברית היא מערכת מורכבת ומדויקת המורכבת מ-15 אלמנטים שונים, המחולקים לארבע קבוצות עיקריות:
+                תנועות גדולות, תנועות קטנות, תנועות חטופות וסימנים נוספים. כל סימן ניקוד מייצג צליל ייחודי ומשמש לקריאה
+                מדויקת של הטקסט העברי.</p>
+        </div>
+
+        <!-- מקטע סטטיסטיקות מורחב -->
+        <div class="nikud-stats">
+            <h3>סטטיסטיקות ניקוד</h3>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">סך הכל סימני ניקוד</div>
+                    <div class="stat-details">
+                        <p>כלל האלמנטים במערכת הניקוד:</p>
+                        <ul>
+                            <li>5 תנועות גדולות</li>
+                            <li>4 תנועות קטנות</li>
+                            <li>3 תנועות חטופות</li>
+                            <li>3 סימנים נוספים</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">תנועות גדולות</div>
+                    <div class="stat-details">
+                        <p>תנועות ארוכות וברורות:</p>
+                        <ul>
+                            <li>קָמָץ (a ארוך) - כמו ב"אָב"</li>
+                            <li>צֵירֵי (e ארוך) - כמו ב"בֵּית"</li>
+                            <li>חוֹלָם (o ארוך) - כמו ב"גּוֹר"</li>
+                            <li>שׁוּרוּק (u ארוך) - כמו ב"שׁוּק"</li>
+                            <li>חִירִיק מָלֵא (i ארוך) - כמו ב"שִׁירִי"</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">תנועות קטנות</div>
+                    <div class="stat-details">
+                        <p>תנועות קצרות ופחות מודגשות:</p>
+                        <ul>
+                            <li>פַתַח (a קצר) - כמו ב"בַּיִת"</li>
+                            <li>סֶגוֹל (e קצר) - כמו ב"גֶּפֶן"</li>
+                            <li>קֻבּוּץ (u קצר) - כמו ב"מֻפְתָּח"</li>
+                            <li>חִירִיק חָסֵר (i קצר) - כמו ב"חִי"</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6</div>
+                    <div class="stat-label">סימנים נוספים</div>
+                    <div class="stat-details">
+                        <p>סימנים מיוחדים וחטפים:</p>
+                        <ul>
+                            <li>שְׁוָא נָע (תנועה חלשה)</li>
+                            <li>שְׁוָא נָח (היעדר תנועה)</li>
+                            <li>דָּגֵשׁ חָזָק (הכפלת עיצור)</li>
+                            <li>חֲטַף פַּתַח (a חטוף)</li>
+                            <li>חֲטַף סֶגוֹל (e חטוף)</li>
+                            <li>חֲטַף קָמָץ (o חטוף)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="nikud-symbols-bar">
+            <h3>כל סימני הניקוד</h3>
+            <div class="symbols-container">
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בָ</span>
+                    <span class="name">קמץ</span>
+                    <span class="sound">a כמו ב"אבא"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בֵ</span>
+                    <span class="name">צירה</span>
+                    <span class="sound">e כמו ב"בית"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בֹ</span>
+                    <span class="name">חולם</span>
+                    <span class="sound">o כמו ב"אור"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בוּ</span>
+                    <span class="name">שורוק</span>
+                    <span class="sound">u כמו ב"קום"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בַ</span>
+                    <span class="name">פתח</span>
+                    <span class="sound">a כמו ב"ילד"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בֶ</span>
+                    <span class="name">סגול</span>
+                    <span class="sound">e כמו ב"ילד"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בֻ</span>
+                    <span class="name">קובוץ</span>
+                    <span class="sound">u כמו ב"שולחן"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בִ</span>
+                    <span class="name">חיריק</span>
+                    <span class="sound">i כמו ב"בי"</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בְ</span>
+                    <span class="name">שווא</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בֲ</span>
+                    <span class="name">חטף פתח</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בֱ</span>
+                    <span class="name">חטף סגול</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בֳ</span>
+                    <span class="name">חטף קמץ</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בּ</span>
+                    <span class="name">דגש</span>
+                </div>
+                <div class="nikud-symbol-item">
+                    <span class="symbol">בִי</span>
+                    <span class="name">חיריק מלא</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="nikud-categories">
+            <div class="nikud-categories-grid">
+                <div class="nikud-category">
+                    <h2>תנועות גדולות</h2>
+                    <div class="category-description">
+                        תנועות גדולות (או ארוכות) מבטאות צלילים ארוכים, ברורים ומשמעותיים.
+                        הן מופיעות בעיקר בהברות מוטעמות ובמילים בעלות משמעות מיוחדת.
+                        צלילים אלו נשמעים יציבים וברורים יותר מהתנועות הקטנות.
+                    </div>
+                    <div class="nikud-grid">
+                        <div class="nikud-card" data-sound="kamatz">
+                            <div class="nikud-symbol">בָ</div>
+                            <div class="nikud-name">קָמָץ</div>
+                            <div class="nikud-sound">a כמו ב"אבא"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="tzere">
+                            <div class="nikud-symbol">בֵ</div>
+                            <div class="nikud-name">צֵירֵי</div>
+                            <div class="nikud-sound">e כמו ב"בית"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="holam">
+                            <div class="nikud-symbol">בֹ</div>
+                            <div class="nikud-name">חוֹלָם</div>
+                            <div class="nikud-sound">o כמו ב"אור"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="shuruq">
+                            <div class="nikud-symbol">בוּ</div>
+                            <div class="nikud-name">שׁוּרוּק</div>
+                            <div class="nikud-sound">u כמו ב"קום"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nikud-category">
+                    <h2>תנועות קטנות</h2>
+                    <div class="category-description">
+                        תנועות קטנות (או קצרות) מבטאות צלילים קצרים ופחות מודגשים.
+                        הן מופיעות בדרך כלל בהברות לא מוטעמות ובמילים יומיומיות.
+                        הצליל שלהן קצר וחטוף יותר מהתנועות הגדולות.
+                    </div>
+                    <div class="nikud-grid">
+                        <div class="nikud-card" data-sound="patach">
+                            <div class="nikud-symbol">בַ</div>
+                            <div class="nikud-name">פַתַח</div>
+                            <div class="nikud-sound">a כמו ב"ילד"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="segol">
+                            <div class="nikud-symbol">בֶ</div>
+                            <div class="nikud-name">סֶגוֹל</div>
+                            <div class="nikud-sound">e כמו ב"ילד"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="kubutz">
+                            <div class="nikud-symbol">בֻ</div>
+                            <div class="nikud-name">קֻבּוּץ</div>
+                            <div class="nikud-sound">u כמו ב"שולחן"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="hirik">
+                            <div class="nikud-symbol">בִ</div>
+                            <div class="nikud-name">חִירִיק</div>
+                            <div class="nikud-sound">i כמו ב"בִּי"</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nikud-category">
+                    <h2>סימנים נוספים וחטפים</h2>
+                    <div class="category-description">
+                        קבוצה זו כוללת את השווא (נע ונח), הדגש (חזק וקל), והחטפים השונים.
+                        השווא משמש להפרדה בין עיצורים או לציון היעדר תנועה,
+                        הדגש משנה את אופן הגיית האות,
+                        והחטפים הם תנועות קצרות במיוחד המשלבות שווא עם תנועה קטנה.
+                    </div>
+                    <div class="nikud-grid">
+                        <div class="nikud-card" data-sound="shva">
+                            <div class="nikud-symbol">בְ</div>
+                            <div class="nikud-name">שְׁוָא</div>
+                            <div class="nikud-sound">תנועה חטופה</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="dagesh">
+                            <div class="nikud-symbol">בּ</div>
+                            <div class="nikud-name">דָּגֵשׁ</div>
+                            <div class="nikud-sound">הדגשת האות</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="hataf-patach">
+                            <div class="nikud-symbol">בֲ</div>
+                            <div class="nikud-name">חֲטַף פַּתַח</div>
+                            <div class="nikud-sound">a חטוף</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="hataf-segol">
+                            <div class="nikud-symbol">בֱ</div>
+                            <div class="nikud-name">חֲטַף סֶגוֹל</div>
+                            <div class="nikud-sound">e חטוף</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                        <div class="nikud-card" data-sound="hataf-kamatz">
+                            <div class="nikud-symbol">בֳ</div>
+                            <div class="nikud-name">חֲטַף קָמָץ</div>
+                            <div class="nikud-sound">o חטוף</div>
+                            <button class="play-sound" aria-label="השמע צליל ניקוד">🔊</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="practice-section">
+            <h2>🎯 תרגול ניקוד</h2>
+
+            <!-- תרגול בסיסי -->
+            <div class="practice-level basic">
+                <h3>תרגול בסיסי</h3>
+                <div class="practice-container" role="region" aria-label="תרגול בסיסי">
+                    <!-- הוספת הנחיות ברורות -->
+                    <div class="practice-instructions" aria-live="polite">
+                        <p>נסה לנקד את המילה הבאה. לחץ על סימני הניקוד המתאימים בסדר הנכון.</p>
+                    </div>
+
+                    <div class="word-display">
+                        <div class="current-word" aria-label="מילה לניקוד">בְּרֵאשִׁית</div>
+                        <div class="word-translation" aria-label="תרגום">בראשית</div>
+                        <!-- הוספת כפתור השמעה -->
+                        <button class="play-word" aria-label="השמע מילה">🔊</button>
+                    </div>
+
+                    <!-- שיפור אזור אפשרויות הניקוד -->
+                    <div class="nikud-options" role="toolbar" aria-label="אפשרויות ניקוד">
+                        <!-- יתווספו דינמית עם תיאורים מפורטים -->
+                    </div>
+
+                    <div class="selected-nikud" aria-live="polite">
+                        <h4>הניקוד שבחרת:</h4>
+                        <div class="selected-list" role="log"></div>
+                        <!-- הוספת כפתור מחיקה -->
+                        <button class="clear-selection" aria-label="נקה בחירה">🗑️</button>
+                    </div>
+
+                    <!-- שיפור כפתור בדיקה ומשוב -->
+                    <button class="check-answer" aria-label="בדוק תשובה">
+                        בדוק תשובה
+                    </button>
+                    <div class="feedback" role="alert" aria-live="assertive"></div>
+
+                    <!-- שיפור סרגל התקדמות -->
+                    <div class="progress-container">
+                        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress"></div>
+                        </div>
+                        <div class="progress-text" aria-live="polite">
+                            התקדמות: <span>0</span>%
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- תרגול מתקדם -->
+            <div class="practice-level advanced">
+                <h3>תרגול מתקדם</h3>
+                <div class="practice-container" role="region" aria-label="תרגול מתקדם">
+                    <!-- הוספת בקרי רמת קושי -->
+                    <div class="difficulty-controls">
+                        <label for="difficulty">רמת קושי:</label>
+                        <select id="difficulty">
+                            <option value="easy">קל</option>
+                            <option value="medium">בינוני</option>
+                            <option value="hard">מתקדם</option>
+                        </select>
+                    </div>
+
+                    <div class="verse-display">
+                        <div class="current-verse" aria-label="פסוק לניקוד">וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר</div>
+                        <div class="verse-translation">ויאמר אלוהים יהי אור</div>
+                        <button class="play-verse" aria-label="השמע פסוק">🔊</button>
+                    </div>
+
+                    <!-- שיפור פירוק מילים -->
+                    <div class="word-breakdown" role="group" aria-label="פירוק מילים">
+                        <div class="word-parts" role="list">
+                            <!-- יתווסף דינמית עם aria-labels מתאימים -->
+                        </div>
+                    </div>
+
+                    <!-- שיפור פלטת הניקוד -->
+                    <div class="nikud-palette" role="toolbar" aria-label="פלטת ניקוד">
+                        <!-- יתווסף דינמית עם tooltips והסברים -->
+                    </div>
+
+                    <!-- הוספת אפשרויות עזרה -->
+                    <div class="help-options">
+                        <button class="show-hint" aria-label="הצג רמז">💡</button>
+                        <button class="show-solution" aria-label="הצג פתרון">❓</button>
+                    </div>
+
+                    <button class="submit-answer" aria-label="הגש תשובה">הגש תשובה</button>
+                    <div class="advanced-feedback" role="alert" aria-live="polite"></div>
+                </div>
+            </div>
+
+            <!-- משחק זיכרון ניקוד -->
+            <div class="memory-game">
+                <h3>🎮 משחק זיכרון ניקוד</h3>
+                <div class="game-container" role="application" aria-label="משחק זיכרון ניקוד">
+                    <!-- הוספת הגדרות משחק -->
+                    <div class="game-settings">
+                        <label for="pairs-count">מספר זוגות:</label>
+                        <select id="pairs-count">
+                            <option value="6">6 זוגות</option>
+                            <option value="8">8 זוגות</option>
+                            <option value="10">10 זוגות</option>
+                        </select>
+                    </div>
+
+                    <div class="cards-grid" role="grid">
+                        <!-- יתווסף דינמית עם aria-labels מתאימים -->
+                    </div>
+
+                    <!-- שיפור סטטיסטיקות משחק -->
+                    <div class="game-stats" role="status" aria-live="polite">
+                        <div class="pairs-found">זוגות שנמצאו: <span>0</span></div>
+                        <div class="moves">מהלכים: <span>0</span></div>
+                        <div class="timer" aria-label="זמן משחק">זמן: <span>00:00</span></div>
+                    </div>
+
+                    <!-- הוספת כפתורי שליטה -->
+                    <div class="game-controls">
+                        <button class="restart-game" aria-label="התחל משחק חדש">משחק חדש</button>
+                        <button class="pause-game" aria-label="השהה משחק">⏸️</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- סיכום התרגול -->
+            <div class="practice-summary">
+                <h3>📊 סיכום התרגול</h3>
+                <div class="stats-container">
+                    <div class="stat-item">
+                        <div class="stat-label">תשובות נכונות</div>
+                        <div class="stat-value correct">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">טעויות</div>
+                        <div class="stat-value incorrect">0</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-label">דיוק</div>
+                        <div class="stat-value accuracy">0%</div>
+                    </div>
+                </div>
+                <div class="achievements">
+                    <h4>🏆 הישגים</h4>
+                    <div class="achievements-grid">
+                        <!-- יתמלא דינמית -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="examples-section">
+            <h2>דוגמאות מהתורה</h2>
+            <div class="examples-grid">
+                <div class="example-card">
+                    <div class="verse">בְּרֵאשִׁית בָּרָא אֱלֹהִים</div>
+                    <div class="translation">בראשית ברא אלוהים</div>
+                    <div class="nikud-explanation">
+                        <ul>
+                            <li>בְּ - שווא</li>
+                            <li>רֵ - צירה</li>
+                            <li>אשִׁ - חיריק</li>
+                            <li>ית - חיריק</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- עוד דו��מאות... -->
+            </div>
+        </div>
+
+        <div class="learning-experiences">
+            <h2>חוויות לימוד אינטראקטיביות</h2>
+
+            <!-- משחק זיהוי ניקוד -->
+            <div class="game-section">
+                <h3>🎮 משחק זיהוי ניקוד</h3>
+                <div class="game-container" role="application" aria-label="משחק זיהוי ניקוד">
+                    <div class="game-word"></div>
+                    <div class="game-options"></div>
+                    <div class="game-score">ניקוד: <span>0</span></div>
+                </div>
+            </div>
+
+            <!-- תרגול מילים מהתורה -->
+            <div class="torah-practice">
+                <h3>📖 תרגול מילים מהתורה</h3>
+                <div class="practice-grid">
+                    <div class="practice-card">
+                        <div class="word">וַיֹּאמֶר</div>
+                        <div class="translation">ויאמר</div>
+                        <div class="nikud-breakdown">
+                            <ul>
+                                <li>וַ - פתח</li>
+                                <li>יֹּ - חולם + דגש</li>
+                                <li>א - ללא ניקוד</li>
+                                <li>מֶ - סגול</li>
+                                <li>ר - ללא ניקוד</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="practice-card">
+                        <div class="word">בְּרֵאשִׁית</div>
+                        <div class="translation">בראשית</div>
+                        <div class="nikud-breakdown">
+                            <ul>
+                                <li>בְּ - שווא</li>
+                                <li>רֵ - צירה</li>
+                                <li>א - ללא ניקוד</li>
+                                <li>שִׁ - חיריק</li>
+                                <li>י - ללא ניקוד</li>
+                                <li>ת - ללא ניקוד</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="practice-card">
+                        <div class="word">שָׁמַיִם</div>
+                        <div class="translation">שמים</div>
+                        <div class="nikud-breakdown">
+                            <ul>
+                                <li>שָׁ - קמץ</li>
+                                <li>מַ - פתח</li>
+                                <li>יִ - חיריק</li>
+                                <li>ם - ללא ניקוד</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- מקטע השוואות -->
+            <div class="comparisons-section">
+                <h3>🔄 השוואות והבדלים</h3>
+                <div class="comparison-grid">
+                    <div class="comparison-card">
+                        <h4>קמץ מול פתח</h4>
+                        <div class="comparison-examples">
+                            <div class="example">
+                                <span class="nikud">בָּ</span>
+                                <span class="sound">ba ארוך</span>
+                            </div>
+                            <div class="example">
+                                <span class="nikud">בַּ</span>
+                                <span class="sound">ba קצר</span>
+                            </div>
+                        </div>
+                        <div class="usage-examples">
+                            <p>דוגמה: בָּנִים (banim) - בַּיִת (bayit)</p>
+                        </div>
+                    </div>
+                    <div class="comparison-card">
+                        <h4>צירה מול סגול</h4>
+                        <div class="comparison-examples">
+                            <div class="example">
+                                <span class="nikud">בֵּ</span>
+                                <span class="sound">be ארוך</span>
+                            </div>
+                            <div class="example">
+                                <span class="nikud">בֶּ</span>
+                                <span class="sound">be קצר</span>
+                            </div>
+                        </div>
+                        <div class="usage-examples">
+                            <p>דוגמה: בֵּית (beit) - בֶּן (ben)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- מקטע תבניות נפוצות -->
+            <div class="patterns-section">
+                <h3>📋 תבניות ניקוד נפוצות</h3>
+                <div class="patterns-grid">
+                    <div class="pattern-card">
+                        <h4>שמות פעולה</h4>
+                        <div class="pattern-examples">
+                            <div class="example">
+                                <span class="word">קָטַל</span>
+                                <span class="translation">katal - הרג</span>
+                            </div>
+                            <div class="example">
+                                <span class="word">שָׁמַר</span>
+                                <span class="translation">shamar - שמר</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>שמות עצם</h4>
+                        <div class="pattern-examples">
+                            <div class="example">
+                                <span class="word">מֶלֶךְ</span>
+                                <span class="translation">melech - מלך</span>
+                            </div>
+                            <div class="example">
+                                <span class="word">סֵפֶר</span>
+                                <span class="translation">sefer - ספר</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- הוספת פאנל הגדרות -->
+        <div class="settings-panel">
+            <h3>התאמה אישית</h3>
+            <div class="setting-item">
+                <label for="font-size">גודל טקסט</label>
+                <select id="font-size">
+                    <option value="normal">רגיל</option>
+                    <option value="large">גדול</option>
+                    <option value="larger">גדול מאוד</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="practice-speed">קצב תרגול</label>
+                <select id="practice-speed">
+                    <option value="slow">איטי</option>
+                    <option value="normal">רגיל</option>
+                    <option value="fast">מהיר</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+</html>

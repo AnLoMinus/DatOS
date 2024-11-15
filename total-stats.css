@@ -1,0 +1,316 @@
+/* עיצוב כללי למקטע הסטטיסטיקות */
+.total-stats {
+  width: 100%;
+  max-width: 100% !important;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.total-stats-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.total-stats-title {
+  font-size: 2rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.total-stats-title .icon {
+  font-size: 2.5rem;
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.total-stats-subtitle {
+  color: #4a5568;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* גריד הסטטיסטיקות */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.stat-item {
+  background: white;
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #3182ce;
+  transition: transform 0.3s ease;
+}
+
+.stat-item:hover .stat-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1.1rem;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.stat-description {
+  font-size: 0.9rem;
+  color: #718096;
+  line-height: 1.4;
+}
+
+/* תת-סטטיסטיקות */
+.sub-stats {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.sub-stat {
+  text-align: center;
+}
+
+.sub-stat-number {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #3182ce;
+}
+
+.sub-stat-label {
+  font-size: 0.8rem;
+  color: #718096;
+}
+
+/* אפקטים מיוחדים */
+.stat-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.stat-item:hover::before {
+  transform: translateX(100%);
+}
+
+/* סגנונות ספציפיים לקטגוריות */
+.stat-item.books {
+  border-bottom: 3px solid #4299e1;
+}
+.stat-item.chapters {
+  border-bottom: 3px solid #48bb78;
+}
+.stat-item.verses {
+  border-bottom: 3px solid #ed8936;
+}
+.stat-item.letters {
+  border-bottom: 3px solid #9f7aea;
+}
+.stat-item.mitzvot {
+  border-bottom: 3px solid #ed64a6;
+}
+.stat-item.prayers {
+  border-bottom: 3px solid #667eea;
+}
+.stat-item.times {
+  border-bottom: 3px solid #4fd1c5;
+}
+.stat-item.features {
+  border-bottom: 3px solid #f6ad55;
+}
+
+/* התאמה למסכים שונים */
+@media (min-width: 1400px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1399px) and (min-width: 992px) {
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 991px) and (min-width: 768px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .total-stats {
+    padding: 1rem;
+  }
+
+  .total-stats-title {
+    font-size: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+  }
+}
+
+/* אנימציות */
+@keyframes floatIcon {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.stat-item {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* דחיית אנימציה לכל פריט */
+.stat-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.stat-item:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.stat-item:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.stat-item:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.stat-item:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.stat-item:nth-child(8) {
+  animation-delay: 0.8s;
+}
+
+/* הוספת סגנונות למקטע החישובים */
+.letters-calculations {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.calculations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.calculation-item {
+  background: white;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.calculation-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.calculation-title {
+  font-size: 1rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.calculation-value {
+  font-size: 1.2rem;
+  color: #3182ce;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+.calculation-explanation {
+  font-size: 0.9rem;
+  color: #718096;
+  line-height: 1.4;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .calculations-grid {
+    grid-template-columns: 1fr;
+  }
+}
