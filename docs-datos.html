@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תיעוד מפורט - חמישה חומשי תורה</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="docs-datos.css">
+    <link rel="stylesheet" href="datetime.css">
+    <script src="datetime.js" defer></script>
+    <script src="https://unpkg.com/@hebcal/core"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <nav class="nav-bar">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <div class="bsd">בס״ד</div>
+                    <a href="index.html" class="nav-link">
+                        <span class="icon">🏠</span>
+                        ראשי
+                    </a>
+                    <a href="docs-datos.html" class="nav-link active">
+                        <span class="icon">📚</span>
+                        תיעוד מפורט
+                    </a>
+                    <a href="guide-datos.html" class="nav-link">
+                        <span class="icon">📖</span>
+                        מדריך למשתמש
+                    </a>
+                    <a href="blog-datos.html" class="nav-link">
+                        <span class="icon">✍️</span>
+                        בלוג הפרויקט
+                    </a>
+                    <a href="contributors.html" class="nav-link">
+                        <span class="icon">👥</span>
+                        רשימת התורמים
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <h1>תיעוד מפורט - פרויקט חמישה חומשי תורה</h1>
+
+        <section class="docs-section">
+            <h2>🔧 ארכיטקטורת המערכת</h2>
+            <div class="docs-content">
+                <h3>מבנה הקוד</h3>
+                <ul>
+                    <li>
+                        <strong>Frontend:</strong>
+                        <ul>
+                            <li>HTML5 לתצוגת התוכן</li>
+                            <li>CSS3 לעיצוב ואנימציות</li>
+                            <li>JavaScript לאינטראקטיביות</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Backend:</strong>
+                        <ul>
+                            <li>Node.js לשרת</li>
+                            <li>MongoDB לאחסון נתונים</li>
+                            <li>Express.js למסגרת העבודה</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <h3>תלויות ורכיבים</h3>
+                <ul>
+                    <li>ספריית Hebcal לחישובי תאריכים עבריים</li>
+                    <li>ספריית Torah.js לניהול טקסט התורה</li>
+                    <li>מערכת ניקוד וטעמים מותאמת אישית</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="docs-section">
+            <h2>🔐 אבטחה ופרטיות</h2>
+            <div class="docs-content">
+                <h3>אמצעי אבטחה</h3>
+                <ul>
+                    <li>הצפנת SSL/TLS לתקשורת מאובטחת</li>
+                    <li>אימות דו-שלבי למשתמשים רשומים</li>
+                    <li>הגנה מפני XSS ו-CSRF</li>
+                </ul>
+
+                <h3>מדיניות פרטיות</h3>
+                <ul>
+                    <li>שמירה על פרטיות המשתמשים</li>
+                    <li>מדיניות שימוש בקובצי Cookie</li>
+                    <li>הגנה על מידע אישי</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="docs-section">
+            <h2>📡 API Documentation</h2>
+            <div class="docs-content">
+                <h3>נקודות קצה זמינות</h3>
+                <div class="api-endpoint">
+                    <code>GET /api/torah/chapter/:book/:chapter</code>
+                    <p>קבלת פרק מספר תורה מסוים</p>
+                    <small>דוגמה לתגובה:</small>
+                    <pre><code>{
+    "book": "בראשית",
+    "chapter": 1,
+    "verses": [
+        {"number": 1, "text": "בְּרֵאשִׁית..."},
+        // ...
+    ]
+}</code></pre>
+                </div>
+
+                <div class="api-endpoint">
+                    <code>GET /api/torah/verse/:book/:chapter/:verse</code>
+                    <p>קבלת פסוק ספציפי</p>
+                </div>
+
+                <div class="api-endpoint">
+                    <code>GET /api/commentaries/:book/:chapter</code>
+                    <p>קבלת פרשנויות לפרק</p>
+                </div>
+
+                <h3>דוגמאות שימוש</h3>
+                <pre><code>
+fetch('/api/torah/chapter/bereshit/1')
+    .then(response => response.json())
+    .then(data => console.log(data));
+                </code></pre>
+            </div>
+        </section>
+
+        <section class="docs-section">
+            <h2>🔄 תהליכי פיתוח</h2>
+            <div class="docs-content">
+                <h3>תהליך הפיתוח</h3>
+                <ul>
+                    <li>שימוש ב-Git לניהול גרסאות</li>
+                    <li>CI/CD באמצעות GitHub Actions</li>
+                    <li>בדיקות אוטומטיות לפני כל שחרור</li>
+                </ul>
+
+                <h3>תהליך תרומה לפרויקט</h3>
+                <ol>
+                    <li>יצירת fork של הפרויקט</li>
+                    <li>פיתוח בענף נפרד</li>
+                    <li>הגשת Pull Request</li>
+                    <li>סקירת קוד ומיזוג</li>
+                </ol>
+            </div>
+        </section>
+
+        <section class="docs-section">
+            <h2>📊 ניטור וביצועים</h2>
+            <div class="docs-content">
+                <h3>כלי ניטור</h3>
+                <ul>
+                    <li>שימוש ב-Google Analytics לניתוח תנועה</li>
+                    <li>ניטור שגיאות באמצעות Sentry</li>
+                    <li>מעקב אחר ביצועי המערכת</li>
+                </ul>
+
+                <h3>אופטימיזציה</h3>
+                <ul>
+                    <li>טעינה מהירה של דפים</li>
+                    <li>מטמון חכם לתוכן סטטי</li>
+                    <li>דחיסת משאבים</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

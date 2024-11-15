@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספר שמות - חומש שני</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <!-- Keep only unique styles for shmot.html here if any -->
+    <link rel="stylesheet" href="datetime.css">
+    <script src="https://unpkg.com/@hebcal/core"></script>
+    <script src="datetime.js" defer></script>
+    <style>
+        /* Add any shmot-specific styles here */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bsd">בס״ד</div>
+        <nav class="nav-bar">
+            <link rel="stylesheet" href="style.css">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <span class="icon">🏠</span>
+                        ראשי
+                    </a>
+                    <a href="bereshit.html" class="nav-link">
+                        <span class="icon">🌍</span>
+                        בראשית
+                    </a>
+                    <a href="shmot.html" class="nav-link active">
+                        <span class="icon">🗽</span>
+                        שמות
+                    </a>
+                    <a href="vayekra.html" class="nav-link">
+                        <span class="icon">🔥</span>
+                        ויקרא
+                    </a>
+                    <a href="bamidbar.html" class="nav-link">
+                        <span class="icon">🏕️</span>
+                        במדבר
+                    </a>
+                    <a href="dvarim.html" class="nav-link">
+                        <span class="icon">📜</span>
+                        דברים
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <h1>📜 ספר שמות</h1>
+
+        <div class="description">
+            <h2>תיאור כללי</h2>
+            <p>ספר שמות, החומש השני בתורה, מתאר את לידתו של עם ישראל כאומה. הספר פותח בשעבוד מצרים, ממשיך דרך הגאולה
+                והיציאה ממצרים, ומגיע לשיאו במעמד הר סיני וקבלת התורה.</p>
+
+            <p>הספר מתחלק לשלושה חלקים עיקריים: החלק הראשון (פרקים א-טו) עוסק בשעבוד מצרים, המכות, יציאת מצרים וקריעת ים
+                סוף. החלק השני (פרקים טז-כד) מתאר את המסע במדבר עד מעמד הר סיני וקבלת התורה. החלק השלישי (פרקים כה-מ)
+                מתמקד בציווי ובניית המשכן.</p>
+
+            <p>דרך סיפורי הספר אנו לומדים על התהוות העם, על מנהיגות, על אמונה בשעת משבר, ועל הברית המיוחדת בין ה' לעמו.
+                הספר מלמד על חשיבות החירות, האחריות הלאומית, והקשר המתמיד בין העם לבוראו.</p>
+
+            <p>בספר מתוארים אירועים מכוננים כמו עשר המכות, קריעת ים סוף, מתן תורה והקמת המשכן, שכל אחד מהם מהווה אבן דרך
+                בעיצוב זהותו של עם ישראל ובביסוס הקשר המיוחד עם הקב"ה.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-title">סך הכל פרקים</div>
+                <div class="stat-value" id="totalChapters">40</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📜</div>
+                <div class="stat-title">סך הכל פסוקים</div>
+                <div class="stat-value" id="totalVerses">1,209</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-title">ממוצע פסוקים לפרק</div>
+                <div class="stat-value" id="averageVerses">30.2</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔤</div>
+                <div class="stat-title">מספר מילים</div>
+                <div class="stat-value" id="totalWords">16,713</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <div class="stat-title">מספר אותיות</div>
+                <div class="stat-value" id="totalLetters">63,529</div>
+            </div>
+        </div>
+
+        <div class="did-you-know">
+            <h2>הידעת? 💡</h2>
+            <div class="facts-carousel">
+                <div class="fact-card active">
+                    <div class="fact-icon">👶</div>
+                    <div class="fact-content">
+                        <h3>הצלת משה</h3>
+                        <p>משה ניצל בזכות תושייתן של נשים: יוכבד אמו, מרים אחותו, בת פרעה והמיילדות העבריות.</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🌊</div>
+                    <div class="fact-content">
+                        <h3>קריעת ים סוף</h3>
+                        <p>הים נקרע לשנים עשר שבילים שונים, כך שכל שבט עבר בנתיב משלו.</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">📜</div>
+                    <div class="fact-content">
+                        <h3>מעמד הר סיני</h3>
+                        <p>במעמד הר סיני שמעו כל ישראל את קול ה' מדבר אליהם ישירות, אירוע שלא חזר על עצמו בהיסטוריה.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="facts-nav">
+                <button onclick="prevFact()">❮</button>
+                <button onclick="nextFact()">❯</button>
+            </div>
+        </div>
+
+        <div class="key-scenes">
+            <h2>סצנות מרכזיות 🎬</h2>
+            <div class="scenes-grid">
+                <div class="scene-card burning-bush">
+                    <div class="scene-icon">🔥</div>
+                    <div class="scene-title">הסנה הבוער</div>
+                    <div class="scene-description">
+                        התגלות ה' למשה בסנה הבוער ושליחותו לגאול את ישראל
+                        <span class="emoji-group">👨‍🦳 🌳 ✨</span>
+                    </div>
+                </div>
+
+                <div class="scene-card plagues">
+                    <div class="scene-icon">🩸</div>
+                    <div class="scene-title">עשר המכות</div>
+                    <div class="scene-description">
+                        המכות שהביא ה' על מצרים עד לשחרור בני ישראל
+                        <span class="emoji-group">🐸 🦟 ⚡</span>
+                    </div>
+                </div>
+
+                <div class="scene-card exodus">
+                    <div class="scene-icon">🌊</div>
+                    <div class="scene-title">קריעת ים סוף</div>
+                    <div class="scene-description">
+                        הנס הגדול של קריעת הים והמעבר בחרבה
+                        <span class="emoji-group">🌊 👣 🏃</span>
+                    </div>
+                </div>
+
+                <div class="scene-card sinai">
+                    <div class="scene-icon">⛰️</div>
+                    <div class="scene-title">מעמד הר סיני</div>
+                    <div class="scene-description">
+                        מתן תורה וכריתת הברית בין ה' לעם ישראל
+                        <span class="emoji-group">📜 ⚡ 🗣️</span>
+                    </div>
+                </div>
+
+                <div class="scene-card golden-calf">
+                    <div class="scene-icon">🐄</div>
+                    <div class="scene-title">חטא העגל</div>
+                    <div class="scene-description">
+                        חטא העגל, שבירת הלוחות וסליחת ה'
+                        <span class="emoji-group">💔 📜 ����</span>
+                    </div>
+                </div>
+
+                <div class="scene-card mishkan">
+                    <div class="scene-icon">🏕️</div>
+                    <div class="scene-title">הקמת המשכן</div>
+                    <div class="scene-description">
+                        בניית המשכן והשראת השכינה בתוך עם ישראל
+                        <span class="emoji-group">🏗️ ✨ 👥</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="enrichment-content">
+            <h2>תכני העשרה 📚</h2>
+            <div class="enrichment-tabs">
+                <button class="tab-button active" onclick="showTab('visual')">סיכום חזותי</button>
+                <button class="tab-button" onclick="showTab('original')">טקסטים מקוריים</button>
+                <button class="tab-button" onclick="showTab('dvar-hashem')">דבר ה'</button>
+                <button class="tab-button" onclick="showTab('kids')">לילדים</button>
+            </div>
+
+            <div id="visual" class="tab-content active">
+                <div class="commandments-grid">
+                    <h3>עשרת הדיברות 📜</h3>
+                    <div class="commandment-cards">
+                        <div class="commandment-card">
+                            <div class="commandment-number">א</div>
+                            <div class="commandment-icon">👑</div>
+                            <div class="commandment-text">אנכי ה' אלוקיך</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ב</div>
+                            <div class="commandment-icon">🚫</div>
+                            <div class="commandment-text">לא יהיה לך אלהים אחרים</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ג</div>
+                            <div class="commandment-icon">🗣️</div>
+                            <div class="commandment-text">לא תשא את שם ה' לשוא</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ד</div>
+                            <div class="commandment-icon">✨</div>
+                            <div class="commandment-text">זכור את יום השבת</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ה</div>
+                            <div class="commandment-icon">👨‍👩‍👦</div>
+                            <div class="commandment-text">כבד את אביך ואת אמך</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ו</div>
+                            <div class="commandment-icon">❤️</div>
+                            <div class="commandment-text">לא תרצח</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ז</div>
+                            <div class="commandment-icon">💑</div>
+                            <div class="commandment-text">לא תנאף</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ח</div>
+                            <div class="commandment-icon">🤝</div>
+                            <div class="commandment-text">לא תגנוב</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ט</div>
+                            <div class="commandment-icon">🗣️</div>
+                            <div class="commandment-text">לא תענה ברעך עד שקר</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">י</div>
+                            <div class="commandment-icon">💭</div>
+                            <div class="commandment-text">לא תחמוד</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="original" class="tab-content">
+                <div class="original-text">
+                    <h3>📖 פסוקים נבחרים עם פרשנות</h3>
+                    <div class="verse-cards">
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיָּקָם מֶלֶךְ חָדָשׁ עַל מִצְרָיִם אֲשֶׁר לֹא יָדַע אֶת יוֹסֵף"
+                            </div>
+                            <div class="verse-source">שמות א', ח'</div>
+                            <div class="verse-commentary">
+                                הפסוק המתאר את תחילת השעבוד במצרים. מלמד על כפיות טובה והתעלמות מההיסטוריה, ועל השינוי
+                                הדרמטי במעמד בני ישראל במצרים.
+                            </div>
+                        </div>
+
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיֹּאמֶר אֱלֹהִים אֶל מֹשֶׁה אֶהְיֶה אֲשֶׁר אֶהְיֶה"</div>
+                            <div class="verse-source">שמות ג', י"ד</div>
+                            <div class="verse-commentary">
+                                תיאור התגלות ה' למשה בסנה הבוער. מבטא את מהות ה' כהוויה נצחית ואת הבטחתו להיות עם עמו
+                                בכל מצב.
+                            </div>
+                        </div>
+
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיִּסַּע מַלְאַךְ הָאֱלֹהִים הַהֹלֵךְ לִפְנֵי מַחֲנֵה יִשְׂרָאֵל
+                                וַיֵּלֶךְ מֵאַחֲרֵיהֶם"</div>
+                            <div class="verse-source">שמות י"ד, י"ט</div>
+                            <div class="verse-commentary">
+                                תיאור ההגנה האלוקית על עם ישראל בעת קריעת ים סוף. מלמד על ההשגחה המיוחדת של ה' על עמו
+                                ברגעי משבר.
+                            </div>
+                        </div>
+
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיַּעֲנוּ כָל הָעָם יַחְדָּו וַיֹּאמְרוּ כֹּל אֲשֶׁר דִּבֶּר ה'
+                                נַעֲשֶׂה"</div>
+                            <div class="verse-source">שמות י"ט, ח'</div>
+                            <div class="verse-commentary">
+                                קבלת התורה על ידי עם ישראל במעמד הר סיני. מבטא את התחייבות המוחלטת של העם לקיים את דבר
+                                ה'.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dvar-hashem" class="tab-content">
+                <div class="dvar-hashem-content">
+                    <h3>📜 דבר ה' - פסוקים מרכזיים</h3>
+                    <div class="verse-cards">
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיֹּאמֶר ה' רָאֹה רָאִיתִי אֶת עֳנִי עַמִּי אֲשֶׁר בְּמִצְרָיִם
+                                וְאֶת צַעֲקָתָם שָׁמַעְתִּי"</div>
+                            <div class="verse-source">שמות ג', ז'</div>
+                            <div class="verse-commentary">
+                                התגלות ה' למשה בסנה מבטאת את הקשר העמוק בין ה' לעמו ואת השגחתו המתמדת. מלמד על כך שה'
+                                שומע את תפילות עמו ומשגיח עליהם גם בזמני צרה וגלות.
+                            </div>
+                        </div>
+
+                        <div class="verse-card">
+                            <div class="verse-text">"אָנֹכִי ה' אֱלֹהֶיךָ אֲשֶׁר הוֹצֵאתִיךָ מֵאֶרֶץ מִצְרַיִם מִבֵּית
+                                עֲבָדִים"</div>
+                            <div class="verse-source">שמות כ', ב'</div>
+                            <div class="verse-commentary">
+                                הדיבר הראשון מעשרת הדיברות, המהווה יסוד האמונה היהודית. מדגיש את חשיבות יציאת מצרים
+                                כאירוע מכונן בזהות העם היהודי ואת הקשר המיוחד בין ה' לעמו.
+                            </div>
+                        </div>
+
+                        <div class="verse-card">
+                            <div class="verse-text">"וְעָשׂוּ לִי מִקְדָּשׁ וְשָׁכַנְתִּי בְּתוֹכָם"</div>
+                            <div class="verse-source">שמות כ"ה, ח'</div>
+                            <div class="verse-commentary">
+                                הציווי על בניית המשכן, המבטא את רצון ה' לשכון בתוך עמו. מלמד על האפשרות ליצור קשר קרוב
+                                עם ה' ועל חשיבות הקדושה בחיי העם.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="kids" class="tab-content">
+                <div class="kids-content">
+                    <h3>סיפורים לילדים 🎈</h3>
+                    <div class="story-cards">
+                        <div class="story-card">
+                            <div class="story-image">👶</div>
+                            <h4>הצלת משה התינוק</h4>
+                            <p>
+                                כשמשה הי תינוק קטן, אמו הצילה אותו מגזירת פרעה על ידי הנחתו בתיבה קטנה על היאור. בת
+                                פרעה מצאה אותו, ריחמה עליו ואימצה אותו לבן.
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(1)">קרא עוד</button>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-image">🌊</div>
+                            <h4>קריעת ים סוף</h4>
+                            <p>
+                                כשבני ישראל הגיעו לים סוף והמצרים רדפו אחריהם, ה' עשה נס גדול: הים נבקע לשניים ובני
+                                ישראל עברו בתוכו ביבשה!
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(2)">קרא עוד</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="audio-section">
+            <h2>קטעים מוקראים 🎧</h2>
+            <div class="audio-grid">
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">🌊</span>
+                        שירת הים
+                    </div>
+                    <div class="audio-text">
+                        "אָז יָשִׁיר מֹשֶׁה וּבְנֵי יִשְׂרָאֵל אֶת הַשִּׁירָה הַזֹּאת לַה'"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/shirat_hayam.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק טו - שירת הים אחרי קריעת ים סוף
+                    </div>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">⛰️</span>
+                        עשרת הדיברות
+                    </div>
+                    <div class="audio-text">
+                        "אָנֹכִי ה' אֱלֹהֶיךָ אֲשֶׁר הוֹצֵאתִיךָ מֵאֶרֶץ מִצְרַיִם"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/aseret_hadibrot.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק כ - מעמד הר סיני ועשרת הדיברות
+                    </div>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">🏕️</span>
+                        הקמת המשכן
+                    </div>
+                    <div class="audio-text">
+                        "וַיְכַס הֶעָנָן אֶת אֹהֶל מוֹעֵד וּכְבוֹד ה' מָלֵא אֶת הַמִּשְׁכָּן"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/mishkan.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק מ - השראת השכינה במשכן
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>חידון ספר שמות 📝</h2>
+            <div class="quiz-container">
+                <div id="quiz-question" class="quiz-question">
+                    <h3>שאלה <span id="question-number">1</span>/5</h3>
+                    <p id="question-text"></p>
+                </div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <div id="quiz-feedback" class="quiz-feedback"></div>
+                <button id="next-question" class="quiz-button" onclick="nextQuestion()" style="display: none;">
+                    לשאלה הבאה ⏭️
+                </button>
+                <button id="start-quiz" class="quiz-button" onclick="startQuiz()">
+                    התחל חידון 🎮
+                </button>
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <h3>סיכום תוצאות</h3>
+                    <p>הצלחת לענות נכון על <span id="correct-answers">0</span> מתוך 5 שאלות!</p>
+                    <button onclick="startQuiz()" class="quiz-button">נסה שוב 🔄</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="lessons-section">
+            <h2>🎯 לקחים נלמדים מספר בראשית</h2>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🗽</span>
+                        חירות ואחריות
+                    </div>
+                    <p>משמעות החירות האמיתית והאחריות הנלווית אליה. יציאה משעבוד לחירות כתהליך פיזי ורוחני.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>👥</span>
+                        גיבוש עם
+                    </div>
+                    <p>תהליך התגבשות עם ישראל מאוסף של עבדים לעם מאוחד בעל ייעוד וזהות משותפת.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>📜</span>
+                        קבלת התורה
+                    </div>
+                    <p>משמעות הברית בין ה' לעם ישראל, וחשיבות התורה כמדריך לחיים ערכיים ורוחניים.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🙏</span>
+                        אמונה וביטחון
+                    </div>
+                    <p>חיזוק האמונה והביטחון בה' דרך הניסים והנפלאות, וההתמודדות עם קשיי המדבר.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🏕️</span>
+                        השראת שכינה
+                    </div>
+                    <p>חשיבות המשכן כמקום להשראת השכינה, והקשר המתמיד בין ה' לעמו.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🤝</span>
+                        אחדות ואחריות
+                    </div>
+                    <p>חשיבות האחדות בעם ישראל והאחריות ההדדית בין חברי הקהילה.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-nav">
+            <div class="quick-nav-item" onclick="scrollToSection('intro')">הקדמה והיסטוריה</div>
+            <div class="quick-nav-item" onclick="scrollToSection('laws')">מצוות ודינים</div>
+            <div class="quick-nav-item" onclick="scrollToSection('ending')">סיום וברכות</div>
+        </div>
+
+        <div class="main-layout">
+            <div class="chapters-container">
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="חיפוש בפרקים..."
+                        onkeyup="searchChapters(this.value)">
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי הקדמה והיסטוריה (פרקים א-י)</h3>
+                    <ul class="chapter-list" id="chapterList1"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי סיפורי האבות (פרקים יא-ל)</h3>
+                    <ul class="chapter-list" id="chapterList2"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי סיום וברכות (פרקים לא-נ)</h3>
+                    <ul class="chapter-list" id="chapterList3"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="back-to-top" onclick="scrollToTop()">↑</div>
+
+    <script>
+        // עדכון רשימת הפרקים
+        const chapters = [
+            { title: "שעבוד מצרים", verses: 22 },
+            { title: "לידת משה והצלתו", verses: 25 },
+            { title: "הסנה הבוער", verses: 22 },
+            { title: "שליחות משה ואהרן", verses: 31 },
+            { title: "החמרת השעבוד", verses: 23 },
+            { title: "הבטחת הגאולה", verses: 30 },
+            { title: "מכת דם", verses: 25 },
+            { title: "מכת צפרדע", verses: 28 },
+            { title: "מכת כינים וערוב", verses: 32 },
+            { title: "מכת דבר ושחין", verses: 27 },
+            { title: "מכת ברד", verses: 35 },
+            { title: "מכת ארבה", verses: 29 },
+            { title: "מכת חושך", verses: 36 },
+            { title: "מכת בכורות", verses: 51 },
+            { title: "יציאת מצרים", verses: 22 },
+            { title: "קריעת ים סוף", verses: 27 },
+            { title: "שירת הים", verses: 26 },
+            { title: "המן והשליו", verses: 36 },
+            { title: "מלחמת עמלק", verses: 16 },
+            { title: "יתרו ועצתו", verses: 27 },
+            { title: "ההכנה למתן תורה", verses: 25 },
+            { title: "עשרת הדיברות", verses: 23 },
+            { title: "משפטים וחוקים", verses: 33 },
+            { title: "הברית בסיני", verses: 18 },
+            { title: "תרומת המשכן", verses: 22 },
+            { title: "כלי המשכן", verses: 30 },
+            { title: "בגדי הכהונה", verses: 43 },
+            { title: "קידוש הכהנים", verses: 46 },
+            { title: "מזבח הקטורת", verses: 38 },
+            { title: "בצלאל ואהליאב", verses: 18 },
+            { title: "חטא העגל", verses: 35 },
+            { title: "תפילת משה", verses: 23 },
+            { title: "הלוחות השניים", verses: 35 },
+            { title: "קרני הוד משה", verses: 35 },
+            { title: "נדבת המשכן", verses: 35 },
+            { title: "עשיית המשכן", verses: 38 },
+            { title: "עשיית הארון והשולחן", verses: 29 },
+            { title: "עשיית המנורה והמזבח", verses: 24 },
+            { title: "בגדי הכהונה", verses: 31 },
+            { title: "הקמת המשכן", verses: 38 }
+        ];
+
+        // עדכון שאלות החידון
+        const quizQuestions = [
+            {
+                question: "מי הציל את משה מהיאור?",
+                options: [
+                    "בת פרעה",
+                    "מרים",
+                    "יוכבד",
+                    "ציפורה"
+                ],
+                correct: 0
+            },
+            {
+                question: "כמה מכות הוכו המצרים?",
+                options: [
+                    "שבע",
+                    "תשע",
+                    "עשר",
+                    "שתים עשרה"
+                ],
+                correct: 2
+            },
+            {
+                question: "מה היה האות הראשון שעשה משה לפני פרעה?",
+                options: [
+                    "הפיכת המים לדם",
+                    "הפיכת המטה לנחש",
+                    "מכת צפרדע",
+                    "מכת כינים"
+                ],
+                correct: 1
+            },
+            {
+                question: "מה היה החג הראשון שנצטוו בו ישראל?",
+                options: [
+                    "שבועות",
+                    "סוכות",
+                    "פסח",
+                    "ראש השנה"
+                ],
+                correct: 2
+            },
+            {
+                question: "מי בנה את המשכן?",
+                options: [
+                    "משה ואהרן",
+                    "בצלאל ואהליאב",
+                    "הלויים",
+                    "כל ישראל"
+                ],
+                correct: 1
+            }
+        ];
+
+        // עדכון סיפורים לילי
+        const stories = {
+            1: {
+                title: "משה והסנה הבוער",
+                content: "כשמשה רעה את צאן יתרו במדבר, הוא ראה מחזה מופלא: סנה (שיח קוצני) בוער באש, אבל האש לא שורפת אותו! כשהתקרב לראות את הפלא הגדול, ה' דיבר אליו מתוך האש וציווה עליו להוציא את בני ישראל ממצרים."
+            },
+            2: {
+                title: "יציאת מצרים",
+                content: "אחרי עשר מכות שה' הביא על המצרים, פרעה סוף סוף הסכים לשחרר את בני ישראל. העם יצא בחיפזון, עם מצות שלא הספיקו להחמיץ, והלך אחרי עמוד הענן שהוביל אותם ביום ועמוד האש שהאיר להם בלילה."
+            }
+        };
+
+        const chapterList1 = document.getElementById('chapterList1');
+        const chapterList2 = document.getElementById('chapterList2');
+        const chapterList3 = document.getElementById('chapterList3');
+
+        chapters.forEach((chapter, index) => {
+            const li = document.createElement('li');
+            li.className = 'chapter-item';
+            li.innerHTML = `
+                <span class="emoji">📖</span>
+                <div class="chapter-info">
+                    <div>פרק ${index + 1}: ${chapter.title}</div>
+                    <div class="chapter-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+            `;
+            li.addEventListener('click', () => {
+                showChapterDetails(index + 1, chapter);
+            });
+
+            if (index < 10) {
+                chapterList1.appendChild(li);
+            } else if (index < 30) {
+                chapterList2.appendChild(li);
+            } else {
+                chapterList3.appendChild(li);
+            }
+        });
+
+        function showChapterDetails(number, chapter) {
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📖</span> פרק ${number}`;
+            modalContent.innerHTML = `
+                <h3>${chapter.title}</h3>
+                <div class="stats-summary">
+                    <div>סטטיסטיקות הפרק:</div>
+                    <div class="total-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+                <p style="margin-top: 15px;">חץ על הכפתור למטה לקריאת הפרק המלא</p>
+                <button onclick="readFullChapter(${number})" 
+                        style="margin-top: 20px; padding: 10px 20px; 
+                               background: var(--accent-color); color: white; 
+                               border: none; border-radius: 5px; 
+                               cursor: pointer;">
+                    קרא את הפרק המלא
+                </button>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('chapterModal').style.display = 'none';
+        }
+
+        function readFullChapter(number) {
+            // כאן אפשר להוסיף פונקציונליות לקריאת הפרק המלא
+            alert(`טוען את הפרק המלא ${number}...`);
+        }
+
+        // סגירת המודל בלחיצה מחוץ לתוכן
+        window.onclick = function (event) {
+            const modal = document.getElementById('chapterModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // אנימציה לכותרות בטעינה
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(`[data-section="${sectionId}"]`);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // הצגת/הסתרת כפתור חזרה למעלה
+        window.onscroll = function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        };
+
+        function searchChapters(query) {
+            query = query.toLowerCase();
+            const items = document.querySelectorAll('.chapter-item');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // הוספת אנימציות לטעינת התוכן
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.chapter-section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // חישוב סטטיסטיקות כלליות
+        function calculateTotalStats() {
+            const totalVerses = chapters.reduce((sum, chapter) => sum + chapter.verses, 0);
+            const averageVerses = (totalVerses / chapters.length).toFixed(1);
+
+            document.getElementById('totalChapters').textContent = chapters.length;
+            document.getElementById('totalVerses').textContent = totalVerses;
+            document.getElementById('averageVerses').textContent = averageVerses;
+        }
+
+        // הפעלת החישוב בטעינת הדף
+        document.addEventListener('DOMContentLoaded', calculateTotalStats);
+
+        // אנימציה לסצנות בת גלילה
+        function animateOnScroll() {
+            const scenes = document.querySelectorAll('.scene-card');
+
+            scenes.forEach(scene => {
+                const scenePosition = scene.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (scenePosition < screenPosition) {
+                    scene.style.opacity = '1';
+                    scene.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // הוספת האזנה לאירוע גלילה
+        window.addEventListener('scroll', animateOnScroll);
+
+        // אתחול הסצנות בטעינה
+        document.addEventListener('DOMContentLoaded', () => {
+            const scenes = document.querySelectorAll('.scene-card');
+            scenes.forEach((scene, index) => {
+                scene.style.opacity = '0';
+                scene.style.transform = 'translateY(20px)';
+                scene.style.transition = 'all 0.5s ease';
+                scene.style.transitionDelay = `${index * 0.2}s`;
+            });
+
+            animateOnScroll();
+        });
+
+        function showTab(tabId) {
+            // הסרת הקלאס active מכל הכפתורים והתוכן
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // הוספת הקלאס active לכפתור ולתוכן הנבחר
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function showFullStory(storyId) {
+            const story = stories[storyId];
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📚</span> ${story.title}`;
+            modalContent.innerHTML = `
+                <div class="story-full">
+                    <p>${story.content}</p>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('start-quiz').style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('question-number').textContent = currentQuestion + 1;
+            document.getElementById('question-text').textContent = question.question;
+
+            const optionsHtml = question.options.map((option, index) => `
+                <div class="quiz-option" onclick="checkAnswer(${index})">
+                    ${option}
+                </div>
+            `).join('');
+
+            document.getElementById('quiz-options').innerHTML = optionsHtml;
+            document.getElementById('quiz-feedback').innerHTML = '';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        function checkAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach(option => option.style.pointerEvents = 'none');
+
+            if (selectedIndex === question.correct) {
+                options[selectedIndex].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = ' כל הכבוד! תשובה נכונה!';
+                score++;
+            } else {
+                options[selectedIndex].classList.add('wrong');
+                options[question.correct].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = '❌ לא נכון. נסה שוב בשאלה הבאה!';
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                document.getElementById('next-question').style.display = 'block';
+            } else {
+                showResults();
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('correct-answers').textContent = score;
+            document.getElementById('quiz-question').style.display = 'none';
+            document.getElementById('quiz-options').style.display = 'none';
+            document.getElementById('quiz-feedback').style.display = 'none';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        let currentFactIndex = 0;
+        const facts = document.querySelectorAll('.fact-card');
+
+        function showFact(index) {
+            facts.forEach(fact => fact.classList.remove('active'));
+            facts[index].classList.add('active');
+        }
+
+        function nextFact() {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        function prevFact() {
+            currentFactIndex = (currentFactIndex - 1 + facts.length) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        // אוטומציה להחלפת עובדות
+        setInterval(nextFact, 5000);
+    </script>
+</body>
+<footer>
+    <div class="credits">
+        <div class="credits-content">
+            <div class="credit-item">
+                <span class="credit-icon">🇮🇱</span>
+                <a href="https://www.gov.il/" class="credit-text">מדינת ישראל</a>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">👨‍💻</span>
+                <span class="credit-text">פיתוח: <a href="https://www.github.com/anlominus" class="credit-text">לאון
+                        יעקובוב</a></span>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">🤖</span>
+                <span class="credit-text">בשיתוף: <a href="https://www.openai.com/" class="credit-text">Claude
+                        AI</a></span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

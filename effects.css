@@ -1,0 +1,429 @@
+/* עיצוב תפריט */
+.nav-links a {
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+/* אפקט הבהוב לקישורים */
+.nav-link {
+  animation: linkPulse 2s infinite;
+}
+
+@keyframes linkPulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* אנימציה מיוחדת לקישור פעיל */
+.nav-link.active {
+  position: relative;
+  animation: activeLink 1s infinite;
+}
+
+@keyframes activeLink {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* אפקט מיוחד ל-BSD */
+.bsd {
+  font-weight: bold;
+  background: linear-gradient(45deg, #ffd700, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: bsdGlow 2s infinite;
+}
+
+@keyframes bsdGlow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+}
+
+/* אנימציית קו תחתון לקישורים */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffd700;
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* רקע מדורג עם אפקט הילה */
+body {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e7eb 100%);
+}
+
+/* גבולות זוהרים עם אנימציה */
+.book-card-mini {
+  border: 2px solid transparent;
+  animation: borderGlow 3s infinite;
+}
+
+@keyframes borderGlow {
+  0% {
+    border-color: rgba(255, 215, 0, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 215, 0, 0.8);
+  }
+  100% {
+    border-color: rgba(255, 215, 0, 0.3);
+  }
+}
+
+/* כותרות עם גרדיאנט וצל */
+h1,
+h2,
+h3 {
+  background: linear-gradient(45deg, #2c3e50, #3498db);
+  -webkit-background-clip: text;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* עיצוב משופר לאזור הסטטיסטיקות */
+.total-stats {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.total-stats:hover {
+  transform: translateY(-5px);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .books-row {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    height: auto;
+    overflow: auto;
+  }
+}
+
+/* אנימציות ריחוף לאימוג'ים */
+.icon {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.2) rotate(10deg);
+  animation: iconFloat 1s infinite alternate;
+}
+
+@keyframes iconFloat {
+  from {
+    transform: translateY(0) rotate(5deg);
+  }
+  to {
+    transform: translateY(-5px) rotate(-5deg);
+  }
+}
+
+/* אפקט הדגשה בצד בעת hover */
+.book-card-mini {
+  position: relative;
+  overflow: hidden;
+}
+
+.book-card-mini::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -5px;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(45deg, #ffd700, #ff6b6b);
+  transition: transform 0.3s ease;
+  transform: translateX(-100%);
+}
+
+.book-card-mini:hover::before {
+  transform: translateX(0);
+}
+
+/* עיצוב מיוחד לפסקאות */
+.description p,
+.book-content p {
+  position: relative;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.description p:hover,
+.book-content p:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateX(5px);
+  box-shadow: -3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* קווים מפרידים דקורטיביים */
+.section-divider {
+  height: 3px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    #ffd700,
+    #ff6b6b,
+    #ffd700,
+    transparent
+  );
+  margin: 1rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.8),
+    transparent
+  );
+  animation: dividerShine 3s infinite;
+}
+
+@keyframes dividerShine {
+  to {
+    left: 100%;
+  }
+}
+
+/* שיפור נראות כללית של התפריט */
+.nav-bar {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.85)
+  );
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+
+/* אפקטים מיוחדים לאימוג'ים */
+[class*="icon"] {
+  display: inline-block;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.2));
+  transition: all 0.3s ease;
+}
+
+[class*="icon"]:hover {
+  filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.5));
+  transform: scale(1.2);
+}
+
+/* עיצוב חדש לסטטיסטיקות הספר */
+.book-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.book-stats .stat-item {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.book-stats .stat-number {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.book-stats .stat-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* הוספת אפקט hover לסטטיסטיקות */
+.book-stats .stat-item:hover {
+  transform: translateY(-2px);
+  transition: transform 0.3s ease;
+}
+
+.book-stats .stat-item:hover .stat-number {
+  color: #3498db;
+}
+
+/* עיצוב מיוחד למקטע המבוא */
+.description {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 1.5rem;
+  max-height: calc(100vh - 300px);
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.7)
+  );
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+
+/* אפקט זוהר בעת hover */
+.description:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.95),
+    rgba(255, 255, 255, 0.85)
+  );
+}
+
+/* עיצוב פסקאות במבוא */
+.description p {
+  margin: 0.5rem;
+  padding: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  height: fit-content;
+}
+
+/* התאמת גודל האימוג'ים */
+.description span.emoji {
+  font-size: 1.2em;
+}
+
+/* סידור מיוחד לפסקה הראשונה והאחרונה */
+.description p:first-child {
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    to right,
+    rgba(255, 215, 0, 0.1),
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 215, 0, 0.1)
+  );
+}
+
+.description p:last-child {
+  grid-column: 1 / -1;
+  background: linear-gradient(
+    to right,
+    rgba(255, 215, 0, 0.1),
+    rgba(255, 255, 255, 0.8),
+    rgba(255, 215, 0, 0.1)
+  );
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 1024px) {
+  .description {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .description {
+    grid-template-columns: 1fr;
+    max-height: none;
+    overflow: auto;
+  }
+}
+
+/* שיפור קריאות הטקסט */
+.description p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* אנימציית כניסה מעודכנת */
+.description p {
+  animation: fadeInScale 0.5s ease-out forwards;
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* הוספת עיכוב לאנימציה של כל פסקה */
+.description p:nth-child(1) {
+  animation-delay: 0s;
+}
+.description p:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.description p:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.description p:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.description p:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.description p:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.description p:nth-child(7) {
+  animation-delay: 0.6s;
+}

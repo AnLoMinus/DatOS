@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>חמישה חומשי תורה</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="thanks-modal.css">
+    <link rel="stylesheet" href="datetime.css">
+    <link rel="stylesheet" href="tools.css">
+    <link rel="stylesheet" href="effects.css">
+    <script src="datetime.js" defer></script>
+    <script src="https://unpkg.com/@hebcal/core"></script>
+    <script src="tools.js" defer></script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <div class="bsd">בס״ד</div>
+                <a href="index.html" class="nav-link active">
+                    <span class="icon">🏠</span>
+                    ראשי
+                </a>
+                <a href="bereshit.html" class="nav-link">
+                    <span class="icon">🌍</span>
+                    בראשית
+                </a>
+                <a href="shmot.html" class="nav-link">
+                    <span class="icon">🗽</span>
+                    שמות
+                </a>
+                <a href="vayekra.html" class="nav-link">
+                    <span class="icon">🔥</span>
+                    ויקרא
+                </a>
+                <a href="bamidbar.html" class="nav-link">
+                    <span class="icon">🏕️</span>
+                    במדבר
+                </a>
+                <a href="dvarim.html" class="nav-link">
+                    <span class="icon">📜</span>
+                    דברים
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <h1>📜 חמישה חומשי תורה</h1>
+
+        <h2 class="section-title">
+            <span class="section-icon">📖</span>
+            מבוא לחמשת חומשי תורה
+            <div class="section-divider"></div>
+        </h2>
+
+        <div class="description">
+            <p>
+                <strong>התורה היא המתנה היקרה והנצחית</strong>
+                <span class="emoji">🎁</span><span class="emoji">✨</span>
+                שקיבלנו מהקב״ה בהר סיני. חמשת חומשי התורה הם המפתח
+                <span class="emoji">🔑</span>
+                להבנת הבריאה, ייעוד האדם, וההיסטוריה של עם ישראל.
+            </p>
+
+            <p>
+                <strong>ספר בראשית</strong>
+                <span class="emoji">🌍</span>
+                מספר על בריאת העולם, האבות הקדושים והאמהות, וראשית עם ישראל.
+                מאדם הראשון ועד יוסף במצרים, הספר מלמד אותנו על יסודות האמונה והמידות הטובות.
+            </p>
+
+            <p>
+                <strong>ספר שמות</strong>
+                <span class="emoji">🗽</span>
+                מתאר את יציאת מצרים, קריעת ים סוף, מתן תורה בהר סיני ובניית המשכן.
+                הספר מלמד על גאולה, אמונה, והקשר המיוחד בין עם ישראל לקב״ה.
+            </p>
+
+            <p>
+                <strong>ספר ויקרא</strong>
+                <span class="emoji">🔥</span>
+                עוסק בעבודת המקדש, הקורבנות, טומאה וטהרה, והחוקים המיוחדים לכהנים.
+                הספר מלמד על קדושה, טהרה, ואהבת ישראל.
+            </p>
+
+            <p>
+                <strong>ספר במדבר</strong>
+                <span class="emoji">🏕️</span>
+                מספר על מסע בני ישראל במדבר, הניסיונות והאתגרים, המרגלים, ומלחמות סיחון ועוג.
+                הספר מלמד על אמונה, מנהיגות, וכוח הרצון.
+            </p>
+
+            <p>
+                <strong>ספר דברים</strong>
+                <span class="emoji">📜</span>
+                הוא משנה תורה, בו משה רבינו מסכם את התורה, מוכיח את העם ומברך אותם לפני פטירתו.
+                הספר מלמד על תשובה, אהבת ה׳, וחשיבות לימוד התורה.
+            </p>
+
+            <p>
+                יחד, חמשת החומשים מהווים את היסוד הרוחני והמוסרי של עם ישראל,
+                ומלמדים אותנו את דרך החיים הנכונה בעולם
+                <span class="emoji">⭐</span>
+            </p>
+        </div>
+
+        <h2 class="section-title">
+            <span class="section-icon">📚</span>
+            סקירת החומשים
+            <div class="section-divider"></div>
+        </h2>
+
+        <!-- מקטע סקירת החומשים -->
+        <div class="books-row">
+            <div class="book-card-mini" data-book-page="bereshit.html">
+                <div class="book-icon-mini">🌍</div>
+                <h3 class="book-title-mini">בראשית</h3>
+                <div class="book-details">
+                    <p>ספר היסוד • בריאת העולם • האבות הקדושים</p>
+                    <div class="book-content">
+                        <div class="content-section">
+                            <h4>תיאור הספר</h4>
+                            <p>מתאר את בריאת העולם, סיפורי האבות והאמהות, ותחילת עם ישראל. מהאדם הראשון ועד ירידת יעקב
+                                למצרים.</p>
+                        </div>
+                        <div class="content-section">
+                            <h4>מסרים מרכזיים</h4>
+                            <ul>
+                                <li>אמונה בבורא עולם</li>
+                                <li>חסד ואהבת הזולת</li>
+                                <li>בחירה חופשית</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>אירועים מרכזיים</h4>
+                            <ul>
+                                <li>בריאת העולם</li>
+                                <li>המבול</li>
+                                <li>עקידת יצחק</li>
+                                <li>מכירת יוסף</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>ייחודיות הספר</h4>
+                            <p>היחיד שמתאר את בריאת העולם ומהווה בסיס לאמונה היהודית</p>
+                        </div>
+                    </div>
+                    <div class="book-topics">
+                        <span class="topic">בריאת העולם והאדם</span>
+                        <span class="topic">אברהם, יצחק ויעקב</span>
+                        <span class="topic">מכירת יוסף</span>
+                        <span class="topic">ירידת יעקב למצרים</span>
+                    </div>
+                    <div class="book-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">43</span>
+                            <span class="stat-label">פרקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1,534</span>
+                            <span class="stat-label">פסוקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">12</span>
+                            <span class="stat-label">פרשיות</span>
+                        </div>
+                    </div>
+                    <div class="book-action">
+                        <a href="bereshit.html" class="book-page-link">
+                            <span class="icon">📖</span>
+                            למעבר לעמוד הספר
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card-mini" data-book-page="shmot.html">
+                <div class="book-icon-mini">🗽</div>
+                <h3 class="book-title-mini">שמות</h3>
+                <div class="book-details">
+                    <p>גלות וגאולה • מתן תורה • המשכן</p>
+                    <div class="book-content">
+                        <div class="content-section">
+                            <h4>תיאור הספר</h4>
+                            <p>מספר על שעבוד מצרים, הגאולה, מתן תורה והקמת המשכן. מגלות לגאולה ומעבדות לחירות.</p>
+                        </div>
+                        <div class="content-section">
+                            <h4>מסרים מרכזיים</h4>
+                            <ul>
+                                <li>חירות וגאולה</li>
+                                <li>קבלת התורה</li>
+                                <li>אחדות העם</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>אירועים מרכזיים</h4>
+                            <ul>
+                                <li>יציאת מצרים</li>
+                                <li>קריעת ים סוף</li>
+                                <li>מעמד הר סיני</li>
+                                <li>חטא העגל</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>ייחודיות הספר</h4>
+                            <p>מתאר את הפיכת עם ישראל מעבדים לעם חופשי וקבלת התורה</p>
+                        </div>
+                    </div>
+                    <div class="book-topics">
+                        <span class="topic">שעבוד מצרים</span>
+                        <span class="topic">עשר המכות</span>
+                        <span class="topic">קריעת ים סוף</span>
+                        <span class="topic">מעמד הר סיני</span>
+                    </div>
+                    <div class="book-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">40</span>
+                            <span class="stat-label">פרקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1,209</span>
+                            <span class="stat-label">פסוקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">11</span>
+                            <span class="stat-label">פרשיות</span>
+                        </div>
+                    </div>
+                    <div class="book-action">
+                        <a href="shmot.html" class="book-page-link">
+                            <span class="icon">📖</span>
+                            למעבר לעמוד הספר
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card-mini" data-book-page="vayekra.html">
+                <div class="book-icon-mini">🔥</div>
+                <h3 class="book-title-mini">ויקרא</h3>
+                <div class="book-details">
+                    <p>עבודת המקדש • טהרה • קדושה</p>
+                    <div class="book-content">
+                        <div class="content-section">
+                            <h4>תיאור הספר</h4>
+                            <p>עוסק בדיני הקורבנות, טומאה וטהרה, קדושת הכהנים והמועדים. מדריך לחיי קדושה.</p>
+                        </div>
+                        <div class="content-section">
+                            <h4>מסרים מרכזיים</h4>
+                            <ul>
+                                <li>קדושה וטהרה</li>
+                                <li>אהבת ישראל</li>
+                                <li>תיקון המידות</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>אירועים מרכזיים</h4>
+                            <ul>
+                                <li>חנוכת המשכן</li>
+                                <li>מות בני אהרן</li>
+                                <li>דיני המועדים</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>ייחודיות הספר</h4>
+                            <p>מתמקד בעבודת המקדש ובהלכות הקשורות לקדושה וטהרה</p>
+                        </div>
+                    </div>
+                    <div class="book-topics">
+                        <span class="topic">דיני הקורבנות</span>
+                        <span class="topic">טומאה וטהרה</span>
+                        <span class="topic">קדושת הכהנים</span>
+                        <span class="topic">המועדים</span>
+                    </div>
+                    <div class="book-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">27</span>
+                            <span class="stat-label">פרקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">859</span>
+                            <span class="stat-label">פסוקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">פרשיות</span>
+                        </div>
+                    </div>
+                    <div class="book-action">
+                        <a href="vayekra.html" class="book-page-link">
+                            <span class="icon">📖</span>
+                            למעבר לעמוד הספר
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card-mini" data-book-page="bamidbar.html">
+                <div class="book-icon-mini">🏕️</div>
+                <h3 class="book-title-mini">במדבר</h3>
+                <div class="book-details">
+                    <p>המסע במדבר • ניסיונות • הכנה לארץ</p>
+                    <div class="book-content">
+                        <div class="content-section">
+                            <h4>תיאור הספר</h4>
+                            <p>מתאר את מסע בני ישראל במדבר, הניסיונות והאתגרים בדרך לארץ ישראל.</p>
+                        </div>
+                        <div class="content-section">
+                            <h4>מסרים מרכזיים</h4>
+                            <ul>
+                                <li>אמונה וביטחון</li>
+                                <li>מנהיגות</li>
+                                <li>אחדות העם</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>אירועים מרכזיים</h4>
+                            <ul>
+                                <li>חטא המרגלים</li>
+                                <li>מחלוקת קורח</li>
+                                <li>מי מריבה</li>
+                                <li>מלחמות סיחון ועוג</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>ייחודיות הספר</h4>
+                            <p>משקף את האתגרים והניסיונות בתהליך הפיכת העם לאומה</p>
+                        </div>
+                    </div>
+                    <div class="book-topics">
+                        <span class="topic">מפקד העם</span>
+                        <span class="topic">חטא המרגלים</span>
+                        <span class="topic">מחלוקת קורח</span>
+                        <span class="topic">מי מריבה</span>
+                    </div>
+                    <div class="book-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">34</span>
+                            <span class="stat-label">פרקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">1,288</span>
+                            <span class="stat-label">פסוקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10</span>
+                            <span class="stat-label">פרשיות</span>
+                        </div>
+                    </div>
+                    <div class="book-action">
+                        <a href="bamidbar.html" class="book-page-link">
+                            <span class="icon">📖</span>
+                            למעבר לעמוד הספר
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="book-card-mini" data-book-page="dvarim.html">
+                <div class="book-icon-mini">📜</div>
+                <h3 class="book-title-mini">דברים</h3>
+                <div class="book-details">
+                    <p>משנה תורה • מוסר • ברית</p>
+                    <div class="book-content">
+                        <div class="content-section">
+                            <h4>תיאור הספר</h4>
+                            <p>נאומי הפרידה של משה רבינו, חזרה על התורה והמצוות, תוכחה וברכה לעם ישראל.</p>
+                        </div>
+                        <div class="content-section">
+                            <h4>מסרים מרכזיים</h4>
+                            <ul>
+                                <li>אהבת ה׳</li>
+                                <li>שמירת המצוות</li>
+                                <li>בחירה וגמול</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>אירועים מרכזיים</h4>
+                            <ul>
+                                <li>חזרת עשרת הדברות</li>
+                                <li>הברית בערבות מואב</li>
+                                <li>שירת האזינו</li>
+                                <li>ברכת משה</li>
+                            </ul>
+                        </div>
+                        <div class="content-section">
+                            <h4>ייחודיות הספר</h4>
+                            <p>נאמר מפי משה עצמו כסיכום וחיזוק לפני הכניסה לארץ</p>
+                        </div>
+                    </div>
+                    <div class="book-topics">
+                        <span class="topic">תוכחת משה</span>
+                        <span class="topic">עשרת הדברות</span>
+                        <span class="topic">הברכה והקללה</span>
+                        <span class="topic">שירת האזינו</span>
+                    </div>
+                    <div class="book-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">34</span>
+                            <span class="stat-label">פרקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">959</span>
+                            <span class="stat-label">פסוקים</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">11</span>
+                            <span class="stat-label">פרשיות</span>
+                        </div>
+                    </div>
+                    <div class="book-action">
+                        <a href="dvarim.html" class="book-page-link">
+                            <span class="icon">📖</span>
+                            למעבר לעמוד הספר
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- הוספת סיכום סטטיסטי כללי אחרי div.books-row -->
+        <div class="total-stats">
+            <div class="total-stats-content">
+                <h3>סיכום כללי - חמישה חומשי תורה</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">187</span>
+                        <span class="stat-label">פרקים</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5,849</span>
+                        <span class="stat-label">פסוקים</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">54</span>
+                        <span class="stat-label">פרשיות</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- הוספת מודל התודות -->
+    <div class="thanks-modal" id="thanksModal">
+        <div class="thanks-content">
+            <button class="close-modal" onclick="closeThanksModal()">×</button>
+            <h2>🙏 הכרת תודה</h2>
+        </div>
+    </div>
+
+    <!-- הוספת מודל ברכה -->
+    <div class="thanks-modal blessing-modal" id="blessingModal">
+        <div class="thanks-content">
+            <button class="close-modal" onclick="closeBlessingModal()">×</button>
+            <h2>✨ ברכת הודיה מיוחדת ✨</h2>
+
+            <div class="blessing-container">
+                <div class="blessing-text">
+                    <p>
+                        ברוך אתה ה' אלוקינו מלך העולם 👑<br>
+                        שהחיינו וקיימנו והגיענו לזמן הזה 🙏
+                    </p>
+                </div>
+
+                <div class="blessing-divider"></div>
+
+                <div class="blessing-poem">
+                    <p>
+                        מודים אנחנו לך ה' אלוקינו ✨<br>
+                        על כל הטוב והחסד שגמלת עמנו 💫
+                    </p>
+                    <p>
+                        על התורה הקדושה שנתת לנו 📜<br>
+                        ועל הזכות להגדיל תורה ולהאדירה 🌟
+                    </p>
+                    <p>
+                        על ההורים והמשפחה היקרה 👨‍👩‍👦<br>
+                        שנטעו בנו אהבת תורה ויראה 💝
+                    </p>
+                    <p>
+                        על המורים והמחנכים לדורותיהם 👨‍🏫<br>
+                        שהאירו את דרכנו באור התורה 🕯️
+                    </p>
+                    <p>
+                        על מדינת ישראל וחירותנו 🇮🇱<br>
+                        ועל הזכות לחיות בארץ הקודש ⭐
+                    </p>
+                    <p>
+                        על הטכנולוגיה והקדמה 💻<br>
+                        המאפשרת להפיץ תורה בכ פינה 🌍
+                    </p>
+                    <p class="blessing-highlight">
+                        יהי רצון שנזכה להמשיך להגדיל תורה 📚<br>
+                        ולהאיר את העולם באורה הקדוש ✨
+                    </p>
+                    <p>
+                        ונזכה לראות בגאולה השלמה 🌅<br>
+                        במהרה במינו, אמן! 🙏
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="credits">
+            <div class="creator-credit">
+                <span class="title">בורא עולם</span>
+                <div class="attributes">
+                    <span class="attribute">אס - אין סוף</span>
+                    <span class="attribute">אצילות</span>
+                    <span class="attribute">אהיה אשר אהיה</span>
+                </div>
+            </div>
+            <div class="credits-content">
+                <div class="credit-item">
+                    <span class="credit-icon">🇮🇱</span>
+                    <a href="https://www.gov.il/" class="credit-text">מדינת ישראל</a>
+                </div>
+                <div class="credit-divider">|</div>
+                <div class="credit-item">
+                    <span class="credit-icon">👨‍💻</span>
+                    <span class="credit-text">פיתוח: <a href="https://www.github.com/anlominus" class="credit-text">לאון
+                            יעקובוב</a></span>
+                </div>
+                <div class="credit-divider">|</div>
+                <div class="credit-item">
+                    <span class="credit-icon">🤖</span>
+                    <span class="credit-text">בשיתוף: <a href="https://www.openai.com/" class="credit-text">Claude
+                            AI</a></span>
+                </div>
+            </div>
+            <div class="additional-links">
+                <div class="links-row">
+                    <a href="docs-datos.html" class="footer-link">
+                        <span class="icon">📚</span>
+                        תיעוד מפורט
+                    </a>
+                    <div class="footer-divider">•</div>
+                    <a href="guide-datos.html" class="footer-link">
+                        <span class="icon">📖</span>
+                        מדריך למשתמש
+                    </a>
+                    <div class="footer-divider">•</div>
+                    <a href="blog-datos.html" class="footer-link">
+                        <span class="icon">✍️</span>
+                        בלוג הפרויקט
+                    </a>
+                    <div class="footer-divider">•</div>
+                    <a href="contributors.html" class="footer-link">
+                        <span class="icon">👥</span>
+                        רשימת תורמים
+                    </a>
+                </div>
+                <div class="action-buttons">
+                    <a href="thanks-modal.html" class="nav-link thanks-btn">
+                        <span class="icon">🙏</span>
+                        הכרת תודה
+                    </a>
+                    <a href="blessing-modal.html" class="nav-link blessing-btn">
+                        <span class="icon">✨</span>
+                        ברכה מיוחדת
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- הוספת סקריפט הפעלת המודל -->
+    <script>
+        function openThanksModal(event) {
+            event.preventDefault();
+            document.getElementById('thanksModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeThanksModal() {
+            document.getElementById('thanksModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        function openBlessingModal(event) {
+            event.preventDefault();
+            document.getElementById('blessingModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBlessingModal() {
+            document.getElementById('blessingModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // סגירת המודלים בלחיצה מחוץ לתוכן
+        document.addEventListener('click', function (event) {
+            if (event.target.classList.contains('thanks-modal')) {
+                closeThanksModal();
+            }
+            if (event.target.classList.contains('blessing-modal')) {
+                closeBlessingModal();
+            }
+        });
+
+        // סגירת המודלים בלחיצה על ESC
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                closeThanksModal();
+                closeBlessingModal();
+            }
+        });
+    </script>
+</body>
+
+
+</html>

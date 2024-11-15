@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספר ויקרא - חומש שלישי</title>
+    <meta name="description"
+        content="ספר ויקרא - החומש השלישי בתורה, העוסק בדיני הקורבנות, טהרה וקדושה. כולל את עבודת הכהנים במשכן, דיני טומאה וטהרה, והוראות לחיי קדושה.">
+    <meta name="keywords" content="ספר ויקרא, קורבנות, כהנים, טהרה, קדושה, משכן, תורה, חומש שלישי">
+    <meta name="author" content="Leon Yaakobov">
+    <meta property="og:title" content="ספר ויקרא - לימוד תורה">
+    <meta property="og:description" content="לימוד ספר ויקרא - דיני הקורבנות, טהרה וקדושה, עבודת הכהנים והמשכן">
+    <meta property="og:image" content="path/to/vayikra-image.jpg">
+    <meta property="og:url" content="https://your-domain.com/vayikra">
+    <link rel="canonical" href="https://your-domain.com/vayikra">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="datetime.css">
+    <script src="https://unpkg.com/@hebcal/core"></script>
+    <script src="datetime.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bsd">בס״ד</div>
+        <nav class="nav-bar">
+            <link rel="stylesheet" href="style.css">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <span class="icon">🏠</span>
+                        ראשי
+                    </a>
+                    <a href="bereshit.html" class="nav-link">
+                        <span class="icon">🌍</span>
+                        בראשית
+                    </a>
+                    <a href="shmot.html" class="nav-link">
+                        <span class="icon">🗽</span>
+                        שמות
+                    </a>
+                    <a href="vayekra.html" class="nav-link active">
+                        <span class="icon">🔥</span>
+                        ויקרא
+                    </a>
+                    <a href="bamidbar.html" class="nav-link">
+                        <span class="icon">🏕️</span>
+                        במדבר
+                    </a>
+                    <a href="dvarim.html" class="nav-link">
+                        <span class="icon">📜</span>
+                        דברים
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <h1>📜 ספר ויקרא</h1>
+
+        <div class="description">
+            <h2>תיאור כללי</h2>
+            <p>ספר ויקרא, החומש השלישי בתורה, עוסק בעיקר בחוקי הקורבנות, טהרה וקדושה. הספר מפרט את עבודת הכהנים במשכן
+                ובמקדש, וכולל הנחיות מפורטות לחיי קדושה של עם ישראל.</p>
+
+            <p>הספר מתחלק לשלושה חלקים עיקריים: החלק הראשון (פרקים א-ז) עוסק בדיני הקורבנות השונים. החלק השני (פרקים
+                ח-י) מתאר את חנוכת המשכן והכהנים. החק השלישי (פרקים יא-כז) מכיל חוקי טהרה, קדושה ומועדים.</p>
+
+            <p>דרך חוקי הספר אנו לומדים על החשיבות של קדושה בחיי היומיום, על הקשר המיוחד בין האדם לבוראו, ועל האחריות
+                המוטלת על עם ישראל להיות "ממלכת כהנים וגוי קדוש".</p>
+
+            <p>בספר מתוארים גם חוקי המועדים, דיני טומאה וטהרה, והוראות מפורטות לשמירת הקדושה בכל תחומי החיים - באכילה,
+                ביחסים בין אדם לחברו, ובעבודת ה'.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">📚</div>
+                <div class="stat-title">סך הכל פרקים</div>
+                <div class="stat-value" id="totalChapters">27</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📜</div>
+                <div class="stat-title">סך הכל פסוקים</div>
+                <div class="stat-value" id="totalVerses">859</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📊</div>
+                <div class="stat-title">ממצע פסוקים לפרק</div>
+                <div class="stat-value" id="averageVerses">31.8</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🔤</div>
+                <div class="stat-title">מספר מילים</div>
+                <div class="stat-value" id="totalWords">11,950</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📝</div>
+                <div class="stat-title">מספר אותיות</div>
+                <div class="stat-value" id="totalLetters">44,790</div>
+            </div>
+        </div>
+
+        <div class="scenes-grid">
+            <div class="scene-card sacrifices">
+                <div class="scene-icon">🔥</div>
+                <div class="scene-title">דיני הקורבנות</div>
+                <div class="scene-description">
+                    פירוט סוגי הקורבנות השונים ואופן הקרבתם
+                    <span class="emoji-group">🐑 ⚖️ 🏺</span>
+                </div>
+            </div>
+
+            <div class="scene-card priests">
+                <div class="scene-icon">👨‍🦳</div>
+                <div class="scene-title">חנוכת המשכן והכהנים</div>
+                <div class="scene-description">
+                    הכנת אהרן ובניו לעבודת הכהונה וחנוכת המשכן
+                    <span class="emoji-group">👔 🏕️ ✨</span>
+                </div>
+            </div>
+
+            <div class="scene-card nadav">
+                <div class="scene-icon">⚡</div>
+                <div class="scene-title">מות נדב ואביהוא</div>
+                <div class="scene-description">
+                    מותם של בני אהרן בהקריבם אש זרה
+                    <span class="emoji-group">🔥 💔 📜</span>
+                </div>
+            </div>
+
+            <div class="scene-card purity">
+                <div class="scene-icon">💫</div>
+                <div class="scene-title">דיני טהרה</div>
+                <div class="scene-description">
+                    חוקי טומאה וטהרה והדרך לשמירת הקדושה
+                    <span class="emoji-group">💧 🌟 ✨</span>
+                </div>
+            </div>
+
+            <div class="scene-card holidays">
+                <div class="scene-icon">🕯️</div>
+                <div class="scene-title">המועדים</div>
+                <div class="scene-description">
+                    פירוט חגי ישראל ומצוותיהם
+                    <span class="emoji-group">📅 🎉 🙏</span>
+                </div>
+            </div>
+
+            <div class="scene-card holiness">
+                <div class="scene-icon">👥</div>
+                <div class="scene-title">קדושים תהיו</div>
+                <div class="scene-description">
+                    מצוות הקדושה בחיי היומיום
+                    <span class="emoji-group">❤️ 🤝 ⭐</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="enrichment-content">
+            <h2>תכני העשרה 📚</h2>
+            <div class="enrichment-tabs">
+                <button class="tab-button active" onclick="showTab('visual')">סיכום חזותי</button>
+                <button class="tab-button" onclick="showTab('original')">טקסטים מקוריים</button>
+                <button class="tab-button" onclick="showTab('dvar-hashem')">דבר ה'</button>
+                <button class="tab-button" onclick="showTab('kids')">לילדים</button>
+            </div>
+
+            <div id="visual" class="tab-content active">
+                <div class="commandments-grid">
+                    <h3>סוגי הקורבנות 🔥</h3>
+                    <div class="commandment-cards">
+                        <div class="commandment-card">
+                            <div class="commandment-number">א</div>
+                            <div class="commandment-icon">🐑</div>
+                            <div class="commandment-text">קורבן עולה</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ב</div>
+                            <div class="commandment-icon">🌾</div>
+                            <div class="commandment-text">קורבן מנחה</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ג</div>
+                            <div class="commandment-icon">🕊️</div>
+                            <div class="commandment-text">קורבן שלמים</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ד</div>
+                            <div class="commandment-icon">🐐</div>
+                            <div class="commandment-text">קורבן חטאת</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ה</div>
+                            <div class="commandment-icon">🐏</div>
+                            <div class="commandment-text">קורבן אשם</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="original" class="tab-content">
+                <div class="original-text">
+                    <h3>📖 פסוקים נבחרים עם פרשנות</h3>
+                    <div class="verse-cards">
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיִּקְרָא אֶל מֹשֶׁה וַיְדַבֵּר ה' אֵלָיו מֵאֹהֶל מוֹעֵד לֵאמֹר"
+                            </div>
+                            <div class="verse-source">ויקרא א', א'</div>
+                            <div class="verse-commentary">
+                                פסוק הפתיחה של הספר, המתאר את הקשר המיוחד בין ה' למשה דרך אוהל מועד. מלמד על חשיבות
+                                המשכן כמקום להשראת השכינה.
+                            </div>
+                        </div>
+                        <div class="verse-card">
+                            <div class="verse-text">"קְדֹשִׁים תִּהְיוּ כִּי קָדוֹשׁ אֲנִי ה' אֱלֹהֵיכֶם"</div>
+                            <div class="verse-source">ויקרא י"ט, ב'</div>
+                            <div class="verse-commentary">
+                                הציווי המרכזי על קדושה בחיי היומיום. מלמד על החובה להתקדש ולהידמות לדרכי ה'.
+                            </div>
+                        </div>
+                        <div class="verse-card">
+                            <div class="verse-text">"וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ אֲנִי ה'"</div>
+                            <div class="verse-source">ויקרא י"ט, י"ח</div>
+                            <div class="verse-commentary">
+                                אחד הכללים הגדולים בתורה, המלמד על חשיבות האהבה והכבוד בין בני האדם.
+                            </div>
+                        </div>
+                        <div class="verse-card">
+                            <div class="verse-text">"אִישׁ אִמּוֹ וְאָבִיו תִּירָאוּ וְאֶת שַׁבְּתֹתַי תִּשְׁמֹרוּ"
+                            </div>
+                            <div class="verse-source">ויקרא י"ט, ג'</div>
+                            <div class="verse-commentary">
+                                מצוות יסוד המשלבות בין כבוד הורים ושמירת שבת, המייצגות את הקשר בין אדם למקום ובין אדם
+                                לחברו.
+                            </div>
+                        </div>
+                        <div class="verse-card">
+                            <div class="verse-text">"וּבַיּוֹם הַשְּׁבִיעִי שַׁבַּת שַׁבָּתוֹן מִקְרָא קֹדֶשׁ"</div>
+                            <div class="verse-source">ויקרא כ"ג, ג'</div>
+                            <div class="verse-commentary">
+                                מצוות השבת כיום קדוש ומיוחד, המזכיר את בריאת העולם ומעיד על הקשר בין ה' לעמו.
+                            </div>
+                        </div>
+                        <div class="verse-card">
+                            <div class="verse-text">"וְכִי יָגוּר אִתְּךָ גֵּר בְּאַרְצְכֶם לֹא תוֹנוּ אֹתוֹ"</div>
+                            <div class="verse-source">ויקרא י"ט, ל"ג</div>
+                            <div class="verse-commentary">
+                                מצוות היחס לגר, המלמדת על חשיבות הרגישות והאמפתיה כלפי הזולת, במיוחד כלפי החלשים בחברה.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="kids" class="tab-content">
+                <div class="kids-content">
+                    <h3>סיפורים לילדים 🎈</h3>
+                    <div class="story-cards">
+                        <div class="story-card">
+                            <div class="story-image">🏕️</div>
+                            <h4>המשכן והקורבנות</h4>
+                            <p>במשכן, הכהנים עבדו את ה' בצורה מיוחדת. הם הקריבו קורבנות שונים כדי להתקרב לה' ולכפר על
+                                חטאים.</p>
+                            <button class="read-more-btn" onclick="showFullStory(1)">קרא עוד</button>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-image">👨‍👩‍👦</div>
+                            <h4>להיות קדושים</h4>
+                            <p>ה' מלמד אותנו איך להיות אנשים טובים וקדושים: לכבד את ההורים, לעזור לעניים, ולאהוב כל
+                                יהודי.</p>
+                            <button class="read-more-btn" onclick="showFullStory(2)">קרא עוד</button>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-image">👨‍🦳</div>
+                            <h4>אהרן הכהן הגדול</h4>
+                            <p>אהרן היה הכהן הגדול הראשון. הוא לבש בגדים מיוחדים ועבד במשכן יחד עם בניו, בשמחה ובאהבה.
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(3)">קרא עוד</button>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-image">🕯️</div>
+                            <h4>חגי ישראל</h4>
+                            <p>בספר ויקרא אנחנו לומדים על החגים המיוחדים שלנו: פסח, שבועות, ראש השנה, יום כיפור וסוכות.
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(4)">קרא עוד</button>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-image">💫</div>
+                            <h4>טהרה וקדושה</h4>
+                            <p>ה' מלמד אותנו איך להיות טהורים וקדושים בחיי היומיום, דרך מצוות מיוחדות ומעשים טובים.</p>
+                            <button class="read-more-btn" onclick="showFullStory(5)">קרא עוד</button>
+                        </div>
+
+                        <div class="story-card">
+                            <div class="story-image">🤝</div>
+                            <h4>בין אדם לחברו</h4>
+                            <p>בספר ויקרא אנחנו לומדים איך להתנהג יפה אחד לשני: לאהוב, לעזור, ולכבד כל אדם.</p>
+                            <button class="read-more-btn" onclick="showFullStory(6)">קרא עוד</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="audio-section">
+            <h2>קטעים מוקראים 🎧</h2>
+            <div class="audio-grid">
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">🔥</span>
+                        דיני הקורבנות
+                    </div>
+                    <div class="audio-text">
+                        "אָדָם כִּי יַקְרִיב מִכֶּם קָרְבָּן לַה' מִן הַבְּהֵמָה מִן הַבָּקָר וּמִן הַצֹּאן"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/korbanot.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק א - דיני קורבן עולה
+                    </div>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">✨</span>
+                        קדושים תהיו
+                    </div>
+                    <div class="audio-text">
+                        "קְדֹשִׁים תִּהְיוּ כִּי קָדוֹשׁ אֲנִי ה' אֱלֹהֵיכֶם"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/kedoshim.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק יט - פרשת קדושים
+                    </div>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">📅</span>
+                        המועדים
+                    </div>
+                    <div class="audio-text">
+                        "אֵלֶּה מוֹעֲדֵי ה' מִקְרָאֵי קֹדֶשׁ אֲשֶׁר תִּקְרְאוּ אֹתָם בְּמוֹעֲדָם"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/moadim.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק כג - פרשת המועדים
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>חידון ספר ויקרא 📝</h2>
+            <div class="quiz-container">
+                <div id="quiz-question" class="quiz-question">
+                    <h3>שאלה <span id="question-number">1</span>/5</h3>
+                    <p id="question-text"></p>
+                </div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <div id="quiz-feedback" class="quiz-feedback"></div>
+                <button id="next-question" class="quiz-button" onclick="nextQuestion()" style="display: none;">
+                    לשאלה הבאה ⏭️
+                </button>
+                <button id="start-quiz" class="quiz-button" onclick="startQuiz()">
+                    התחל חידון 🎮
+                </button>
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <h3>סיכום תוצאות</h3>
+                    <p>הצלחת לענות נכון על <span id="correct-answers">0</span> מתוך 5 שאלות!</p>
+                    <button onclick="startQuiz()" class="quiz-button">נסה שוב 🔄</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="lessons-section">
+            <h2>🎯 לקחים נלמדים מספר ויקרא</h2>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🔥</span>
+                        עבודת הקורבנות
+                    </div>
+                    <p>משמעות הקרבת הקורבנות כביטוי להתקרבות לה', חשיבות הכוונה והרצון הפנימי בעבודת ה', והצורך בתיקון
+                        החטאים.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>👨‍👦</span>
+                        תפקיד הכהונה
+                    </div>
+                    <p>חשיבות תפקיד הכהנים כמתווכים בין העם לה', האחריות המיוחדת המוטלת עליהם, וההקפדה על קדושת המקדש.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>✨</span>
+                        טהרה וקדושה
+                    </div>
+                    <p>החשיבות של שמירת הטהרה בחיי היומיום, ההבדלה בין טמא לטהור, והשאיפה המתמדת להתקדש ולהיטהר.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>📅</span>
+                        מועדי ה'
+                    </div>
+                    <p>משמעות המועדים כזמנים מיוחדים להתקרבות לה', חשיבות השבת והחגים בחיי העם, וההכנה הרוחנית הנדרשת
+                        לקראתם.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>💝</span>
+                        אהבת ישראל
+                    </div>
+                    <p>חשיבות האחדות והערבות ההדדית בעם ישראל, מצוות "ואהבת לרעך כמוך", והאחריות לדאוג לחלשים ולנזקקים
+                        בחברה.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🌟</span>
+                        חיי קדושה
+                    </div>
+                    <p>הציווי "קדושים תהיו", המחייב התנהגות מוסרית וערכית בכל תחומי החיים, והשאיפה להידמות לדרכי ה'.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-nav">
+            <div class="quick-nav-item" onclick="scrollToSection('intro')">הקדמה והיסטוריה</div>
+            <div class="quick-nav-item" onclick="scrollToSection('laws')">מצוות ודינים</div>
+            <div class="quick-nav-item" onclick="scrollToSection('ending')">סיום וברכות</div>
+        </div>
+
+        <div class="main-layout">
+            <div class="chapters-container">
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="חיפוש בפרקים..."
+                        onkeyup="searchChapters(this.value)">
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי הקורבנות (פרקים א-ז)</h3>
+                    <ul class="chapter-list" id="chapterList1"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי טומאה וטהרה (פרקים ח-טו)</h3>
+                    <ul class="chapter-list" id="chapterList2"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי קדושה ומועדים (פרקים טז-כז)</h3>
+                    <ul class="chapter-list" id="chapterList3"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="back-to-top" onclick="scrollToTop()">↑</div>
+
+    <div class="did-you-know">
+        <h2>הידעת? 💡</h2>
+        <div class="facts-carousel">
+            <div class="fact-card active">
+                <div class="fact-icon">🔥</div>
+                <div class="fact-content">
+                    <h3>סוגי הקורבנות</h3>
+                    <p>בספר ויקרא מתוארים חמישה סוגי קורבנות עיקריים: עולה, מנחה, שלמים, חטאת ואשם. לכל קורבן יש משמעות
+                        ומטרה ייחודית.</p>
+                </div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">👨‍👦</div>
+                <div class="fact-content">
+                    <h3>הכהנים והמשכן</h3>
+                    <p>אהרן ובניו היו הכהנים הראשונים שעבדו במשכן. הם עברו תהליך מיוחד של שבעה ימי מילואים לפני תחילת
+                        עבודתם.</p>
+                </div>
+            </div>
+            <div class="fact-card">
+                <div class="fact-icon">📅</div>
+                <div class="fact-content">
+                    <h3>המועדים</h3>
+                    <p>בפרק כ"ג מתוארים כל מועדי ה': שבת, פסח, שבועות, ראש השנה, יום כיפור וסוכות, עם הלכותיהם המיוחדות.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="facts-nav">
+            <button onclick="prevFact()">❮</button>
+            <button onclick="nextFact()">❯</button>
+        </div>
+    </div>
+
+    <div id="dvar-hashem" class="tab-content">
+        <div class="dvar-hashem-content">
+            <h3>📜 דבר ה' - פסוקים מרכזיים</h3>
+            <div class="verse-cards">
+                <div class="verse-card">
+                    <div class="verse-text">"וַיִּקְרָא אֶל מֹשֶׁה וַיְדַבֵּר ה' אֵלָיו מֵאֹהֶל מוֹעֵד לֵאמֹר"</div>
+                    <div class="verse-source">ויקרא א', א'</div>
+                    <div class="verse-commentary">
+                        פתיחת הספר מדגישה את הקשר המיוחד בין ה' למשה דרך אוהל מועד. מלמד על חשיבות המשכן כמקום להשראת
+                        השכינה וקבלת הוראות ה'.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <div class="verse-text">"קְדֹשִׁים תִּהְיוּ כִּי קָדוֹשׁ אֲנִי ה' אֱלֹהֵיכֶם"</div>
+                    <div class="verse-source">ויקרא י"ט, ב'</div>
+                    <div class="verse-commentary">
+                        הציווי המרכזי על קדושה בחיי היומיום. מלמד על החובה להתקדש ולהידמות לדרכי ה', ועל האפשרות של האדם
+                        להתעלות לדרגות רוחניות גבוהות.
+                    </div>
+                </div>
+
+                <div class="verse-card">
+                    <div class="verse-text">"וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ אֲנִי ה'"</div>
+                    <div class="verse-source">ויקרא י"ט, י"ח</div>
+                    <div class="verse-commentary">
+                        אחד הכללים הגדולים בתורה, המלמד על חשיבות האהבה והכבוד בין בני האדם. מדגיש את הקשר ההדוק בין
+                        מצוות בין אדם
+                        לחברו למצוות בין אדם למקום.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // עדכון רשימת הפרקים
+        const chapters = [
+            { title: "קורבן עולה", verses: 17 },
+            { title: "קורבן מנחה", verses: 16 },
+            { title: "קורבן שלמים", verses: 17 },
+            { title: "קורבן חטאת", verses: 35 },
+            { title: "קורבן אשם", verses: 19 },
+            { title: "תורת העולה והמנחה", verses: 38 },
+            { title: "תורת החטאת והאשם", verses: 38 },
+            { title: "חנוכת המשכן", verses: 36 },
+            { title: "היום השמיני למילואים", verses: 24 },
+            { title: "מות נדב ואביהוא", verses: 20 },
+            { title: "בעלי חיים טמאים וטהורים", verses: 47 },
+            { title: "טומאת יולדת", verses: 8 },
+            { title: "טומאת צרעת", verses: 59 },
+            { title: "טהרת המצורע", verses: 57 },
+            { title: "טומאת זב וזבה", verses: 33 },
+            { title: "עבודת יום הכיפורים", verses: 34 },
+            { title: "איסור שחוטי חוץ", verses: 16 },
+            { title: "איסורי עריות", verses: 30 },
+            { title: "קדושים תהיו", verses: 37 },
+            { title: "קדושת הכהנים", verses: 24 },
+            { title: "מומי כהונה", verses: 33 },
+            { title: "אכילת קודשים", verses: 33 },
+            { title: "המועדים", verses: 44 },
+            { title: "נר תמיד ולחם הפנים", verses: 23 },
+            { title: "המקלל וחוקי נזיקין", verses: 23 },
+            { title: "שנת השמיטה והיובל", verses: 55 },
+            { title: "הברכות והקללות", verses: 46 }
+        ];
+
+        // עדכון שאלות החידון
+        const quizQuestions = [
+            {
+                question: "מי הציל את משה מהיאור?",
+                options: [
+                    "בת פרעה",
+                    "מרים",
+                    "יוכבד",
+                    "ציפורה"
+                ],
+                correct: 0
+            },
+            {
+                question: "כמה מכות הוכו המצרים?",
+                options: [
+                    "שבע",
+                    "תשע",
+                    "עשר",
+                    "שתים עשרה"
+                ],
+                correct: 2
+            },
+            {
+                question: "מה היה האות הראשון שעשה משה לפני פרעה?",
+                options: [
+                    "הפיכת המים לדם",
+                    "הפיכת המטה לנחש",
+                    "מכת צפרדע",
+                    "מכת כינים"
+                ],
+                correct: 1
+            },
+            {
+                question: "מה היה החג הראשון שנצטוו בו ישראל?",
+                options: [
+                    "שבועות",
+                    "סוכות",
+                    "פסח",
+                    "ראש השנה"
+                ],
+                correct: 2
+            },
+            {
+                question: "מי בנה את המשכן?",
+                options: [
+                    "משה ואהרן",
+                    "בצלאל ואהליאב",
+                    "הלויים",
+                    "כל ישראל"
+                ],
+                correct: 1
+            }
+        ];
+
+        // עדכון סיפורים לילי
+        const stories = {
+            1: {
+                title: "משה והסנה הבוער",
+                content: "כשמשה רעה את צאן יתרו במדבר, הוא ראה מחזה מופלא: סנה (שיח קוצני) בוער באש, אבל האש לא שורפת אותו! כשהתקרב לראות את הפלא הגדול, ה' דיבר אליו מתוך האש וציווה עליו להוציא את בני ישראל ממצרים."
+            },
+            2: {
+                title: "יציאת מצרים",
+                content: "אחרי עשר מכות שה' הביא על המצרים, פרעה סוף סוף הסכים לשחרר את בני ישראל. העם יצא בחיפזון, עם מצות שלא הספיקו להחמיץ, והלך אחרי עמוד הענן שהוביל אותם ביום ועמוד האש שהאיר להם בלילה."
+            },
+            3: {
+                title: "אהרן הכהן הגדול",
+                content: "אהרן היה הכהן הגדול הראשון. הוא לבש בגדים מיוחדים ועבד במשכן יחד עם בניו, בשמחה ובאהבה."
+            },
+            4: {
+                title: "חגי ישראל",
+                content: "בספר ויקרא אנחנו לומדים על החגים המיוחדים שלנו: פסח, שבועות, ראש השנה, יום כיפור וסוכות."
+            },
+            5: {
+                title: "טהרה וקדושה",
+                content: "ה' מלמד אותנו איך להיות טהורים וקדושים בחיי היומיום, דרך מצוות מיוחדות ומעשים טובים."
+            },
+            6: {
+                title: "בין אדם לחברו",
+                content: "בספר ויקרא אנחנו לומדים איך להתנהג יפה אחד לשני: לאהוב, לעזור, ולכבד כל אדם."
+            }
+        };
+
+        const chapterList1 = document.getElementById('chapterList1');
+        const chapterList2 = document.getElementById('chapterList2');
+        const chapterList3 = document.getElementById('chapterList3');
+
+        chapters.forEach((chapter, index) => {
+            const li = document.createElement('li');
+            li.className = 'chapter-item';
+            li.innerHTML = `
+                <span class="emoji">📖</span>
+                <div class="chapter-info">
+                    <div>פרק ${index + 1}: ${chapter.title}</div>
+                    <div class="chapter-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+            `;
+            li.addEventListener('click', () => {
+                showChapterDetails(index + 1, chapter);
+            });
+
+            // חלוקה לשלוש קטגוריות
+            if (index < 7) {
+                chapterList1.appendChild(li); // פרקי הקורבנות
+            } else if (index < 15) {
+                chapterList2.appendChild(li); // פרקי טומאה וטהרה
+            } else {
+                chapterList3.appendChild(li); // פרקי קדושה ומועדים
+            }
+        });
+
+        function showChapterDetails(number, chapter) {
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📖</span> פרק ${number}`;
+            modalContent.innerHTML = `
+                <h3>${chapter.title}</h3>
+                <div class="stats-summary">
+                    <div>סטטיסטיקות הפרק:</div>
+                    <div class="total-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+                <p style="margin-top: 15px;">חץ על הכפתור למטה לקריאת הפרק המלא</p>
+                <button onclick="readFullChapter(${number})" 
+                        style="margin-top: 20px; padding: 10px 20px; 
+                               background: var(--accent-color); color: white; 
+                               border: none; border-radius: 5px; 
+                               cursor: pointer;">
+                    קרא את הפרק המלא
+                </button>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('chapterModal').style.display = 'none';
+        }
+
+        function readFullChapter(number) {
+            // כאן אפשר להוסיף פונקציונליות לקריאת הפרק המלא
+            alert(`טוען את הפרק המלא ${number}...`);
+        }
+
+        // סגירת המודל בלחיצה מחוץ לתוכן
+        window.onclick = function (event) {
+            const modal = document.getElementById('chapterModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // אנימציה לכותרות בטעינה
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(`[data-section="${sectionId}"]`);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // הצגת/הסתרת כפתור חזרה למעלה
+        window.onscroll = function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        };
+
+        function searchChapters(query) {
+            query = query.toLowerCase();
+            const items = document.querySelectorAll('.chapter-item');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // הוספת אנימציות לטעינת התוכן
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.chapter-section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // חישוב סטטיסטיקות כלליות
+        function calculateTotalStats() {
+            const totalVerses = chapters.reduce((sum, chapter) => sum + chapter.verses, 0);
+            const averageVerses = (totalVerses / chapters.length).toFixed(1);
+
+            document.getElementById('totalChapters').textContent = chapters.length;
+            document.getElementById('totalVerses').textContent = totalVerses;
+            document.getElementById('averageVerses').textContent = averageVerses;
+        }
+
+        // הפעלת החישוב בטעינת הדף
+        document.addEventListener('DOMContentLoaded', calculateTotalStats);
+
+        // אנימציה לסצנות בת גלילה
+        function animateOnScroll() {
+            const scenes = document.querySelectorAll('.scene-card');
+
+            scenes.forEach(scene => {
+                const scenePosition = scene.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (scenePosition < screenPosition) {
+                    scene.style.opacity = '1';
+                    scene.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // הוספת האזנה לאירוע גלילה
+        window.addEventListener('scroll', animateOnScroll);
+
+        // אתחול הסצנות בטעינה
+        document.addEventListener('DOMContentLoaded', () => {
+            const scenes = document.querySelectorAll('.scene-card');
+            scenes.forEach((scene, index) => {
+                scene.style.opacity = '0';
+                scene.style.transform = 'translateY(20px)';
+                scene.style.transition = 'all 0.5s ease';
+                scene.style.transitionDelay = `${index * 0.2}s`;
+            });
+
+            animateOnScroll();
+        });
+
+        function showTab(tabId) {
+            // הסרת הקלאס active מכל הכפתורים והתוכן
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // הוספ הקלאס active לכפתור ולתוכן הנבחר
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function showFullStory(storyId) {
+            const story = stories[storyId];
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📚</span> ${story.title}`;
+            modalContent.innerHTML = `
+                <div class="story-full">
+                    <p>${story.content}</p>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('start-quiz').style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('question-number').textContent = currentQuestion + 1;
+            document.getElementById('question-text').textContent = question.question;
+
+            const optionsHtml = question.options.map((option, index) => `
+                <div class="quiz-option" onclick="checkAnswer(${index})">
+                    ${option}
+                </div>
+            `).join('');
+
+            document.getElementById('quiz-options').innerHTML = optionsHtml;
+            document.getElementById('quiz-feedback').innerHTML = '';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        function checkAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach(option => option.style.pointerEvents = 'none');
+
+            if (selectedIndex === question.correct) {
+                options[selectedIndex].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = ' כל הכבוד! תשובה נכונה!';
+                score++;
+            } else {
+                options[selectedIndex].classList.add('wrong');
+                options[question.correct].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = '❌ לא נכון. נסה שוב בשאלה הבאה!';
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                document.getElementById('next-question').style.display = 'block';
+            } else {
+                showResults();
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('correct-answers').textContent = score;
+            document.getElementById('quiz-question').style.display = 'none';
+            document.getElementById('quiz-options').style.display = 'none';
+            document.getElementById('quiz-feedback').style.display = 'none';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        let currentFactIndex = 0;
+        const facts = document.querySelectorAll('.fact-card');
+
+        function showFact(index) {
+            facts.forEach(fact => fact.classList.remove('active'));
+            facts[index].classList.add('active');
+        }
+
+        function nextFact() {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        function prevFact() {
+            currentFactIndex = (currentFactIndex - 1 + facts.length) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        // אוטומציה להחלפת עובדות
+        setInterval(nextFact, 5000);
+    </script>
+</body>
+<footer>
+
+    <div class="credits">
+        <div class="credits-content">
+            <div class="credit-item">
+                <span class="credit-icon">🇮🇱</span>
+                <a href="https://www.gov.il/" class="credit-text">מדינת ישראל</a>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">👨‍💻</span>
+                <span class="credit-text">פיתוח: <a href="https://www.github.com/anlominus" class="credit-text">לאון
+                        יעקובוב</a></span>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">🤖</span>
+                <span class="credit-text">בשיתוף: <a href="https://www.openai.com/" class="credit-text">Claude
+                        AI</a></span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>

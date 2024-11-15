@@ -1,0 +1,282 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datetime.css">
+    <link rel="stylesheet" href="effects.css">
+    <script src="datetime.js" defer></script>
+    <script src="https://unpkg.com/@hebcal/core"></script>
+
+    <style>
+        .blessing-poem {
+            direction: rtl;
+            text-align: center;
+            font-size: 1.5em;
+            line-height: 1.8;
+            max-width: 900px;
+            color: #2c3e50;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .blessing-poem p {
+            margin: 3px 0;
+            padding: 20px;
+            border-radius: 18px;
+            transition: all 0.4s ease;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .blessing-poem p:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: white;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .blessing-text {
+            font-size: 2.2em;
+            color: var(--primary-color);
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .blessing-highlight {
+            background: linear-gradient(135deg,
+                    var(--primary-color),
+                    var(--accent-color)) !important;
+            color: white !important;
+            font-weight: bold;
+            padding: 25px !important;
+            border: none !important;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        .blessing-divider {
+            width: 200px;
+            height: 4px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    var(--gold),
+                    var(--primary-color),
+                    var(--gold),
+                    transparent);
+            margin: 25px auto;
+            border-radius: 2px;
+        }
+
+        .blessing-poem span {
+            display: inline-block;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .blessing-poem p:hover span {
+            transform: scale(1.4) rotate(15deg);
+        }
+
+        @media (max-width: 768px) {
+            .blessing-poem {
+                font-size: 1.3em;
+                padding: 25px;
+                margin: 20px;
+            }
+
+            .blessing-text {
+                font-size: 1.9em;
+                padding: 20px;
+            }
+
+            .blessing-poem p {
+                margin: 20px 0;
+                padding: 15px;
+            }
+        }
+
+        .blessing-modal .thanks-content {
+            background: linear-gradient(135deg, #fff9e6, #ffffff);
+            overflow-y: auto;
+        }
+
+        .blessing-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            overflow-y: auto;
+            gap: 20px;
+        }
+
+        .blessing-text {
+            text-align: center;
+            font-size: 2.2em;
+            line-height: 2.2;
+            margin: 0;
+            padding: 4px;
+            background: linear-gradient(135deg, #fff6e6, #fffaf0);
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            max-width: 600px;
+            width: 90%;
+            font-weight: 700;
+            color: #2d3748;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            animation: smoothGlowingBorder 4s ease-in-out infinite;
+        }
+
+        .blessing-text::before {
+            content: "";
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg,
+                    var(--gold),
+                    #ffd700,
+                    #ffed4a,
+                    #ffd700,
+                    var(--gold));
+            border-radius: 22px;
+            z-index: -1;
+            animation: gradientBorder 3s linear infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientBorder {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes smoothGlowingBorder {
+            0% {
+                box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            }
+
+            100% {
+                box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+            }
+        }
+
+        /* התאמה למסכים קטנים */
+        @media (max-width: 768px) {
+            .blessing-text {
+                font-size: 1.8em;
+                padding: 30px;
+                line-height: 2;
+            }
+        }
+    </style>
+</head>
+
+<body dir="rtl">
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <div class="bsd">בס״ד</div>
+                <a href="index.html" class="nav-link active">
+                    <span class="icon">🏠</span>
+                    ראשי
+                </a>
+                <a href="bereshit.html" class="nav-link">
+                    <span class="icon">🌍</span>
+                    בראשית
+                </a>
+                <a href="shmot.html" class="nav-link">
+                    <span class="icon">🗽</span>
+                    שמות
+                </a>
+                <a href="vayekra.html" class="nav-link">
+                    <span class="icon">🔥</span>
+                    ויקרא
+                </a>
+                <a href="bamidbar.html" class="nav-link">
+                    <span class="icon">🏕️</span>
+                    במדבר
+                </a>
+                <a href="dvarim.html" class="nav-link">
+                    <span class="icon">📜</span>
+                    דברים
+                </a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- הוספת מודל ברכה -->
+    <div class="thanks-modal blessing-modal" id="blessingModal">
+        <div class="thanks-content">
+            <button class="close-modal" onclick="closeBlessingModal()">×</button>
+            <h2>✨ ברכת הודיה מיוחדת ✨</h2>
+
+            <div class="blessing-container">
+                <div class="blessing-text">
+                    <p>
+                        ברוך אתה ה' אלוקינו מלך העולם 👑<br>
+                        שהחיינו וקיימנו והגיענו לזמן הזה 🙏
+                    </p>
+                </div>
+
+                <div class="blessing-divider"></div>
+
+                <div class="blessing-poem">
+                    <p>
+                        מודים אנחנו לך ה' אלוקינו ✨<br>
+                        על כל הטוב והחסד שגמלת עמנו 💫
+                    </p>
+                    <p>
+                        על התורה הקדושה שנתת לנו 📜<br>
+                        ועל הזכות להגדיל תורה ולהאדירה 🌟
+                    </p>
+                    <p>
+                        על ההורים והמשפחה היקרה 👨‍👩‍👦<br>
+                        שנטעו בנו אהבת תורה ויראה 💝
+                    </p>
+                    <p>
+                        על המורים והמחנכים לדורותיהם 👨‍🏫<br>
+                        שהאירו את דרכנו באור התורה 🕯️
+                    </p>
+                    <p>
+                        על מדינת ישראל וחירותנו 🇮🇱<br>
+                        ועל הזכות לחיות בארץ הקודש ⭐
+                    </p>
+                    <p>
+                        על הטכנולוגיה והקדמה 💻<br>
+                        המאפשרת להפיץ תורה בכ פינה 🌍
+                    </p>
+                    <p class="blessing-highlight">
+                        יהי רצון שנזכה להמשיך להגדיל תורה 📚<br>
+                        ולהאיר את העולם באורה הקדוש ✨
+                    </p>
+                    <p>
+                        ונזכה לראות בגאולה השלמה 🌅<br>
+                        במהרה במינו, אמן! 🙏
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

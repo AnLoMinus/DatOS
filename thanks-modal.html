@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הכרת תודה</title>
+    <style>
+        :root {
+            --gold: #ffd700;
+            --accent-color: #4a90e2;
+            --primary-color: #333;
+            --gradient-1: linear-gradient(135deg, #ffd700, #ff8c00);
+            --gradient-2: linear-gradient(135deg, #4a90e2, #357abd);
+            --bg-creator: #fff6e5;
+            /* לבורא עולם - צהבהב */
+            --bg-parents: #ffebee;
+            /* להורים - ורוד בהיר */
+            --bg-family: #fff3e0;
+            /* למשפחה - כתום בהיר */
+            --bg-israel: #e3f2fd;
+            /* למדינת ישראל - תכלת */
+            --bg-teachers: #e8f5e9;
+            /* למורים - ירוק בהיר */
+            --bg-people: #f3e5f5;
+            /* לעם ישראל - סגול בהיר */
+            --bg-tech: #e0f7fa;
+            /* לטכנולוגיה - טורקיז בהיר */
+            --bg-partners: #fff8e1;
+            /* לשותפים - צהוב בהיר */
+            --bg-dreams: #fce4ec;
+            /* לחלומות - ורוד בהיר */
+            --bg-miracles: #f1f8e9;
+            /* לניסים - ירוק בהיר */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+            min-height: 100vh;
+            background: #ffffff;
+            color: #2d3748;
+        }
+
+        .thanks-modal {
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+            padding: 20px;
+            background: #ffffff;
+        }
+
+        .thanks-content {
+            width: 95%;
+            max-width: 1800px;
+            margin: 40px auto;
+            padding: 40px;
+            border-radius: 30px;
+            background: transparent;
+            box-shadow: none;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thanks-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: var(--gradient-1);
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 3.5em;
+            margin-bottom: 1.5em;
+            background: var(--gradient-1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient-1);
+            border-radius: 2px;
+        }
+
+        .thanks-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .thanks-item {
+            background: var(--bg-default);
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+
+        .thanks-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .thanks-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(255, 255, 255, 0.4));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .thanks-item:hover::before {
+            opacity: 1;
+        }
+
+        .thanks-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .thanks-item .icon {
+            font-size: 2em;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .thanks-item:hover .icon {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .thanks-item p {
+            line-height: 1.8;
+            color: #4a5568;
+            margin: 0;
+            font-size: 1.1em;
+        }
+
+        @media (max-width: 768px) {
+            .thanks-content {
+                padding: 20px;
+                margin: 20px auto;
+            }
+
+            h2 {
+                font-size: 2.5em;
+            }
+
+            .thanks-list {
+                gap: 20px;
+                padding: 10px;
+            }
+
+            .thanks-item {
+                padding: 20px;
+            }
+        }
+
+        /* אנימציית כניסה לאלמנטים */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .thanks-item {
+            animation: fadeInUp 0.6s ease forwards;
+            opacity: 0;
+        }
+
+        .thanks-item:nth-child(1) {
+            animation-delay: 0.1s;
+        }
+
+        .thanks-item:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .thanks-item:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .thanks-item:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+
+        .thanks-item:nth-child(5) {
+            animation-delay: 0.5s;
+        }
+
+        .thanks-item:nth-child(6) {
+            animation-delay: 0.6s;
+        }
+
+        .thanks-item:nth-child(7) {
+            animation-delay: 0.7s;
+        }
+
+        .thanks-item:nth-child(8) {
+            animation-delay: 0.8s;
+        }
+
+        .thanks-item:nth-child(9) {
+            animation-delay: 0.9s;
+        }
+
+        .thanks-item:nth-child(10) {
+            animation-delay: 1s;
+        }
+
+        .thanks-item:nth-child(1) {
+            background-color: var(--bg-creator);
+        }
+
+        .thanks-item:nth-child(2) {
+            background-color: var(--bg-parents);
+        }
+
+        .thanks-item:nth-child(3) {
+            background-color: var(--bg-family);
+        }
+
+        .thanks-item:nth-child(4) {
+            background-color: var(--bg-israel);
+        }
+
+        .thanks-item:nth-child(5) {
+            background-color: var(--bg-teachers);
+        }
+
+        .thanks-item:nth-child(6) {
+            background-color: var(--bg-people);
+        }
+
+        .thanks-item:nth-child(7) {
+            background-color: var(--bg-tech);
+        }
+
+        .thanks-item:nth-child(8) {
+            background-color: var(--bg-partners);
+        }
+
+        .thanks-item:nth-child(9) {
+            background-color: var(--bg-dreams);
+        }
+
+        .thanks-item:nth-child(10) {
+            background-color: var(--bg-miracles);
+        }
+    </style>
+
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="datetime.css">
+    <link rel="stylesheet" href="effects.css">
+    <script src="datetime.js" defer></script>
+    <script src="https://unpkg.com/@hebcal/core"></script>
+</head>
+
+<body>
+    <nav class="nav-bar">
+        <div class="nav-container">
+            <div class="nav-links">
+                <div class="bsd">בס״ד</div>
+                <a href="index.html" class="nav-link active">
+                    <span class="icon">🏠</span>
+                    ראשי
+                </a>
+                <a href="bereshit.html" class="nav-link">
+                    <span class="icon">🌍</span>
+                    בראשית
+                </a>
+                <a href="shmot.html" class="nav-link">
+                    <span class="icon">🗽</span>
+                    שמות
+                </a>
+                <a href="vayekra.html" class="nav-link">
+                    <span class="icon">🔥</span>
+                    ויקרא
+                </a>
+                <a href="bamidbar.html" class="nav-link">
+                    <span class="icon">🏕️</span>
+                    במדבר
+                </a>
+                <a href="dvarim.html" class="nav-link">
+                    <span class="icon">📜</span>
+                    דברים
+                </a>
+            </div>
+
+        </div>
+    </nav>
+    <h2>🙏 הכרת תודה</h2>
+    <div class="thanks-modal">
+        <div class="thanks-content">
+            <ul class="thanks-list">
+                <li class="thanks-item">
+                    <h3><span class="icon">👑</span> לבורא עולם</h3>
+                    <p>תודה אין סופית לקדוש ברוך הוא על הכל! ✨ על החיים, על הבריאה המופלאה 🌎, על התורה הקדושה 📜, על עם
+                        ישראל הנבחר ⭐, ועל ל רגע של חסד ונשימה! אין עוד מלבדו! 🙏</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">👨‍👩‍👦</span> להורים היקרים</h3>
+                    <p>אבא ואמא היקרים! ❤️ תודה על החיים, על החינוך לאמונה ומסורת 🕯️, על האהבה האין סופית 💝, על התמיכה
+                        בכל צעד ושעל 🤗, ועל שנטעתם בי את אהבת התורה והמצוות! אוהב אתכם בכל הלב! 💖</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">👥</span> למשפחה המורחבת</h3>
+                    <p>לכל בני המשפחה היקרים! 🤝 תודה על התמיכה והאהבה 💕, על השמחות המשותפות 🎉, על העזרה בכל עת 🤲,
+                        ועל היותכם משפחה מדהימה שתמיד שם בשבילי! 🫂</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">🏛️</span> למדינת ישראל</h3>
+                    <p>תודה על הזכות לחיות במדינה יהודית! 🇮🇱 על החירות והעצמאות 🕊️, על הביטחון 🛡️, על האפשרות ללמוד
+                        תורה ארץ הודש ✡️, ועל הזכות להיות חלק מהגאולה! ⭐</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">📚</span> למורים ולמחנכים</h3>
+                    <p>למורי ורבותי היקרים! 🎓 תודה על ההשקעה האדירה 💫, על הסבלנות האין סופית 🌟, על החכמה והידע
+                        שהענקתם 📖, ועל שפתחתם בפני את שערי התורה והדעת! 🔑</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">🌟</span> לעם ישראל</h3>
+                    <p>לעם הנבחר והמיוחד! ✨ תודה על האחדות והערבות ההדדית 🤝, על החסד והנתינה 💝, על שמירת המסורת לאורך
+                        הדורות 📜, ועל האור שאנו מביאים לעולם! 🌅 עם ישראל חי! 💫</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">🌐</span> לטכנולוגיה וקדמה</h3>
+                    <p>תודה על היכולת להפיץ תורה בדרכים חדשות! 💻 על הכלים המודרניים להנגשת התורה 📱, על החיבור בין עולם
+                        התורה לטכנולוגיה 🔄, ועל האפשרות להגיע לכל יהודי בכל מקום! 🌍</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">🙌</span> לכל השותפים לדרך</h3>
+                    <p>תודה מיוחדת לכל מי שלקח חלק בפרויקט! 🤝 לכל מי שתמך, עזר, ייעץ והאיר את הדרך 💫. יחד אנחנו
+                        מגשימים חלום של הנגשת התורה לכל! ✨ תודה! 🙏</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">💭</span> לחלומות ולשאיפות</h3>
+                    <p>תודה על היכולת לחלום 🌈, על הכוח להגשים 💪, על האמונה בדרך 🌟, ועל התקווה לעתיד טוב יותר! 🌅 "כל
+                        החלומות הולכים אחר הפה" 💫</p>
+                </li>
+                <li class="thanks-item">
+                    <h3><span class="icon">🌈</span> לניסים ולנפלאות</h3>
+                    <p>תודה על כל הניסים הגלויים והנסתרים 🙏, על השמחות והאתגרים 💫, על ההזדמנויות להתפתח ולצמוח 🌱, ועל
+                        כל רגע של חסד בחיינו ✨!</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

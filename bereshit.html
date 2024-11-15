@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספר בראשית - חומש בראשית</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="datetime.css">
+    <!-- <link rel="stylesheet" href="effects.css"> -->
+    <script src="https://unpkg.com/@hebcal/core"></script>
+    <script src="datetime.js" defer></script>
+    <!-- Keep only unique styles for bereshit.html here if any -->
+    <style>
+        /* Add any bereshit-specific styles here */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="bsd">בס״ד</div>
+
+        <nav class="nav-bar">
+            <link rel="stylesheet" href="style.css">
+            <div class="nav-container">
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <span class="icon">🏠</span>
+                        ראשי
+                    </a>
+                    <a href="bereshit.html" class="nav-link active">
+                        <span class="icon">🌍</span>
+                        בראשית
+                    </a>
+                    <a href="shmot.html" class="nav-link">
+                        <span class="icon">🗽</span>
+                        שמות
+                    </a>
+                    <a href="vayekra.html" class="nav-link">
+                        <span class="icon">🔥</span>
+                        ויקרא
+                    </a>
+                    <a href="bamidbar.html" class="nav-link">
+                        <span class="icon">🏕️</span>
+                        במדבר
+                    </a>
+                    <a href="dvarim.html" class="nav-link">
+                        <span class="icon">📜</span>
+                        דברים
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <h1>📜 ספר בראשית</h1>
+
+        <div class="description">
+            <h2>תיאור כללי</h2>
+            <p>ספר בראשית הוא ספר היסוד של התורה והיהדות כולה, המתאר את בריאת העולם, התפתחות האנושות, והיווצרות עם ישראל
+                באמצעות סיפורי האבות. הספר מהווה את הבסיס להבנת מקומו של עם ישראל בהיסטוריה העולמית ואת ייעודו המיוחד.
+            </p>
+
+            <p>הספר מתחלק לשני חלקים עיקריים: החלק הראשון (פרקים א-יא) עוסק בבריאת העולם והתפתחות האנושות כולה, כולל
+                סיפורי המבול ומגדל בבל. החלק השני (פרקים יב-נ) מתמקד בסיפורי האבות - אברהם, יצחק ויעקב, ומסתיים בסיפורו
+                המרתק של יוסף במצרים.</p>
+
+            <p>דרך סיפורי הספר אנו לומדים על ערכי יסוד כמו אמונה, צדק, חסד ומשפחה. הספר מלמד על בחירת עם ישראל והברית
+                המיוחדת עם הקב"ה, תוך הדגשת האחריות המוסרית והרוחנית הנובעת מבחירה זו. סיפורי האבות משמשים כמודל לדורות
+                הבאים בהתמודדות עם אתגרי החיים ובשמירה על זהות ייחודית בתוך העולם הרחב.</p>
+
+            <p>בספר מתוארים אירועים מכוננים כמו עקידת יצחק, חלום יעקב, ומכירת יוסף, שכל אחד מהם מלמד על היבט אחר באמונה
+                ובמערכת היחסים המורכבת בין האדם לבוראו ובין אדם לחברו. הספר מסתיים בירידת בני יעקב למצרים, המהווה את
+                הרקע לגלות מצרים ולגאולה העתידית בספר שמות.</p>
+        </div>
+
+        <div class="general-stats">
+            <h2>סטטיסטיקות כלליות</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">📚</div>
+                    <div class="stat-title">סך הכל פרקים</div>
+                    <div class="stat-value" id="totalChapters">50</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📜</div>
+                    <div class="stat-title">סך הכל פסוקים</div>
+                    <div class="stat-value" id="totalVerses">1533</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-title">ממוצע פסוקים לפרק</div>
+                    <div class="stat-value" id="averageVerses">30.7</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🔤</div>
+                    <div class="stat-title">מספר מילים</div>
+                    <div class="stat-value" id="totalWords">20,512</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">📝</div>
+                    <div class="stat-title">מספר אותיות</div>
+                    <div class="stat-value" id="totalLetters">78,064</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="did-you-know">
+            <h2>הידעת? 💡</h2>
+            <div class="facts-carousel">
+                <div class="fact-card active">
+                    <div class="fact-icon">🌍</div>
+                    <div class="fact-content">
+                        <h3>בריאת העולם</h3>
+                        <p>ספר בראשית מתחיל בתיאור בריאת העולם בשישה ימים, כולל בריאת האדם וחוה.</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">👨‍👩‍👦</div>
+                    <div class="fact-content">
+                        <h3>סיפורי האבות</h3>
+                        <p>הספר מכיל את סיפורי האבות: אברהם, יצחק, יעקב ויוסף, והבריתות שנכרתו עמם.</p>
+                    </div>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-icon">🌎</div>
+                    <div class="fact-content">
+                        <h3>התפתחות האנושות</h3>
+                        <p>הספר מתאר את המבול, מגדל בבל, והמעבר מחברה אוניברסלית למשפחת אבות מייסדת.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="facts-nav">
+                <button onclick="prevFact()">❮</button>
+                <button onclick="nextFact()">❯</button>
+            </div>
+        </div>
+
+        <div class="key-scenes">
+            <h2>סצנות מרכזיות 🎬</h2>
+            <div class="scenes-grid">
+                <div class="scene-card creation">
+                    <div class="scene-icon">🌍</div>
+                    <div class="scene-title">בריאת העולם</div>
+                    <div class="scene-description">
+                        תיאור ששת ימי הבריאה, בריאת האדם וחוה, גן עדן והחטא הקדמון.
+                        <span class="emoji-group">🌟 🌿 👫</span>
+                    </div>
+                </div>
+
+                <div class="scene-card flood">
+                    <div class="scene-icon">🌊</div>
+                    <div class="scene-title">המבול</div>
+                    <div class="scene-description">
+                        סיפור המבול, תיבת נח והברית עם האנושות.
+                        <span class="emoji-group">🚢 🕊️ 🌈</span>
+                    </div>
+                </div>
+
+                <div class="scene-card akeda">
+                    <div class="scene-icon">🗻</div>
+                    <div class="scene-title">עקידת יצחק</div>
+                    <div class="scene-description">
+                        ניסיון אברהם בהר המוריה, מסירות נפש ואמונה.
+                        <span class="emoji-group">🔥 🐏 ⛰️</span>
+                    </div>
+                </div>
+
+                <div class="scene-card joseph">
+                    <div class="scene-icon">👑</div>
+                    <div class="scene-title">יוסף במצרים</div>
+                    <div class="scene-description">
+                        מכירת יוסף, עלייתו למלכות והמפגש עם אחיו.
+                        <span class="emoji-group">👕 🌾 👨‍👦‍👦</span>
+                    </div>
+                </div>
+
+                <div class="scene-card jacob">
+                    <div class="scene-icon">🌟</div>
+                    <div class="scene-title">חלום יעקב</div>
+                    <div class="scene-description">
+                        חלום הסולם, המלאכים והבטחת הארץ.
+                        <span class="emoji-group">🪜 👼 💫</span>
+                    </div>
+                </div>
+
+                <div class="scene-card covenant">
+                    <div class="scene-icon">🔥</div>
+                    <div class="scene-title">ברית בין הבתרים</div>
+                    <div class="scene-description">
+                        הברית בין ה' לאברהם וההבטחה על הארץ והזרע.
+                        <span class="emoji-group">🕯️ 🦅 ⚡</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="enrichment-content">
+            <h2>תכני העשרה 📚</h2>
+            <div class="enrichment-tabs">
+                <button class="tab-button active" onclick="showTab('visual')">סיכום חזותי</button>
+                <button class="tab-button" onclick="showTab('original')">טקסטים מקוריים</button>
+                <button class="tab-button" onclick="showTab('dvar-hashem')">דבר ה'</button>
+                <button class="tab-button" onclick="showTab('kids')">לילדים</button>
+            </div>
+
+            <div id="visual" class="tab-content active">
+                <div class="commandments-grid">
+                    <h3>עשרת הדיברות 📜</h3>
+                    <div class="commandment-cards">
+                        <div class="commandment-card">
+                            <div class="commandment-number">א</div>
+                            <div class="commandment-icon">👑</div>
+                            <div class="commandment-text">אנכי ה' אלוקיך</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ב</div>
+                            <div class="commandment-icon">🚫</div>
+                            <div class="commandment-text">לא יהיה לך אלהים אחרים</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ג</div>
+                            <div class="commandment-icon">🗣️</div>
+                            <div class="commandment-text">לא תשא את שם ה' לשוא</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ד</div>
+                            <div class="commandment-icon">✨</div>
+                            <div class="commandment-text">זכור את יום השבת</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ה</div>
+                            <div class="commandment-icon">👨‍👩‍👦</div>
+                            <div class="commandment-text">כבד את אביך ואת אמך</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ו</div>
+                            <div class="commandment-icon">❤️</div>
+                            <div class="commandment-text">לא תרצח</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ז</div>
+                            <div class="commandment-icon">💑</div>
+                            <div class="commandment-text">לא תנאף</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ח</div>
+                            <div class="commandment-icon">🤝</div>
+                            <div class="commandment-text">לא תגנוב</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">ט</div>
+                            <div class="commandment-icon">🗣️</div>
+                            <div class="commandment-text">לא תענה ברעך עד שקר</div>
+                        </div>
+                        <div class="commandment-card">
+                            <div class="commandment-number">י</div>
+                            <div class="commandment-icon">💭</div>
+                            <div class="commandment-text">לא תחמוד</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="original" class="tab-content">
+                <div class="original-text">
+                    <h3>פסוקים נבחרים עם פרשנות 📖</h3>
+                    <div class="verse-cards">
+                        <div class="verse-card">
+                            <div class="verse-text">"בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ"</div>
+                            <div class="verse-source">בראשית א:א</div>
+                            <div class="verse-commentary">
+                                הפסוק הראשון בתורה, המתאר את תחילת הבריאה והכוח האלוקי שברא את הכל.
+                            </div>
+                        </div>
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר וַיְהִי אוֹר"</div>
+                            <div class="verse-source">בראשית א:ג</div>
+                            <div class="verse-commentary">
+                                תיאור בריאת האור, המהווה את תחילת סדר הבריאה וההפרדה בין אור לחושך.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="dvar-hashem" class="tab-content">
+                <div class="dvar-hashem-content">
+                    <h3>📜 דבר ה' - פסוקים מרכזיים</h3>
+                    <div class="verse-cards">
+                        <div class="verse-card">
+                            <div class="verse-text">"בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ"</div>
+                            <div class="verse-source">בראשית א', א'</div>
+                            <div class="verse-commentary">
+                                פסוק היסוד של הבריאה, המבטא את כוחו של הקב"ה כבורא העולם וכל אשר בו. מלמד על היות ה'
+                                ראשון לכל דבר ועל תכליתה של הבריאה.
+                            </div>
+                        </div>
+
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיֹּאמֶר ה' אֶל-אַבְרָם, לֶךְ-לְךָ מֵאַרְצְךָ וּמִמּוֹלַדְתְּךָ
+                                וּמִבֵּית אָבִיךָ"</div>
+                            <div class="verse-source">בראשית י"ב, א'</div>
+                            <div class="verse-commentary">
+                                הציווי הראשון לאברהם אבינו, המסמל את תחילת הברית המיוחדת בין ה' לעם ישראל. מלמד על
+                                אמונה, מסירות נפש והליכה בדרך ה'.
+                            </div>
+                        </div>
+
+                        <div class="verse-card">
+                            <div class="verse-text">"וַיֹּאמֶר אַל-תִּקְרַב הֲלֹם שַׁל-נְעָלֶיךָ מֵעַל רַגְלֶיךָ, כִּי
+                                הַמָּקוֹם אֲשֶׁר אַתָּה עוֹמֵד עָלָיו, אַדְמַת-קֹדֶשׁ הוּא"</div>
+                            <div class="verse-source">בראשית כ"ח, י"ג</div>
+                            <div class="verse-commentary">
+                                התגלות ה' ליעקב בחלום הסולם, המבטאת את הקשר המתמשך בין ה' לאות. מלמד על השגחה פרטית
+                                וקדושת הארץ.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="kids" class="tab-content">
+                <div class="kids-content">
+                    <h3>סיפורים לילדים 🎈</h3>
+                    <div class="story-cards">
+                        <div class="story-card">
+                            <div class="story-image">🌍</div>
+                            <h4>בריאת העולם</h4>
+                            <p>
+                                בתחילת הזמן, אלוהים ברא את השמיים והארץ. הוא יצר את האור, המים, היבשה, הצמחים, החיות,
+                                ולבסוף את האדם.
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(1)">קרא עוד</button>
+                        </div>
+                        <div class="story-card">
+                            <div class="story-image">👨‍👩‍👦</div>
+                            <h4>סיפורי האבות</h4>
+                            <p>
+                                אברהם, יצחק, יעקב ויוסף הם האבות של עם ישראל. הם חוו ניסיונות רבים ולמדו על אמונה
+                                וביטחון באלוהים.
+                            </p>
+                            <button class="read-more-btn" onclick="showFullStory(2)">קרא עוד</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="audio-section">
+            <h2>קטעים מוקראים 🎧</h2>
+            <div class="audio-grid">
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">🎵</span>
+                        בריאת העולם
+                    </div>
+                    <div class="audio-text">
+                        "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/creation.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק א - תיאור בריאת העולם
+                    </div>
+                </div>
+
+                <div class="audio-card">
+                    <div class="audio-title">
+                        <span class="audio-icon">🗣️</span>
+                        סיפורי האבות
+                    </div>
+                    <div class="audio-text">
+                        "וַיֹּאמֶר אֱלֹהִים לְאַבְרָם לֶךְ-לְךָ מֵאַרְצְךָ"
+                    </div>
+                    <div class="audio-player">
+                        <audio controls>
+                            <source src="audio/avot.mp3" type="audio/mpeg">
+                            הדפדפן שלך לא תומך בנגן השמע
+                        </audio>
+                    </div>
+                    <div class="audio-description">
+                        פרק יב - קריאת אברהם
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="quiz-section">
+            <h2>חידון ספר בראשית</h2>
+            <div class="quiz-container">
+                <div id="quiz-question" class="quiz-question">
+                    <h3>שאלה <span id="question-number">1</span>/5</h3>
+                    <p id="question-text"></p>
+                </div>
+                <div id="quiz-options" class="quiz-options"></div>
+                <div id="quiz-feedback" class="quiz-feedback"></div>
+                <button id="next-question" class="quiz-button" onclick="nextQuestion()" style="display: none;">
+                    לשאלה הבאה ⏭️
+                </button>
+                <button id="start-quiz" class="quiz-button" onclick="startQuiz()">
+                    התחל חידון 🎮
+                </button>
+                <div id="quiz-results" class="quiz-results" style="display: none;">
+                    <h3>סיכום תוצאות</h3>
+                    <p>הצלחת לענות נכון על <span id="correct-answers">0</span> מתוך 5 שאלות!</p>
+                    <button onclick="startQuiz()" class="quiz-button">נסה שוב 🔄</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="lessons-section">
+            <h2>🎯 לקחים נלמדים מספר בראשית</h2>
+            <div class="lessons-grid">
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🌍</span>
+                        בריאת העולם
+                    </div>
+                    <p>הכרת גדלות הבריאה והאחריות על הטבע והסביבה. לימוד על מקור העולם וייחודו של האדם כנזר הבריאה.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>👨‍👩‍👦</span>
+                        סיפורי האבות
+                    </div>
+                    <p>אמונה, מסירות נפש וחשיבות המשפחה והמורשת. דוגמה אישית של האבות בהתמודדות עם ניסיונות החיים.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🌎</span>
+                        התפתחות האנושות
+                    </div>
+                    <p>המשמעות של חופש בחירה וכוחה של השגחה אלוקית. הבנת התהליכים ההיסטוריים המובילים לבחירת עם ישראל.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>❤️</span>
+                        יחסי אחים
+                    </div>
+                    <p>לימוד על מערכות יחסים במשפחה, התמודדות עם קנאה ושנאה, וכוחה של סליחה ופיוס מסיפורי יוסף ואחיו.
+                    </p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>🤝</span>
+                        ברית וייעוד
+                    </div>
+                    <p>הבנת משמעות הברית בין ה' לעם ישראל, האחריות והייעוד המיוחד הנובעים ממנה, והחובה להעביר מסורת זו
+                        לדורות הבאים.</p>
+                </div>
+
+                <div class="lesson-card">
+                    <div class="lesson-title">
+                        <span>⚖️</span>
+                        צדק ומוסר
+                    </div>
+                    <p>לימוד ערכי מוסר בסיסיים דרך סיפורי התורה, כמו הכנסת אורחים של אברהם, מידת החסד, והתנהגות ישרה בין
+                        אדם לחברו.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="quick-nav">
+            <div class="quick-nav-item" onclick="scrollToSection('intro')">הקדמה והיסטוריה</div>
+            <div class="quick-nav-item" onclick="scrollToSection('laws')">מצוות ודינים</div>
+            <div class="quick-nav-item" onclick="scrollToSection('ending')">סיום וברכות</div>
+        </div>
+
+        <div class="main-layout">
+            <div class="chapters-container">
+                <div class="search-container">
+                    <input type="text" class="search-box" placeholder="חיפוש בפרקים..."
+                        onkeyup="searchChapters(this.value)">
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי הקדמה והיסטוריה (פרקים א-י)</h3>
+                    <ul class="chapter-list" id="chapterList1"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי סיפורי האבות (פרקים יא-ל)</h3>
+                    <ul class="chapter-list" id="chapterList2"></ul>
+                </div>
+
+                <div class="chapter-section">
+                    <h3>פרקי סיום וברכות (פרקים לא-נ)</h3>
+                    <ul class="chapter-list" id="chapterList3"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chapterModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <div class="back-to-top" onclick="scrollToTop()">↑</div>
+
+    <script>
+        const chapters = [
+            { title: "בריאת העולם", verses: 31 },
+            { title: "גן עדן והחטא הקדמון", verses: 25 },
+            { title: "קין והבל", verses: 24 },
+            { title: "תולדות אדם", verses: 32 },
+            { title: "המבול", verses: 22 },
+            { title: "נח והברית", verses: 28 },
+            { title: "מגדל בבל", verses: 9 },
+            { title: "אברהם ושרה", verses: 20 },
+            { title: "עקידת יצחק", verses: 18 },
+            { title: "יעקב ועשו", verses: 34 },
+            { title: "יוסף ואחיו", verses: 36 },
+            { title: "ירידת יעקב למצרים", verses: 27 },
+            { title: "ברכות יעקב", verses: 33 },
+            { title: "מות יעקב ויוסף", verses: 26 },
+            // פרקי סיפורי האבות (המשך)
+            { title: "לך לך - קריאת אברהם", verses: 20 },
+            { title: "ברית בין הבתרים", verses: 21 },
+            { title: "תולדות ישמעאל", verses: 16 },
+            { title: "ברית המילה", verses: 27 },
+            { title: "הפיכת סדום", verses: 38 },
+            { title: "לידת יצחק", verses: 34 },
+            { title: "נישואי יצחק ורבקה", verses: 67 },
+            { title: "תולדות יצחק", verses: 34 },
+            { title: "יעקב מקבל את הברכות", verses: 46 },
+            { title: "חלום יעקב", verses: 22 },
+            { title: "יעקב בבית לבן", verses: 35 },
+            // פרקי סיום וברכות
+            { title: "יעקב חוזר לארץ כנען", verses: 55 },
+            { title: "מאבק יעקב עם המלאך", verses: 33 },
+            { title: "דינה ושכם", verses: 31 },
+            { title: "מות רחל", verses: 29 },
+            { title: "תולדות עשו", verses: 43 },
+            { title: "יוסף וחלומותיו", verses: 36 },
+            { title: "יהודה ותמר", verses: 30 },
+            { title: "יוסף בבית פוטיפר", verses: 23 },
+            { title: "יוסף בבית הסוהר", verses: 23 },
+            { title: "חלומות פרעה", verses: 57 },
+            { title: "יוסף משנה למלך", verses: 38 },
+            { title: "ירידת האחים למצרים", verses: 38 },
+            { title: "בנימין יורד למצרים", verses: 34 },
+            { title: "יוסף מתגלה לאחיו", verses: 28 },
+            { title: "יעקב יורד למצרים", verses: 34 },
+            { title: "ברכות יעקב לבניו", verses: 33 },
+            { title: "מות יעקב", verses: 26 },
+            { title: "מות יוסף", verses: 26 }
+        ];
+
+        const chapterList1 = document.getElementById('chapterList1');
+        const chapterList2 = document.getElementById('chapterList2');
+        const chapterList3 = document.getElementById('chapterList3');
+
+        chapters.forEach((chapter, index) => {
+            const li = document.createElement('li');
+            li.className = 'chapter-item';
+            li.innerHTML = `
+                <span class="emoji">📖</span>
+                <div class="chapter-info">
+                    <div>פרק ${index + 1}: ${chapter.title}</div>
+                    <div class="chapter-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+            `;
+            li.addEventListener('click', () => {
+                showChapterDetails(index + 1, chapter);
+            });
+
+            if (index < 10) {
+                chapterList1.appendChild(li);
+            } else if (index < 30) {
+                chapterList2.appendChild(li);
+            } else {
+                chapterList3.appendChild(li);
+            }
+        });
+
+        function showChapterDetails(number, chapter) {
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📖</span> פרק ${number}`;
+            modalContent.innerHTML = `
+                <h3>${chapter.title}</h3>
+                <div class="stats-summary">
+                    <div>סטטיסטיקות הפרק:</div>
+                    <div class="total-stats">מספר פסוקים: ${chapter.verses}</div>
+                </div>
+                <p style="margin-top: 15px;">לחץ על הכפתור למטה לקריאת הפרק המלא</p>
+                <button onclick="readFullChapter(${number})" 
+                        style="margin-top: 20px; padding: 10px 20px; 
+                               background: var(--accent-color); color: white; 
+                               border: none; border-radius: 5px; 
+                               cursor: pointer;">
+                    קרא את הפרק המלא
+                </button>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('chapterModal').style.display = 'none';
+        }
+
+        function readFullChapter(number) {
+            // כאן אפשר להוסיף פונקציונליות לקריאת הפרק המלא
+            alert(`טוען את הפרק המלא ${number}...`);
+        }
+
+        // סגירת המודל בלחיצה מחוץ לתוכן
+        window.onclick = function (event) {
+            const modal = document.getElementById('chapterModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // אנימציה לכותרות בטעינה
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    section.style.transition = 'all 0.5s ease';
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        function scrollToSection(sectionId) {
+            const section = document.querySelector(`[data-section="${sectionId}"]`);
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // הצגת/הסתרת כפתור חזרה למעלה
+        window.onscroll = function () {
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        };
+
+        function searchChapters(query) {
+            query = query.toLowerCase();
+            const items = document.querySelectorAll('.chapter-item');
+
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(query)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // הוספת אנימציות לטעינת התוכן
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.chapter-section');
+            sections.forEach((section, index) => {
+                setTimeout(() => {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }, index * 200);
+            });
+        });
+
+        // חישוב סטטיסטיקות כלליות
+        function calculateTotalStats() {
+            const totalVerses = chapters.reduce((sum, chapter) => sum + chapter.verses, 0);
+            const averageVerses = (totalVerses / chapters.length).toFixed(1);
+
+            document.getElementById('totalChapters').textContent = chapters.length;
+            document.getElementById('totalVerses').textContent = totalVerses;
+            document.getElementById('averageVerses').textContent = averageVerses;
+        }
+
+        // הפעלת החישוב בטעינת הדף
+        document.addEventListener('DOMContentLoaded', calculateTotalStats);
+
+        // אנימציה לסצנות בעת גלילה
+        function animateOnScroll() {
+            const scenes = document.querySelectorAll('.scene-card');
+
+            scenes.forEach(scene => {
+                const scenePosition = scene.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (scenePosition < screenPosition) {
+                    scene.style.opacity = '1';
+                    scene.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // הוספת האזנה לאירוע גלילה
+        window.addEventListener('scroll', animateOnScroll);
+
+        // אתחול הסצנות בטעינה
+        document.addEventListener('DOMContentLoaded', () => {
+            const scenes = document.querySelectorAll('.scene-card');
+            scenes.forEach((scene, index) => {
+                scene.style.opacity = '0';
+                scene.style.transform = 'translateY(20px)';
+                scene.style.transition = 'all 0.5s ease';
+                scene.style.transitionDelay = `${index * 0.2}s`;
+            });
+
+            animateOnScroll();
+        });
+
+        function showTab(tabId) {
+            // הסרת הקלאס active מכל הכפתורים והתוכן
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+
+            // הוספת הקלאס active לכפתור ולתוכן הנבחר
+            document.querySelector(`button[onclick="showTab('${tabId}')"]`).classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+
+        function showFullStory(storyId) {
+            const stories = {
+                1: {
+                    title: "בריאת העולם",
+                    content: "בתחילת הזמן, אלוהים ברא את השמיים והארץ. הוא יצר את האור, המים, היבשה, הצמחים, החיות, ולבסוף את האדם."
+                },
+                2: {
+                    title: "סיפורי האבות",
+                    content: "אברהם, יצחק, יעקב ויוסף הם האבות של עם ישראל. הם חוו ניסיונות רבים ולמדו על אמונה וביטחון באלוהים."
+                }
+            };
+
+            const story = stories[storyId];
+            const modal = document.getElementById('chapterModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalContent = document.getElementById('modalContent');
+
+            modalTitle.innerHTML = `<span class="emoji">📚</span> ${story.title}`;
+            modalContent.innerHTML = `
+                <div class="story-full">
+                    <p>${story.content}</p>
+                </div>
+            `;
+
+            modal.style.display = 'flex';
+        }
+
+        // שאלות החידן
+        const quizQuestions = [
+            {
+                question: "מהו הפסוק הראשון בתורה?",
+                options: [
+                    "בְּרֵאשִׁית בָּרָא אֱלֹהִים אֵת הַשָּׁמַיִם וְאֵת הָאָרֶץ",
+                    "וַיֹּאמֶר אֱלֹהִים יְהִי אוֹר",
+                    "וַיְהִי עֶרֶב וַיְהִי בֹקֶר",
+                    "וַיֹּאמֶר אֱלֹהִים לְאַבְרָם לֶךְ-לְךָ"
+                ],
+                correct: 0
+            },
+            {
+                question: "מי היה הראשון שנברא?",
+                options: [
+                    "האדם",
+                    "האור",
+                    "החיות",
+                    "הצמחים"
+                ],
+                correct: 1
+            },
+            {
+                question: "מהו החטא הקדמון?",
+                options: [
+                    "אכילת פרי עץ הדעת",
+                    "רצח הבל",
+                    "בניית מגדל בבל",
+                    "גניבת הבכורה"
+                ],
+                correct: 0
+            },
+            {
+                question: "מי היה הראשון שנקרא 'אברהם'?",
+                options: [
+                    "אברהם אבינו",
+                    "יצחק",
+                    "יעקב",
+                    "יוסף"
+                ],
+                correct: 0
+            },
+            {
+                question: "מהו הסיפור המרכזי של יוסף?",
+                options: [
+                    "מכירתו לעבדות",
+                    "עקידת יצחק",
+                    "בריאת העולם",
+                    "המבול"
+                ],
+                correct: 0
+            }
+        ];
+
+        let currentQuestion = 0;
+        let score = 0;
+
+        function startQuiz() {
+            currentQuestion = 0;
+            score = 0;
+            document.getElementById('quiz-results').style.display = 'none';
+            document.getElementById('start-quiz').style.display = 'none';
+            showQuestion();
+        }
+
+        function showQuestion() {
+            const question = quizQuestions[currentQuestion];
+            document.getElementById('question-number').textContent = currentQuestion + 1;
+            document.getElementById('question-text').textContent = question.question;
+
+            const optionsHtml = question.options.map((option, index) => `
+                <div class="quiz-option" onclick="checkAnswer(${index})">
+                    ${option}
+                </div>
+            `).join('');
+
+            document.getElementById('quiz-options').innerHTML = optionsHtml;
+            document.getElementById('quiz-feedback').innerHTML = '';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        function checkAnswer(selectedIndex) {
+            const question = quizQuestions[currentQuestion];
+            const options = document.querySelectorAll('.quiz-option');
+
+            options.forEach(option => option.style.pointerEvents = 'none');
+
+            if (selectedIndex === question.correct) {
+                options[selectedIndex].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = ' כל הכבוד! תשובה נכונה!';
+                score++;
+            } else {
+                options[selectedIndex].classList.add('wrong');
+                options[question.correct].classList.add('correct');
+                document.getElementById('quiz-feedback').innerHTML = '❌ לא נכון. נסה שוב בשאלה הבאה!';
+            }
+
+            if (currentQuestion < quizQuestions.length - 1) {
+                document.getElementById('next-question').style.display = 'block';
+            } else {
+                showResults();
+            }
+        }
+
+        function nextQuestion() {
+            currentQuestion++;
+            if (currentQuestion < quizQuestions.length) {
+                showQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quiz-results').style.display = 'block';
+            document.getElementById('correct-answers').textContent = score;
+            document.getElementById('quiz-question').style.display = 'none';
+            document.getElementById('quiz-options').style.display = 'none';
+            document.getElementById('quiz-feedback').style.display = 'none';
+            document.getElementById('next-question').style.display = 'none';
+        }
+
+        let currentFactIndex = 0;
+        const facts = document.querySelectorAll('.fact-card');
+
+        function showFact(index) {
+            facts.forEach(fact => fact.classList.remove('active'));
+            facts[index].classList.add('active');
+        }
+
+        function nextFact() {
+            currentFactIndex = (currentFactIndex + 1) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        function prevFact() {
+            currentFactIndex = (currentFactIndex - 1 + facts.length) % facts.length;
+            showFact(currentFactIndex);
+        }
+
+        // אוטומציה להחלפת עובדות
+        setInterval(nextFact, 5000);
+    </script>
+</body>
+<footer>
+
+    <div class="credits">
+        <div class="credits-content">
+            <div class="credit-item">
+                <span class="credit-icon">🇮🇱</span>
+                <a href="https://www.gov.il/" class="credit-text">מדינת ישראל</a>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">👨‍💻</span>
+                <span class="credit-text">פיתוח: <a href="https://www.github.com/anlominus" class="credit-text">לאון
+                        יעקובוב</a></span>
+            </div>
+            <div class="credit-divider">|</div>
+            <div class="credit-item">
+                <span class="credit-icon">🤖</span>
+                <span class="credit-text">בשיתוף: <a href="https://www.openai.com/" class="credit-text">Claude
+                        AI</a></span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</html>
