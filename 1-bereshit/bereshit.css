@@ -1,0 +1,1384 @@
+.chapter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 100%;
+}
+
+.chapter-item {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0.5rem 0;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.chapter-item:hover .chapter-header {
+  background-color: #f5f5f5;
+}
+
+.chapter-item.active .chapter-header {
+  background-color: #f0f7ff;
+  border-radius: 8px 8px 0 0;
+}
+
+.chapter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.chapter-info {
+  display: flex;
+  flex-direction: column;
+  margin-right: 1rem;
+  flex-grow: 1;
+}
+
+.chapter-title {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #333;
+}
+
+.chapter-stats {
+  font-size: 0.9em;
+  color: #666;
+  margin-top: 0.25rem;
+}
+
+.chapter-accordion {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-out;
+  background: #f9f9f9;
+  border-radius: 0 0 8px 8px;
+  width: 100%;
+}
+
+.chapter-accordion.active {
+  max-height: none;
+  height: auto;
+  transition: max-height 0.5s ease-in;
+}
+
+.verse-item {
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.verse-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  cursor: pointer;
+  background: #f8f9fa;
+  transition: background-color 0.3s ease;
+}
+
+.verse-header:hover {
+  background: #e9ecef;
+}
+
+.verse-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+  margin-right: 1rem;
+}
+
+.verse-expand-icon {
+  font-size: 0.8em;
+  color: #6c757d;
+  transition: transform 0.3s ease;
+  margin-right: 1rem;
+}
+
+.verse-details {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  background: #fff;
+}
+
+.verse-item.active .verse-details {
+  border-top: 1px solid #e9ecef;
+}
+
+.verse-container {
+  padding: 1rem;
+}
+
+.verse-number {
+  background: #007bff;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-left: 1rem;
+  min-width: 2.5rem;
+  text-align: center;
+}
+
+.verse-preview .verse-text {
+  font-size: 1.1em;
+  color: #2c3e50;
+  margin-left: 1rem;
+  flex: 1;
+}
+
+.verse-item {
+  transform-origin: top;
+  transition: transform 0.3s ease;
+}
+
+.verse-item.active {
+  transform: translateY(0);
+}
+
+.verse-translation {
+  font-size: 1em;
+  color: #495057;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}
+
+.words-analysis,
+.combinations-section,
+.reverse-reading-section {
+  margin: 1rem 0;
+}
+
+.verse-header:hover .verse-expand-icon {
+  color: #007bff;
+}
+
+.verse-item.active .verse-expand-icon {
+  transform: rotate(180deg);
+}
+
+.verse-letter {
+  border-right: 1px solid rgba(255, 255, 255, 0.5);
+  padding-right: 6px;
+  margin-right: 2px;
+}
+
+.verse-text {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #333;
+  line-height: 1.8;
+  text-align: justify;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-right: 4px solid #007bff;
+}
+
+.verse-translation {
+  color: #555;
+  line-height: 1.6;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  border-radius: 4px;
+  border-right: 3px solid #28a745;
+}
+
+.verse-commentary {
+  font-size: 0.95em;
+  color: #666;
+  line-height: 1.5;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 4px;
+  border-right: 3px solid #ffc107;
+}
+
+.verse-stats {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 0.75rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  justify-content: center;
+  white-space: nowrap;
+}
+
+.stat-icon {
+  font-size: 1.1em;
+  color: #666;
+  min-width: 1.5em;
+}
+
+.verse-or {
+  align-self: flex-start;
+  padding: 0.5rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+  color: #666;
+  font-size: 0.9em;
+  margin-top: 0.5rem;
+}
+
+.chapter-section h3 {
+  color: #2c3e50;
+  font-size: 1.3rem;
+  margin: 1.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #eee;
+}
+
+.emoji {
+  font-size: 1.5rem;
+  margin-left: 1rem;
+}
+
+.chapter-section {
+  margin-bottom: 2rem;
+  overflow: visible;
+}
+
+.chapters-container {
+  overflow: visible;
+  height: auto;
+  width: 100%;
+}
+
+/* אפקטים מיוחדים לימי הבריאה */
+.verse-item[data-day] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* יום ראשון - אור וחושך (פסוקים 1-5) */
+.verse-item[data-day="1"] {
+  background: linear-gradient(
+    to right,
+    rgba(26, 26, 26, 0.8),
+    rgba(255, 255, 255, 0.8)
+  );
+}
+
+/* יום שני - רקיע ומים (פסוקים 6-8) */
+.verse-item[data-day="2"] {
+  background: linear-gradient(180deg, #87ceeb 0%, #1e90ff 100%);
+}
+
+/* יום שלישי - יבשה וצמחיה (פסוקים 9-13) */
+.verse-item[data-day="3"] {
+  background: linear-gradient(45deg, #8b4513 0%, #228b22 100%);
+}
+
+/* יום רביעי - מאורות (פסוקים 14-19) */
+.verse-item[data-day="4"] {
+  background: linear-gradient(
+    to right,
+    rgba(255, 215, 0, 0.8),
+    /* זהב - שמש */ rgba(192, 192, 192, 0.8) /* כסף - ירח */
+  );
+}
+
+/* יום חמישי - בעלי חיים ימיים ועופות (פסוקים 20-23) */
+.verse-item[data-day="5"] {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 119, 190, 0.8),
+    /* כחול ים */ rgba(135, 206, 235, 0.8) /* כחול שמיים */
+  );
+}
+
+/* יום שישי - חיות יבשה ואדם (פסוקים 24-31) */
+.verse-item[data-day="6"] {
+  background: linear-gradient(
+    to right,
+    rgba(139, 69, 19, 0.8),
+    /* חום אדמה */ rgba(255, 228, 196, 0.8) /* גוון בשר */
+  );
+}
+
+/* אפקטים משותפים */
+.verse-item[data-day] {
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.verse-item[data-day]:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* התאמת צבעי טקסט */
+.verse-item[data-day] .verse-text {
+  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  text-shadow: none;
+}
+
+.verse-item[data-day] .verse-translation,
+.verse-item[data-day] .verse-commentary {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* אפקט זוהר לפסוקי "ויהי כן" */
+.verse-item[data-day] .verse-text:contains("וַיְהִי כֵן") {
+  animation: divine-glow 2s infinite;
+}
+
+@keyframes divine-glow {
+  0% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* התאמות נוספות לקריאות */
+.verse-item[data-day] .verse-stats {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(5px);
+}
+
+.verse-item[data-day] .stat-item {
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* אפקט מעבר חלק */
+.verse-item[data-day] {
+  transition: all 0.3s ease-in-out;
+}
+
+.verse-letter-inline {
+  font-weight: bold;
+  color: #007bff;
+  margin-left: 0.5rem;
+  font-size: 1.1em;
+}
+
+.chapter-accordion.active .verse-item {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.chapter-accordion.active .verse-item:nth-child(n) {
+  transition-delay: calc(0.1s * var(--verse-index, 0));
+}
+
+/* הוספת סכמת צבעים לפרק ו' */
+.verse-item[data-chapter="6"] {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* פסוקים 1-2: תיאור התרבות האנושות */
+.verse-item[data-chapter="6"][data-verse-number="1"],
+.verse-item[data-chapter="6"][data-verse-number="2"] {
+  background: linear-gradient(to right, #f8d7da, #ffeef0);
+  border-right: 4px solid #dc3545;
+}
+
+/* פסוקים 3-4: הנפילים והגבלת חיי האדם */
+.verse-item[data-chapter="6"][data-verse-number="3"],
+.verse-item[data-chapter="6"][data-verse-number="4"] {
+  background: linear-gradient(to right, #d4edda, #e8f5e9);
+  border-right: 4px solid #28a745;
+}
+
+/* פסוקים 5-7: רת האדם והחלטת ה' */
+.verse-item[data-chapter="6"][data-verse-number="5"],
+.verse-item[data-chapter="6"][data-verse-number="6"],
+.verse-item[data-chapter="6"][data-verse-number="7"] {
+  background: linear-gradient(to right, #fff3cd, #fff8e1);
+  border-right: 4px solid #ffc107;
+}
+
+/* פסוק 8: נח מוצא חן */
+.verse-item[data-chapter="6"][data-verse-number="8"] {
+  background: linear-gradient(to right, #cce5ff, #e6f2ff);
+  border-right: 4px solid #007bff;
+}
+
+/* פסוקים 9-10: תולדות נח */
+.verse-item[data-chapter="6"][data-verse-number="9"],
+.verse-item[data-chapter="6"][data-verse-number="10"] {
+  background: linear-gradient(to right, #e2e3e5, #f8f9fa);
+  border-right: 4px solid #6c757d;
+}
+
+/* פסוקים 11-13: השחתת הארץ */
+.verse-item[data-chapter="6"][data-verse-number="11"],
+.verse-item[data-chapter="6"][data-verse-number="12"],
+.verse-item[data-chapter="6"][data-verse-number="13"] {
+  background: linear-gradient(to right, #f5c6cb, #ffdce0);
+  border-right: 4px solid #dc3545;
+}
+
+/* פסוקים 14-16: ציווי בניית התיבה */
+.verse-item[data-chapter="6"][data-verse-number="14"],
+.verse-item[data-chapter="6"][data-verse-number="15"],
+.verse-item[data-chapter="6"][data-verse-number="16"] {
+  background: linear-gradient(to right, #b8daff, #d4e5ff);
+  border-right: 4px solid #0056b3;
+}
+
+/* פסוקים 17-22: הבטחת המבול והברית */
+.verse-item[data-chapter="6"][data-verse-number="17"],
+.verse-item[data-chapter="6"][data-verse-number="18"],
+.verse-item[data-chapter="6"][data-verse-number="19"],
+.verse-item[data-chapter="6"][data-verse-number="20"],
+.verse-item[data-chapter="6"][data-verse-number="21"],
+.verse-item[data-chapter="6"][data-verse-number="22"] {
+  background: linear-gradient(to right, #c3e6cb, #d1f2d7);
+  border-right: 4px solid #155724;
+}
+
+/* אפקטים משותפים */
+.verse-item[data-chapter="6"] {
+  margin: 1rem 0;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.verse-item[data-chapter="6"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* התאמת צבעי טקסט */
+.verse-item[data-chapter="6"] .verse-text {
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.verse-item[data-chapter="6"] .verse-translation {
+  color: #34495e;
+}
+
+.verse-item[data-chapter="6"] .verse-commentary {
+  color: #7f8c8d;
+}
+
+/* מקרא צבעים */
+.chapter-6-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend-color {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+}
+
+/* הוספת סגנונות לתוויות */
+.verse-row {
+  display: flex;
+  align-items: center;
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.verse-label {
+  min-width: 60px;
+  margin-left: 10px;
+  font-weight: bold;
+  text-align: left;
+}
+
+.translation-row {
+  background-color: #e8f5e9;
+}
+
+.commentary-row {
+  background-color: #fff3e0;
+}
+
+/* עיצוב חדש לניתוח המילים */
+.words-analysis {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.words-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.word-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.word-header {
+  border-bottom: 2px solid #e9ecef;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.word-text {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.word-meaning {
+  color: #6c757d;
+  font-size: 0.9em;
+  margin-right: 0.5rem;
+}
+
+.word-details {
+  font-size: 0.95em;
+}
+
+.word-root {
+  color: #007bff;
+  margin-bottom: 0.5rem;
+}
+
+.word-connections ul {
+  list-style: none;
+  padding-right: 1rem;
+}
+
+.word-connections li::before {
+  content: "•";
+  color: #007bff;
+  margin-left: 0.5rem;
+}
+
+/* עיצוב צירופי מילים */
+.combinations-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #fff3e0;
+  border-radius: 8px;
+}
+
+.combination-card {
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.combination-words {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* עיצוב קריאה לאחור */
+.reverse-reading-section {
+  margin: 1.5rem 0;
+  padding: 1rem;
+  background: #e8f5e9;
+  border-radius: 8px;
+}
+
+.reverse-text {
+  font-size: 1.1em;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  direction: rtl;
+}
+
+.reverse-insights {
+  color: #666;
+  font-size: 0.95em;
+}
+
+/* התאמות כלליות */
+.verse-text-section {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.1em;
+}
+
+/* אנימציות */
+.word-card,
+.combination-card {
+  transition: transform 0.2s ease;
+}
+
+.word-card:hover,
+.combination-card:hover {
+  transform: translateY(-2px);
+}
+
+/* נוסיף סגנונות לתיבת החיפוש */
+.search-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.search-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  pointer-events: none;
+}
+
+.search-box {
+  padding-left: 35px;
+  padding-right: 15px;
+  width: 100%;
+  height: 45px;
+  border: 2px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.search-box::placeholder {
+  color: #adb5bd;
+}
+
+/* סגנון להדגשת תוצאות החיפוש */
+.search-highlight {
+  background-color: #fff3cd;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.search-highlight:hover {
+  background-color: #ffe5a0;
+}
+
+/* עיצובים לתוצאות החיפוש */
+.search-match {
+  border-left: 4px solid #007bff;
+}
+
+.search-highlight {
+  background-color: #fff3cd;
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-weight: bold;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.2s ease;
+}
+
+.search-highlight:hover {
+  background-color: #ffe5a0;
+}
+
+.no-results {
+  text-align: center;
+  padding: 2rem;
+  color: #6c757d;
+  font-style: italic;
+  background: #f8f9fa;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.search-wrapper {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.search-results {
+  margin-top: 1rem;
+}
+
+.chapter-details {
+  background: white;
+  padding: 2rem;
+  border-radius: 0;
+  width: 100%;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  overflow-y: auto;
+  position: relative;
+  margin: 0;
+}
+
+.chapter-details-header {
+  position: sticky;
+  top: 0;
+  background: white;
+  padding: 1rem 2rem;
+  margin: -2rem -2rem 2rem -2rem;
+  border-bottom: 2px solid #eee;
+  z-index: 10;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chapter-details-content {
+  padding: 0 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.topic-tag {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #e3f2fd;
+  border-radius: 20px;
+  margin: 0.25rem;
+  font-size: 0.9em;
+}
+
+.insight-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 0.5rem 0;
+}
+
+.theme-category {
+  background: #f5f5f5;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+.lesson-card {
+  background: #e8f5e9;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 0.5rem 0;
+}
+
+/* אנימציות */
+.chapter-details {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.chapter-details-btn {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: background-color 0.2s ease;
+  margin-right: 1rem;
+}
+
+.chapter-details-btn:hover {
+  background: #0056b3;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 0;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.close-modal {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #666;
+  z-index: 11;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.close-modal:hover {
+  color: #333;
+  background: #f5f5f5;
+}
+
+/* שיפור הרספונסיביות */
+@media (max-width: 768px) {
+  .chapter-details {
+    padding: 1rem;
+  }
+
+  .chapter-details-content {
+    padding: 0 1rem;
+  }
+
+  .chapter-details-header {
+    padding: 1rem;
+    margin: -1rem -1rem 1rem -1rem;
+  }
+}
+
+.progress-overview {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.progress-overview h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+/* עדכון למיקום הגרף */
+#modalProgressContainer {
+  margin: 1rem 0;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+#modalProgressContainer .torah-progress-container {
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* עיצוב הכפתור */
+.progress-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease;
+}
+
+.progress-button:hover {
+  background: #0056b3;
+}
+
+.progress-button .icon {
+  font-size: 1.2em;
+}
+
+/* עיצוב המודל */
+.progress-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.progress-modal-content {
+  position: relative;
+  background: white;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* עיצוב מחדש של הכותרת */
+.progress-modal-content h2 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #007bff;
+}
+
+/* סידור חדש של הסטטיסטיקות */
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+/* עיצוב מחדש של התקדמות לפי ספרים */
+.books-progress {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.book-progress {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.book-progress:hover {
+  transform: translateY(-5px);
+}
+
+.book-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+/* עיצוב מחדש של סרגלי ההתקדמות */
+.total-progress-bars {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.total-progress-item {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  height: 24px;
+  background: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 0.5rem 0;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  transition: width 0.5s ease;
+}
+
+/* כפתור סגירה */
+.close-progress-modal {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.close-progress-modal:hover {
+  background: #f8f9fa;
+  transform: rotate(90deg);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 1200px) {
+  .books-progress {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .summary-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .books-progress {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .total-progress-bars {
+    grid-template-columns: 1fr;
+  }
+
+  .progress-modal-content {
+    padding: 1rem;
+  }
+}
+
+/* אנימציות */
+.progress-modal-content {
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* סגנונות נוספים לשיפור המראה */
+.stat-item {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-label {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.stat-value {
+  font-size: 1.5em;
+  color: #007bff;
+  margin-bottom: 0.25rem;
+}
+
+.stat-percentage {
+  font-size: 1em;
+  color: #6c757d;
+}
+
+.progress-text {
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* עיצוב תצוגת ההתקדמות */
+.progress-display {
+  padding: 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.progress-display h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 1.8em;
+}
+
+.summary-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.progress-details {
+  margin: 2rem 0;
+}
+
+.progress-section {
+  margin-bottom: 2rem;
+}
+
+.progress-section h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 8px;
+}
+
+.progress-bar {
+  height: 24px;
+  background: #e9ecef;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  transition: width 0.5s ease;
+}
+
+.progress-labels {
+  display: flex;
+  justify-content: space-between;
+  color: #6c757d;
+  font-weight: bold;
+}
+
+.chapters-grid {
+  margin-top: 3rem;
+}
+
+.chapters-grid h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.chapters-status {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+  gap: 0.5rem;
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.chapter-indicator {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.chapter-indicator.completed {
+  background: #28a745;
+  color: white;
+}
+
+.chapter-indicator.pending {
+  background: #e9ecef;
+  color: #6c757d;
+}
+
+.chapter-indicator:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .progress-display {
+    padding: 1rem;
+  }
+
+  .summary-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .chapters-status {
+    grid-template-columns: repeat(auto-fill, minmax(35px, 1fr));
+  }
+
+  .chapter-indicator {
+    width: 35px;
+    height: 35px;
+    font-size: 0.9em;
+  }
+}
+
+/* עיצוב כפתור התקדמות */
+.progress-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1em;
+  margin: 1rem auto;
+  transition: background-color 0.3s ease;
+}
+
+.progress-button:hover {
+  background: #0056b3;
+}
+
+.progress-button .icon {
+  font-size: 1.2em;
+}
+
+/* עיצוב המודל */
+.progress-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  overflow-y: auto;
+}
+
+.progress-modal-content {
+  position: relative;
+  background: white;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.close-progress-modal {
+  position: fixed;
+  top: 1.5rem;
+  left: 1.5rem;
+  font-size: 2rem;
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  z-index: 1001;
+}
+
+.close-progress-modal:hover {
+  background: #f8f9fa;
+  transform: rotate(90deg);
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .progress-modal-content {
+    padding: 1rem;
+  }
+}

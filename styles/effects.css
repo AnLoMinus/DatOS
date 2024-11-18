@@ -306,10 +306,10 @@ h3 {
 /* עיצוב מיוחד למקטע המבוא */
 .description {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
   gap: 1rem;
   padding: 1.5rem;
-  max-height: calc(100vh - 300px);
+  /* max-height: calc(100vh - 300px); */
   overflow: hidden;
   background: linear-gradient(
     135deg,

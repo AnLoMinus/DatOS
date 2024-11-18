@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="he">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>תעתיק עברית-אנגלית</title>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="transliteration.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>תעתיק עברית-אנגלית</h1>
+
+        <!-- טבלת האותיות -->
+        <section class="letters-section">
+            <h2>טבלת האותיות</h2>
+            <div class="letters-grid">
+                <!-- יתמלא דינמית ע"י JavaScript -->
+            </div>
+        </section>
+
+        <!-- ממיר טקסט -->
+        <section class="converter-section">
+            <h2>ממיר טקסט</h2>
+            <div class="converter-container">
+                <div class="converter-box">
+                    <div class="input-group">
+                        <label>עברית</label>
+                        <textarea id="hebrewText" placeholder="הקלד טקסט בעברית..."></textarea>
+                    </div>
+                    <div class="converter-buttons">
+                        <button id="toEnglish" class="convert-btn">
+                            המר לאנגלית ⬇️
+                        </button>
+                        <button id="toHebrew" class="convert-btn">
+                            המר לעברית ⬆️
+                        </button>
+                    </div>
+                    <div class="input-group">
+                        <label>אנגלית</label>
+                        <textarea id="englishText" placeholder="Type text in English..."></textarea>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- תרגול -->
+        <section class="practice-section">
+            <h2>תרגול</h2>
+            <div class="practice-container">
+                <p>מהי האות באנגלית?</p>
+                <div class="letter-display"></div>
+                <div class="answers">
+                    <!-- יתמלא דינמית -->
+                </div>
+                <div class="feedback"></div>
+                <button class="start-practice">התחל תרגול</button>
+            </div>
+        </section>
+
+        <!-- מידע נוסף -->
+        <section class="info-section">
+            <h2>מידע נוסף</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>כללי תעתיק</h3>
+                    <ul>
+                        <li>האותיות מתועתקות לפי הכללים המקובלים באקדמיה ללשון העברית</li>
+                        <li>יש להתחשב בהקשר ובמשמעות המילה</li>
+                        <li>חלק מהאותיות יכולות להיות מתועתקות בכמה דרכים</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>טיפים לשימוש</h3>
+                    <ul>
+                        <li>השתמש בטבלת ההמרה לבדיקת אותיות בודדות</li>
+                        <li>תרגל באופן קבוע להטמעת הכללים</li>
+                        <li>שים לב לדוגמאות המצורפות לכל אות</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="transliteration.js"></script>
+</body>
+
+</html>

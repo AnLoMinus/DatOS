@@ -1,0 +1,44 @@
+/* עיצוב כללי */
+body {
+  font-family: David, Arial, sans-serif;
+  direction: rtl;
+}
+
+/* עיצוב כותרות פרשות */
+.parasha-title {
+  font-size: 2em;
+  color: #2d68b0;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* עיצוב פרקים */
+.chapter {
+  margin: 20px 0;
+  padding: 15px;
+}
+
+/* עיצוב פסוקים */
+.verse {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+/* עיצוב מספרי פסוקים */
+.verse-number {
+  color: #2d68b0;
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* עיצוב סימוני עליות */
+.aliya-marker {
+  background-color: #7694da;
+  color: white;
+  padding: 2px 5px;
+  margin: 0 5px;
+  font-size: 0.8em;
+}
+
+/* TODO: להוסיף עיצובים נוספים לפי הצורך */

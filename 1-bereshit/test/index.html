@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ספר בראשית - תורה עם פירוש</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <!-- תפריט ראשי -->
+    <header class="main-header">
+        <div class="header-content">
+            <h1>ספר בראשית</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="חיפוש בפרקים...">
+            </div>
+            <button id="showProgressBtn" class="progress-btn">התקדמות הכתיבה</button>
+        </div>
+    </header>
+
+    <!-- תוכן ראשי -->
+    <main class="main-content">
+        <!-- חלק ראשון: בריאת העולם -->
+        <section class="book-section" id="creation">
+            <h2>בריאת העולם והאנושות</h2>
+            <ul id="creationChapters" class="chapters-list"></ul>
+        </section>
+
+        <!-- חלק שני: המבול -->
+        <section class="book-section" id="flood">
+            <h2>המבול ודור הפלגה</h2>
+            <ul id="floodChapters" class="chapters-list"></ul>
+        </section>
+
+        <!-- חלק שלישי: האבות -->
+        <section class="book-section" id="patriarchs">
+            <h2>סיפורי האבות</h2>
+            <ul id="patriarchChapters" class="chapters-list"></ul>
+        </section>
+    </main>
+
+    <!-- מודל פרטי פרק -->
+    <div id="chapterDetailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 id="modalChapterTitle"></h2>
+            <div id="modalChapterDescription"></div>
+
+            <div class="chapter-content">
+                <section class="key-topics">
+                    <h3>מושגי מפתח</h3>
+                    <div id="keyTopics"></div>
+                </section>
+
+                <section class="insights">
+                    <h3>תובנות מרכזיות</h3>
+                    <div id="insights"></div>
+                </section>
+
+                <section class="main-themes">
+                    <h3>נושאים מרכזיים</h3>
+                    <div id="mainThemes"></div>
+                </section>
+
+                <section class="practical-lessons">
+                    <h3>לקחים מעשיים</h3>
+                    <div id="practicalLessons"></div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- מודל התקדמות -->
+    <div id="progressModal" class="modal">
+        <div class="modal-content">
+            <span class="close-progress-modal">&times;</span>
+            <div id="modalProgressContainer"></div>
+        </div>
+    </div>
+
+    <!-- טעינת הסקריפטים -->
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>

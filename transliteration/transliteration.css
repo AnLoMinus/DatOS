@@ -1,0 +1,217 @@
+/* עיצוב כללי */
+:root {
+  --primary-color: #2b6cb0;
+  --secondary-color: #4a5568;
+  --accent-color: #2c5282;
+  --background-color: #f7fafc;
+  --card-background: #ffffff;
+  --text-color: #2d3748;
+  --border-color: #e2e8f0;
+}
+
+body {
+  font-family: "Heebo", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* טבלת האותיות */
+.letters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.letter-card {
+  background: var(--card-background);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.letter-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.letter-pair {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.hebrew-letter {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.arrow-separator {
+  color: var(--accent-color);
+  font-size: 1.5em;
+}
+
+.english-letter {
+  font-size: 1.8em;
+  color: var(--accent-color);
+}
+
+.letter-info {
+  border-top: 1px solid var(--border-color);
+  padding-top: 1rem;
+}
+
+.transliteration {
+  font-size: 1.2em;
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.example {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.1em;
+}
+
+/* ממיר טקסט */
+.converter-container {
+  background: var(--card-background);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.converter-box {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.input-group textarea {
+  height: 150px;
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 1.1em;
+}
+
+.converter-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.convert-btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent-color);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.convert-btn:hover {
+  background: var(--primary-color);
+  transform: scale(1.05);
+}
+
+/* תרגול */
+.practice-container {
+  background: var(--card-background);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.letter-display {
+  font-size: 4em;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.answer-btn {
+  padding: 1rem;
+  border: 2px solid var(--accent-color);
+  border-radius: 8px;
+  background: white;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.answer-btn:hover {
+  background: var(--accent-color);
+  color: white;
+}
+
+.feedback {
+  min-height: 24px;
+  margin: 1rem 0;
+  font-weight: bold;
+}
+
+.feedback.correct {
+  color: #48bb78;
+}
+
+.feedback.incorrect {
+  color: #e53e3e;
+}
+
+/* רספונסיביות */
+@media (max-width: 768px) {
+  .converter-box {
+    grid-template-columns: 1fr;
+  }
+
+  .answers {
+    grid-template-columns: 1fr;
+  }
+
+  .letter-card {
+    padding: 1rem;
+  }
+
+  .hebrew-letter,
+  .english-letter {
+    font-size: 2em;
+  }
+}

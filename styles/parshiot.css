@@ -1,0 +1,484 @@
+.book-section {
+  margin-bottom: 3rem;
+  background: var(--bg-light);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.book-description {
+  margin: 1.5rem 0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.parshiot-table {
+  overflow-x: auto;
+  margin: 2rem 0;
+}
+
+.parshiot-table table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.parshiot-table th,
+.parshiot-table td {
+  padding: 1rem;
+  text-align: right;
+  border: 1px solid var(--border-color);
+}
+
+.parshiot-table th {
+  background: var(--primary-color);
+  color: white;
+  font-weight: bold;
+}
+
+.parshiot-table tr:nth-child(even) {
+  background: var(--bg-light);
+}
+
+.parasha-name {
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.parshiot-table tr:hover {
+  background: var(--hover-color);
+  transition: all 0.3s ease;
+  transform: translateX(-5px);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* סגנונות לפירושים */
+.commentary-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border-radius: 10px;
+}
+
+.commentary-title {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.commentary-content {
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+/* אנימציות */
+.book-section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* תצוגה מותאמת למובייל */
+@media (max-width: 768px) {
+  .parshiot-table {
+    font-size: 0.9rem;
+  }
+
+  .parshiot-table th,
+  .parshiot-table td {
+    padding: 0.75rem;
+  }
+
+  .book-section {
+    padding: 1rem;
+  }
+}
+
+.commentary-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.commentary-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+.commentary-content h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.commentary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.commentary-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.commentary-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.commentary-item h4 {
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.commentary-item h4::before {
+  content: "📚";
+  font-size: 1.2rem;
+}
+
+.commentary-item p {
+  line-height: 1.8;
+  color: var(--text-primary);
+  font-size: 1.1rem;
+}
+
+.close-commentary-btn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.close-commentary-btn:hover {
+  background: var(--primary-dark);
+  transform: rotate(90deg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* סגנונות לפירושים נוספים */
+.additional-commentaries {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px dashed var(--border-color);
+}
+
+.additional-commentaries h4 {
+  text-align: center;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.additional-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.additional-item {
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.additional-item h5 {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.additional-item h5::before {
+  content: "✨";
+}
+
+/* אנימציות */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.commentary-content {
+  animation: modalFadeIn 0.3s ease forwards;
+}
+
+.error-message {
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg-light);
+  border-radius: 10px;
+  margin: 2rem 0;
+}
+
+/* עדכון סגנונות הטבלה והכפתורים */
+.parshiot-table tr:hover {
+  background: var(--hover-color);
+  transition: all 0.3s ease;
+  transform: translateX(-5px);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.commentary-btn {
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.commentary-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(
+    135deg,
+    var(--primary-dark) 0%,
+    var(--primary-color) 100%
+  );
+}
+
+.commentary-btn::before {
+  content: "📚";
+  font-size: 1.2rem;
+}
+
+/* עדכון המודל למסך מלא */
+.commentary-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.commentary-content {
+  background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 4rem 2rem 2rem 2rem;
+}
+
+/* סגנונות נוספים לתוכן המודל */
+.commentary-content h3 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-color);
+  background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.commentary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  padding: 0 2rem;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+/* עדכון כפתור הסגירה */
+.close-commentary-btn {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1001;
+}
+
+.close-commentary-btn:hover {
+  background: var(--primary-dark);
+  transform: rotate(90deg);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* עיצוב שורות הטבלה */
+.parshiot-table tr {
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.parshiot-table td {
+  padding: 1.2rem;
+  vertical-align: middle;
+}
+
+.parasha-name {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: var(--primary-color);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.parasha-name::before {
+  content: "📖";
+  font-size: 1.2rem;
+}
+
+/* התאמה למסך מלא במובייל */
+@media (max-width: 768px) {
+  .commentary-content {
+    padding: 4rem 1rem 1rem 1rem;
+  }
+
+  .commentary-grid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+
+  .commentary-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .close-commentary-btn {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
+
+/* אנימציות חדשות */
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.commentary-content {
+  animation: slideIn 0.3s ease-out forwards;
+}
+
+/* סגנונות נוספים לטבלה */
+.parshiot-table th {
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--primary-dark) 100%
+  );
+  color: white;
+  font-weight: bold;
+  padding: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+.parshiot-table tbody tr:nth-child(even) {
+  background: rgba(var(--primary-rgb), 0.05);
+}
+
+/* הוספת אפקט הצללה בעת ריחוף */
+.commentary-item {
+  transition: all 0.3s ease;
+}
+
+.commentary-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#backgroundAudio {
+  display: none;
+}

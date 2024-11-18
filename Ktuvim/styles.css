@@ -1,0 +1,127 @@
+/* תוספת סגנונות ספציפיים לעמוד הכתובים */
+.book-card-mini {
+  background: linear-gradient(145deg, #ffffff 0%, #f5f5f5 100%);
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  max-width: 350px;
+}
+
+.book-card-mini:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.book-icon-mini {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.book-title-mini {
+  color: #2c3e50;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.book-details {
+  font-size: 1rem;
+  color: #666;
+}
+
+.content-section h4 {
+  color: #2c3e50;
+  margin: 1rem 0;
+}
+
+.content-section p {
+  line-height: 1.6;
+}
+
+/* התאמה לתצוגה במובייל */
+@media (max-width: 768px) {
+  .books-row {
+    flex-direction: column;
+  }
+
+  .book-card-mini {
+    margin: 1rem 0;
+  }
+}
+
+.books-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.book-card-mini {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .books-row {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.book-stats-mini {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.stat-mini {
+  background: #f0f0f0;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+}
+
+.book-author {
+  color: #2c3e50;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+.book-description {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #444;
+  margin: 0.5rem 0;
+}
+
+.book-themes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.8rem;
+}
+
+.theme-tag {
+  background: #e9ecef;
+  color: #495057;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+/* התאמה למסכים קטנים */
+@media (max-width: 768px) {
+  .book-card-mini {
+    max-width: 100%;
+    margin: 0.5rem 0;
+  }
+}

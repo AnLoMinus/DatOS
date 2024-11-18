@@ -18,6 +18,7 @@ body {
   line-height: 1.6;
   padding: 20px;
   min-height: 100vh;
+  /* cursor: url("images/wand.png"), auto; */
 }
 
 .container {
@@ -1838,68 +1839,113 @@ h1::after {
   transform: translateX(-5px);
 }
 
-/* סגנונות לסקציית אותיות התורה */
+/* מקטע אותיות התורה */
 .letters-stats-section {
+  width: 100%;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  padding: 2.5rem;
+  border-radius: 20px;
   margin: 2rem 0;
-  padding: 2rem;
-  background-color: #f8f9fa;
-  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .letters-stats-container {
-  max-width: 900px;
-  margin: 0 auto;
+  width: 100%;
 }
 
 .letters-stats-content {
-  padding: 1rem;
+  width: 100%;
 }
 
+/* כותרת ומספר האותיות */
 .letters-intro {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.2rem;
-}
-
-.letters-intro strong {
-  color: #2c3e50;
   font-size: 1.4rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(248, 249, 250, 0.9)
+  );
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
+/* חלוקת המידע לשתי עמודות */
 .letters-details {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  padding: 1rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.letters-info,
+.letters-distribution,
+.letters-calculations,
+.letters-significance {
+  background: linear-gradient(135deg, #ffffff, #f8f9fa);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.letters-info:hover,
+.letters-distribution:hover,
+.letters-calculations:hover,
+.letters-significance:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
 }
 
 .letters-info h3,
-.letters-distribution h3 {
+.letters-distribution h3,
+.letters-calculations h3,
+.letters-significance h3 {
   color: #2c3e50;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+  font-size: 1.3rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 2px solid rgba(52, 152, 219, 0.2);
 }
 
-.letters-info ul {
+.letters-info ul,
+.letters-distribution ul,
+.letters-calculations ul,
+.letters-significance ul {
   list-style-type: none;
   padding: 0;
 }
 
-.letters-info li {
+.letters-info li,
+.letters-distribution li,
+.letters-calculations li,
+.letters-significance li {
   margin-bottom: 0.8rem;
-  padding-right: 1.5rem;
-  position: relative;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
-.letters-info li:before {
-  content: "•";
-  position: absolute;
-  right: 0;
-  color: #3498db;
+.letters-info li:hover,
+.letters-distribution li:hover,
+.letters-calculations li:hover,
+.letters-significance li:hover {
+  transform: translateX(-5px);
+  background: rgba(52, 152, 219, 0.1);
 }
 
-.letters-distribution p {
-  line-height: 1.6;
+.note {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: rgba(52, 152, 219, 0.1);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin-top: 1rem;
 }
 
 /* רספונסיביות */
@@ -1907,155 +1953,13 @@ h1::after {
   .letters-details {
     grid-template-columns: 1fr;
   }
-}
 
-/* סגנון למקטע הסטטיסטיקות הכללי */
-.total-stats {
-  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8ec 100%);
-  border-radius: 15px;
-  padding: 10px;
-  margin: 10px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.total-stats-content {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.total-stats-content h3 {
-  text-align: center;
-  color: #2c3e50;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-  position: relative;
-}
-
-.total-stats-content h3::after {
-  content: "";
-  display: block;
-  width: 60px;
-  height: 3px;
-  background: #3498db;
-  margin: 0.5rem auto;
-  border-radius: 2px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
-
-.stats-grid .stat-item {
-  background: white;
-  padding: 10px;
-  border-radius: 12px;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.stats-grid .stat-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.stats-grid .stat-number {
-  display: block;
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #2980b9;
-  margin: 5px 0;
-}
-
-.stats-grid .stat-label {
-  display: block;
-  font-size: 0.8em;
-  color: #34495e;
-  font-weight: 500;
-  margin: 3px 0;
-}
-
-.stats-grid .stat-description {
-  display: block;
-  font-size: 0.7em;
-  color: #7f8c8d;
-  line-height: 1.4;
-  margin: 3px 0;
-}
-
-/* התאמה למסכים קטנים */
-@media (max-width: 768px) {
-  .stats-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px;
-  }
-
-  .stats-grid .stat-number {
-    font-size: 2rem;
-  }
-
-  .stats-grid .stat-label {
-    font-size: 1rem;
-  }
-
-  .stats-grid .stat-description {
-    font-size: 0.8rem;
-  }
-
-  .total-stats {
+  .letters-stats-section {
     padding: 1.5rem;
-    margin: 1.5rem 0;
   }
 
-  .total-stats-content h3 {
-    font-size: 1.5rem;
+  .letters-intro {
+    font-size: 1.2rem;
+    padding: 1rem;
   }
-}
-
-/* אנימציות לסטטיסטיקות */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.stats-grid .stat-item {
-  animation: fadeInUp 0.6s ease forwards;
-  opacity: 0;
-}
-
-/* דחיית אנימציה לכל פריט בנפרד */
-.stats-grid .stat-item:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.stats-grid .stat-item:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.stats-grid .stat-item:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.stats-grid .stat-item:nth-child(4) {
-  animation-delay: 0.4s;
-}
-.stats-grid .stat-item:nth-child(5) {
-  animation-delay: 0.5s;
-}
-.stats-grid .stat-item:nth-child(6) {
-  animation-delay: 0.6s;
-}
-.stats-grid .stat-item:nth-child(7) {
-  animation-delay: 0.7s;
-}
-.stats-grid .stat-item:nth-child(8) {
-  animation-delay: 0.8s;
 }

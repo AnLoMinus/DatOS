@@ -1,33 +1,36 @@
 {
-  "parshiot": {
-    "בראשית": {
-      "book": "genesis",
-      "chapters": ["בראשית א-ו"],
-      "related": ["תהילים א", "תהילים ב", "ישעיהו מב"]
-    },
-    "נח": {
-      "book": "genesis",
-      "chapters": ["בראשית ו-יא"],
-      "related": ["תהילים כט", "ישעיהו נד"]
-    },
-    "לך לך": {
-      "book": "genesis",
-      "chapters": ["בראשית יב-יז"],
-      "related": ["תהילים קי", "ישעיהו מ"]
-    },
-    "שמות": {
-      "book": "exodus",
-      "chapters": ["שמות א-ו"],
-      "related": ["תהילים קיג", "ישעיהו כז"]
-    }
+  "bereshit": {
+    "total_chapters": 50,
+    "current_chapter": 1,
+    "sections": [
+      {
+        "name": "בריאת העולם והאנושות",
+        "chapters": [1, 2, 3, 4, 5]
+      },
+      {
+        "name": "המבול ודור הפלגה",
+        "chapters": [6, 7, 8, 9, 10, 11]
+      },
+      {
+        "name": "סיפורי האבות",
+        "chapters": [12, 13, 14, 15, 16, 17, 18, 19, 20]
+      }
+    ]
   },
-  "daily": {
-    "sunday": ["תהילים א-ג", "משלי א"],
-    "monday": ["תהילים ד-ו", "משלי ב"],
-    "tuesday": ["תהילים ז-ט", "משלי ג"],
-    "wednesday": ["תהילים י-יב", "משלי ד"],
-    "thursday": ["תהילים יג-טו", "משלי ה"],
-    "friday": ["תהילים טז-יח", "משלי ו"],
-    "saturday": ["תהילים יט-כא", "משלי ז"]
+  "shmot": {
+    "total_chapters": 40,
+    "current_chapter": null
+  },
+  "vayikra": {
+    "total_chapters": 27,
+    "current_chapter": null
+  },
+  "bamidbar": {
+    "total_chapters": 36,
+    "current_chapter": null
+  },
+  "dvarim": {
+    "total_chapters": 34,
+    "current_chapter": null
   }
 }

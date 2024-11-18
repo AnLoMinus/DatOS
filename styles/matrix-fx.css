@@ -1,0 +1,279 @@
+/* Matrix Rain Effect - אפקט גשם מטריקס */
+.matrix-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.matrix-drop {
+  position: absolute;
+  color: #0f0;
+  font-family: "Heebo", sans-serif;
+  font-size: 1.5em;
+  text-shadow: 0 0 5px #0f0;
+  animation: matrixRain linear infinite;
+  opacity: 0.3;
+}
+
+@keyframes matrixRain {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Holy Light Effect - הילה זוהרת */
+.holy-light {
+  position: relative;
+  overflow: hidden;
+}
+
+.holy-light::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 223, 186, 0.2) 0%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.holy-light:hover::before {
+  opacity: 1;
+  animation: holyPulse 2s infinite;
+}
+
+@keyframes holyPulse {
+  0% {
+    transform: scale(0.95);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(0.95);
+  }
+}
+
+/* Sacred Text Glow - זוהר לטקסט קדוש */
+.sacred-text {
+  transition: text-shadow 0.3s ease;
+}
+
+.sacred-text:hover {
+  text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700, 0 0 30px #ffd700;
+  animation: sacredPulse 1.5s infinite;
+}
+
+@keyframes sacredPulse {
+  0% {
+    text-shadow: 0 0 10px #ffd700;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffd700, 0 0 30px #ffd700;
+  }
+  100% {
+    text-shadow: 0 0 10px #ffd700;
+  }
+}
+
+/* Scroll Revelation - התגלות בגלילה */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease;
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hebrew Letter Float - אותיות צפות */
+.floating-letters {
+  position: relative;
+}
+
+.floating-letter {
+  position: absolute;
+  font-size: 2em;
+  color: rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  animation: letterFloat 10s linear infinite;
+}
+
+@keyframes letterFloat {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(10px, -10px) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+}
+
+/* Divine Border - מסגרת קדושה */
+.divine-border {
+  position: relative;
+}
+
+.divine-border::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #ffd700, transparent) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: borderRotate 4s linear infinite;
+}
+
+@keyframes borderRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Torah Scroll Unroll - פתיחת מגילה */
+.torah-unroll {
+  transform-origin: left;
+  animation: unroll 1s ease-out forwards;
+}
+
+@keyframes unroll {
+  from {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* Wisdom Sparkle - ניצוצות חכמה */
+.wisdom-sparkle {
+  position: relative;
+}
+
+.wisdom-sparkle::after {
+  content: "✨";
+  position: absolute;
+  right: -20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8em;
+  opacity: 0;
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%,
+  100% {
+    opacity: 0;
+    transform: translateY(-50%) scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+}
+
+/* Sacred Pulse - פעימה קדושה */
+.sacred-pulse {
+  animation: sacredPulseEffect 2s ease-in-out infinite;
+}
+
+@keyframes sacredPulseEffect {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Utility Classes */
+.fx-matrix {
+  position: relative;
+} /* For Matrix Rain */
+.fx-holy {
+  position: relative;
+} /* For Holy Light */
+.fx-glow {
+  position: relative;
+} /* For Sacred Text Glow */
+.fx-reveal {
+  position: relative;
+} /* For Scroll Revelation */
+.fx-float {
+  position: relative;
+} /* For Hebrew Letter Float */
+.fx-border {
+  position: relative;
+} /* For Divine Border */
+.fx-unroll {
+  position: relative;
+} /* For Torah Scroll Unroll */
+.fx-sparkle {
+  position: relative;
+} /* For Wisdom Sparkle */
+.fx-pulse {
+  position: relative;
+} /* For Sacred Pulse */
+
+/* Hebrew Letters for Matrix Rain */
+.hebrew-matrix {
+  font-family: "Heebo", sans-serif;
+  direction: rtl;
+}
+
+/* Performance Optimizations */
+.optimize-gpu {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .matrix-drop,
+  .holy-light::before,
+  .sacred-text,
+  .floating-letter,
+  .divine-border::after,
+  .torah-unroll,
+  .wisdom-sparkle::after,
+  .sacred-pulse {
+    animation: none !important;
+    transition: none !important;
+  }
+}
