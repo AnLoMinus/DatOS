@@ -1963,3 +1963,69 @@ h1::after {
     padding: 1rem;
   }
 }
+
+/* תפריט צד */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -300px; /* מתחיל מחוץ למסך */
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  direction: rtl;
+}
+
+.sidebar.open {
+  right: 0;
+}
+
+.sidebar-header {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-sidebar {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.sidebar-content {
+  padding: 1rem;
+}
+
+.gematria-tools {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.gematria-tools input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.gematria-tools button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.gematria-results {
+  padding: 1rem;
+  background: #f8f9fa;
+  border-radius: 4px;
+}

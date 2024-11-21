@@ -525,3 +525,77 @@ class ToolsBar {
 document.addEventListener("DOMContentLoaded", () => {
   new ToolsBar();
 });
+
+// פונקציות לתפריט הצד
+function openSidebar() {
+  document.getElementById("gematriaSidebar").classList.add("open");
+}
+
+function closeSidebar() {
+  document.getElementById("gematriaSidebar").classList.remove("open");
+}
+
+// פונקציה לחישוב גימטריה
+function calculateGematria() {
+  const input = document.getElementById("gematriaInput").value;
+  const results = document.getElementById("gematriaResults");
+
+  // מילון ערכי האותיות
+  const gematriaValues = {
+    א: 1,
+    ב: 2,
+    ג: 3,
+    ד: 4,
+    ה: 5,
+    ו: 6,
+    ז: 7,
+    ח: 8,
+    ט: 9,
+    י: 10,
+    כ: 20,
+    ל: 30,
+    מ: 40,
+    נ: 50,
+    ס: 60,
+    ע: 70,
+    פ: 80,
+    צ: 90,
+    ק: 100,
+    ר: 200,
+    ש: 300,
+    ת: 400,
+    ך: 20,
+    ם: 40,
+    ן: 50,
+    ף: 80,
+    ץ: 90,
+  };
+
+  let sum = 0;
+  for (let char of input) {
+    if (gematriaValues[char]) {
+      sum += gematriaValues[char];
+    }
+  }
+
+  results.innerHTML = `
+        <h4>תוצאות הגימטריה:</h4>
+        <p>המילה: ${input}</p>
+        <p>ערך גימטרי: ${sum}</p>
+    `;
+}
+
+// סגירת התפריט בלחיצה מחוץ לו
+document.addEventListener("click", (e) => {
+  const sidebar = document.getElementById("gematriaSidebar");
+  const isClickInside = sidebar.contains(e.target);
+  const isClickOnButton = e.target.closest(".nav-link");
+
+  if (
+    !isClickInside &&
+    !isClickOnButton &&
+    sidebar.classList.contains("open")
+  ) {
+    closeSidebar();
+  }
+});

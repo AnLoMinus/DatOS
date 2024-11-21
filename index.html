@@ -57,11 +57,30 @@
                     <span class="icon">📖</span>
                     סידור
                 </a>
+                <button class="nav-link" onclick="openSidebar()">
+                    <span class="icon">🔢</span>
+                    גימטריה
+                </button>
             </div>
 
         </div>
     </nav>
 
+    <div class="sidebar" id="gematriaSidebar">
+        <div class="sidebar-header">
+            <h3>גימטריאות</h3>
+            <button class="close-sidebar" onclick="closeSidebar()">×</button>
+        </div>
+        <div class="sidebar-content">
+            <div class="gematria-tools">
+                <input type="text" id="gematriaInput" placeholder="הכנס מילה או מספר...">
+                <button onclick="calculateGematria()">חשב</button>
+            </div>
+            <div class="gematria-results" id="gematriaResults">
+                <!-- התוצאות יוצגו כאן -->
+            </div>
+        </div>
+    </div>
 
     <div class="container">
         <h1 class="fx-holy holy-light sacred-text">📜 חמישה חומשי תורה</h1>
@@ -139,8 +158,9 @@
                     <div class="book-content">
                         <div class="content-section">
                             <h4>תיאור הספר</h4>
-                            <p>מתאר את בריאת העולם 🌍, סיפורי האבות והאמהות 👨‍👩‍👦, ותחילת עם ישראל. מהאדם הראשון וע��
-                                ירידת יעקב למצרים.</p>
+                            <p>מתאר את בריאת העולם 🌍, סיפורי האבות והאמהות 👨‍👩‍👦, ותחילת עם ישראל. מהאדם הראשון ועד
+                                יוסף במצרים, הספר מלמד אותנו על יסודות האמונה והמידות הטובות.
+                            </p>
                         </div>
                         <div class="content-section">
                             <h4>מסרים מרכזיים</h4>
@@ -876,7 +896,7 @@
                 </div>
                 <div class="credit-divider">|</div>
                 <div class="credit-item">
-                    <span class="credit-icon">👨‍���</span>
+                    <span class="credit-icon">👨‍</span>
                     <span class="credit-text">פיתוח: <a href="https://www.github.com/anlominus" class="credit-text">לאון
                             יעקובוב</a></span>
                 </div>
