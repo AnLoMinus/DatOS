@@ -6,49 +6,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>חמישה חומשי תורה</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="thanks-modal.css">
-    <link rel="stylesheet" href="datetime.css">
-    <link rel="stylesheet" href="tools.css">
-    <link rel="stylesheet" href="effects.css">
-    <link rel="stylesheet" href="mitzvot.css">
-    <script src="datetime.js" defer></script>
+    <link rel="stylesheet" href="../styles/datetime.css">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/effects.css">
+    <link rel="stylesheet" href="bereshit.css">
+    <link rel="stylesheet" href="../css/torah-progress.css">
     <script src="https://unpkg.com/@hebcal/core"></script>
-    <script src="tools.js" defer></script>
+    <script src="../js/datetime.js" defer></script>
+    <script src="../js/torah-chapters-highlighter.js" defer></script>
+    <script src="../js/torah-progress-tracker.js" defer></script>
+    <script src="../js/barParashot.js" defer></script>
+    <link rel="stylesheet" href="mitzvot.css">
+    <script src="https://unpkg.com/@hebcal/core"></script>
     <script src="mitzvot.js" defer></script>
 </head>
 
 <body>
+
     <nav class="nav-bar">
         <div class="nav-container">
             <div class="nav-links">
-                <div class="bsd">בס״ד</div>
-                <a href="index.html" class="nav-link active">
+                <a href="../index.html" class="nav-link">
                     <span class="icon">🏠</span>
                     ראשי
                 </a>
-                <a href="bereshit.html" class="nav-link">
+                <a href="../1-bereshit/bereshit.html" class="nav-link">
                     <span class="icon">🌍</span>
                     בראשית
                 </a>
-                <a href="shmot.html" class="nav-link">
+                <a href="../2-shmot/shmot.html" class="nav-link">
                     <span class="icon">🗽</span>
                     שמות
                 </a>
-                <a href="vayekra.html" class="nav-link">
+                <a href="../3-vayekra/vayekra.html" class="nav-link">
                     <span class="icon">🔥</span>
                     ויקרא
                 </a>
-                <a href="bamidbar.html" class="nav-link">
+                <a href="../4-bamidbar/bamidbar.html" class="nav-link">
                     <span class="icon">🏕️</span>
                     במדבר
                 </a>
-                <a href="dvarim.html" class="nav-link">
+                <a href="../5-dvarim/dvarim.html" class="nav-link">
                     <span class="icon">📜</span>
                     דברים
                 </a>
             </div>
-
         </div>
     </nav>
 
