@@ -102,14 +102,20 @@ class DailyLearningSystem {
   }
 
   updateUI() {
-    // עדכון סטטיסטיקות
-    document.querySelector(".stat:nth-child(1) .number").textContent =
-      this.learningStats.pagesLearned;
-    document.querySelector(".stat:nth-child(2) .number").textContent =
-      this.learningStats.minutesLearned;
-    document.querySelector(
-      ".stat:nth-child(3) .number"
-    ).textContent = `${this.learningStats.completionRate}%`;
+    // עדכון סטטיסטיקות (אם קיימות על הדף)
+    const stats = document.querySelectorAll(".stat .number");
+    if (stats.length >= 3) {
+      stats[0].textContent = this.learningStats.pagesLearned;
+      stats[1].textContent = this.learningStats.minutesLearned;
+      stats[2].textContent = `${this.learningStats.completionRate}%`;
+    }
+
+    const progress = document.querySelector(".daily-progress .progress");
+    const progressText = document.querySelector(".daily-progress .progress-text");
+    if (progress && progressText) {
+      progress.style.width = `${this.learningStats.completionRate}%`;
+      progressText.textContent = `${this.learningStats.completionRate}%`;
+    }
 
     // עדכון תוכן הלימוד
     this.updateContentSection("torahContent", this.dailyContent.torah);
@@ -209,7 +215,7 @@ class DailyLearningSystem {
     const navLinks = document.querySelector(".nav-links");
     if (navLinks) {
       const dailyLearningLink = document.createElement("a");
-      dailyLearningLink.href = "#";
+      dailyLearningLink.href = "daily-learning/daily-learning.html";
       dailyLearningLink.className = "nav-link daily-learning-btn";
       dailyLearningLink.innerHTML = `
         <span class="icon">📚</span>
@@ -219,8 +225,10 @@ class DailyLearningSystem {
 
       // הוספת מאזין אירועים לפתיחת המודל
       dailyLearningLink.addEventListener("click", (e) => {
-        e.preventDefault();
-        this.openModal();
+        if (document.getElementById("dailyLearningModal")) {
+          e.preventDefault();
+          this.openModal();
+        }
       });
     }
   }
@@ -253,7 +261,7 @@ class DailyLearningSystem {
             <span class="icon">💾</span>
             שמור התקדמות
           </button>
-          <a href="daily-learning.html" class="full-page-link">
+          <a href="daily-learning/daily-learning.html" class="full-page-link">
             <span class="icon">📑</span>
             למעבר לעמוד המלא
           </a>

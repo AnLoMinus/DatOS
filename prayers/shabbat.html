@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="he">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תפילת שחרית - סידור תפילה</title>
+    <title>תפילות שבת - סידור תפילה</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/style.css">
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="../css/prayer-page.css">
     <script src="../js/prayer-page.js" defer></script>
 </head>
-
 <body>
     <nav class="nav-bar">
         <div class="nav-container">
@@ -27,9 +25,9 @@
                     <span class="icon">📖</span>
                     סידור
                 </a>
-                <a href="shacharit.html" class="nav-link active">
-                    <span class="icon">🌅</span>
-                    שחרית
+                <a href="shabbat.html" class="nav-link active">
+                    <span class="icon">🕯️</span>
+                    שבת
                 </a>
             </div>
         </div>
@@ -38,8 +36,8 @@
     <div class="container">
         <div class="prayer-header">
             <h1>
-                <span class="section-icon">🌅</span>
-                תפילת שחרית
+                <span class="section-icon">🕯️</span>
+                תפילות שבת
             </h1>
             <div class="prayer-controls">
                 <button class="control-btn" id="fontSizeBtn">
@@ -58,34 +56,82 @@
         </div>
 
         <div class="prayer-sections">
-            <div class="prayer-section book-card-mini" id="birkotHashachar">
+            <div class="prayer-section book-card-mini" id="kabalatShabbat">
                 <h2 class="section-title">
                     <span class="section-icon">✨</span>
-                    ברכות השחר
+                    קבלת שבת
                     <div class="section-divider"></div>
                 </h2>
                 <div class="prayer-text">
                     <div class="hebrew">
-                        <p>מוֹדֶה אֲנִי לְפָנֶיךָ מֶלֶךְ חַי וְקַיָּם, שֶׁהֶחֱזַרְתָּ בִּי נִשְׁמָתִי בְּחֶמְלָה. רַבָּה
-                            אֱמוּנָתֶךָ:</p>
-                        <!-- יתר ברכות השחר -->
+                        <p>לְכָה דוֹדִי לִקְרַאת כַּלָּה, פְּנֵי שַׁבָּת נְקַבְּלָה...</p>
                     </div>
-                    <div class="translation">
-                        <p>מודה אני לפניך - אני מודה לך</p>
-                        <p>מלך חי וקיים - מלך שחי לנצח</p>
+                    <div class="notes">
+                        <p>שירי קבלת שבת, מזמור שיר ליום השבת, וקדיש דרבנן.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="prayer-section book-card-mini" id="psukeiDzimra">
+            <div class="prayer-section book-card-mini" id="arvitShabbat">
                 <h2 class="section-title">
-                    <span class="section-icon">🎵</span>
-                    פסוקי דזמרה
+                    <span class="section-icon">🌙</span>
+                    ערבית של שבת
                     <div class="section-divider"></div>
                 </h2>
                 <div class="prayer-text">
                     <div class="hebrew">
-                        <p>בָּרוּךְ שֶׁאָמַר וְהָיָה הָעוֹלָם, בָּרוּךְ הוּא...</p>
+                        <p>וַיְכֻלּוּ הַשָּׁמַיִם וְהָאָרֶץ וְכָל צְבָאָם...</p>
+                    </div>
+                    <div class="translation">
+                        <p>ברכות קריאת שמע לשבת, העמידה של שבת והקדושה ״אתה קידשת״.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prayer-section book-card-mini" id="shacharitShabbat">
+                <h2 class="section-title">
+                    <span class="section-icon">🌅</span>
+                    שחרית של שבת
+                    <div class="section-divider"></div>
+                </h2>
+                <div class="prayer-text">
+                    <div class="hebrew">
+                        <p>נִשְׁמַת כָּל חַי תְּבָרֵךְ אֶת שִׁמְךָ...</p>
+                    </div>
+                    <div class="notes">
+                        <p>פיוטי שבת, קריאת התורה לשבוע, והעמידה בנוסח ״ישמח משה״.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prayer-section book-card-mini" id="musaf">
+                <h2 class="section-title">
+                    <span class="section-icon">⏰</span>
+                    מוסף
+                    <div class="section-divider"></div>
+                </h2>
+                <div class="prayer-text">
+                    <div class="hebrew">
+                        <p>תִּקַּנְתָּ שַׁבָּת רָצִיתָ קְרְבָּנוֹתֶיהָ...</p>
+                    </div>
+                    <div class="translation">
+                        <p>תפילת המוסף לזכר קרבנות המוסף של שבת.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prayer-section book-card-mini" id="minchaShabbat">
+                <h2 class="section-title">
+                    <span class="section-icon">🌤️</span>
+                    מנחה של שבת
+                    <div class="section-divider"></div>
+                </h2>
+                <div class="prayer-text">
+                    <div class="hebrew">
+                        <p>אַתָּה אֶחָד וְשִׁמְךָ אֶחָד וּמִי כְּעַמְּךָ כְּיִשְׂרָאֵל...</p>
+                    </div>
+                    <div class="notes">
+                        <p>העמידה של שבת עם ״אתה אחד״ וקריאת פרשת השבוע הנוספת.</p>
                     </div>
                 </div>
             </div>
@@ -121,5 +167,4 @@
         </div>
     </footer>
 </body>
-
 </html>

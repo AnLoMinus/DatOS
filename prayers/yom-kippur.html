@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="he">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>תפילת שחרית - סידור תפילה</title>
+    <title>תפילות יום כיפור - סידור תפילה</title>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/style.css">
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="../css/prayer-page.css">
     <script src="../js/prayer-page.js" defer></script>
 </head>
-
 <body>
     <nav class="nav-bar">
         <div class="nav-container">
@@ -27,9 +25,9 @@
                     <span class="icon">📖</span>
                     סידור
                 </a>
-                <a href="shacharit.html" class="nav-link active">
-                    <span class="icon">🌅</span>
-                    שחרית
+                <a href="yom-kippur.html" class="nav-link active">
+                    <span class="icon">📿</span>
+                    יום כיפור
                 </a>
             </div>
         </div>
@@ -38,8 +36,8 @@
     <div class="container">
         <div class="prayer-header">
             <h1>
-                <span class="section-icon">🌅</span>
-                תפילת שחרית
+                <span class="section-icon">📿</span>
+                תפילות יום כיפור
             </h1>
             <div class="prayer-controls">
                 <button class="control-btn" id="fontSizeBtn">
@@ -58,34 +56,66 @@
         </div>
 
         <div class="prayer-sections">
-            <div class="prayer-section book-card-mini" id="birkotHashachar">
+            <div class="prayer-section book-card-mini" id="kolNidre">
                 <h2 class="section-title">
-                    <span class="section-icon">✨</span>
-                    ברכות השחר
+                    <span class="section-icon">🕯️</span>
+                    כל נדרי
                     <div class="section-divider"></div>
                 </h2>
                 <div class="prayer-text">
                     <div class="hebrew">
-                        <p>מוֹדֶה אֲנִי לְפָנֶיךָ מֶלֶךְ חַי וְקַיָּם, שֶׁהֶחֱזַרְתָּ בִּי נִשְׁמָתִי בְּחֶמְלָה. רַבָּה
-                            אֱמוּנָתֶךָ:</p>
-                        <!-- יתר ברכות השחר -->
+                        <p>כָּל נִדְרֵי וֶאֱסָרֵי... מִיּוֹם כִּפּוּרִים זֶה עַד יוֹם כִּפּוּרִים הַבָּא עָלֵינוּ.</p>
                     </div>
-                    <div class="translation">
-                        <p>מודה אני לפניך - אני מודה לך</p>
-                        <p>מלך חי וקיים - מלך שחי לנצח</p>
+                    <div class="notes">
+                        <p>פתיחת היום הקדוש בהתרת נדרים ובקבלת קדושת היום.</p>
                     </div>
                 </div>
             </div>
 
-            <div class="prayer-section book-card-mini" id="psukeiDzimra">
+            <div class="prayer-section book-card-mini" id="vidui">
                 <h2 class="section-title">
-                    <span class="section-icon">🎵</span>
-                    פסוקי דזמרה
+                    <span class="section-icon">💧</span>
+                    וידוי
                     <div class="section-divider"></div>
                 </h2>
                 <div class="prayer-text">
                     <div class="hebrew">
-                        <p>בָּרוּךְ שֶׁאָמַר וְהָיָה הָעוֹלָם, בָּרוּךְ הוּא...</p>
+                        <p>אַשָּׁםְנוּ בָּגַדְנוּ... עַל חֵטְא שֶׁחָטָאנוּ.</p>
+                    </div>
+                    <div class="translation">
+                        <p>וידוי כפול בכל חמשת התפילות של היום – ערבית, שחרית, מוסף, מנחה ונעילה.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prayer-section book-card-mini" id="musaf">
+                <h2 class="section-title">
+                    <span class="section-icon">📜</span>
+                    מוסף יום הכיפורים
+                    <div class="section-divider"></div>
+                </h2>
+                <div class="prayer-text">
+                    <div class="hebrew">
+                        <p>עֲבוֹדַת הַכֹּהֵן הַגָּדוֹל, ״אשרי עין ראתה״, וסדר העבודה עם נפילת אפיים.</p>
+                    </div>
+                    <div class="notes">
+                        <p>כולל תיאור עבודת יום הכיפורים ופיוטי ״מרש״א״.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="prayer-section book-card-mini" id="neilah">
+                <h2 class="section-title">
+                    <span class="section-icon">🌅</span>
+                    נעילה
+                    <div class="section-divider"></div>
+                </h2>
+                <div class="prayer-text">
+                    <div class="hebrew">
+                        <p>פְּתַח לָנוּ שַׁעַר בְּעֵת נְעִילַת שַׁעַר, תְּפִלָּה חֲסָדֶיךָ כְּגָדְלֶךָ.</p>
+                    </div>
+                    <div class="translation">
+                        <p>סיום היום הקדוש בשירת ״ה׳ הוא האלוקים״ ותקיעת שופר בסוף נעילה.</p>
                     </div>
                 </div>
             </div>
@@ -121,5 +151,4 @@
         </div>
     </footer>
 </body>
-
 </html>
