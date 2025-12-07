@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="../styles/effects.css">
     <link rel="stylesheet" href="../css/siddur.css">
     <link rel="stylesheet" href="../css/prayer-page.css">
-    <link rel="stylesheet" href="../styles/chanukah.css">
     <script src="../js/prayer-page.js" defer></script>
 </head>
 <body>
@@ -38,9 +37,8 @@
         <div class="prayer-header">
             <h1>
                 <span class="section-icon">🕎</span>
-                תפילות ומנהגי חנוכה
+                תפילות חנוכה
             </h1>
-            <div class="subtitle">אור, ניסים, שירה וחום ביתי בימי החנוכה</div>
             <div class="prayer-controls">
                 <button class="control-btn" id="fontSizeBtn">
                     <span class="icon">🔤</span>
@@ -57,32 +55,6 @@
             </div>
         </div>
 
-        <section class="hanukkah-hero">
-            <div class="glow-ring"></div>
-            <div class="sparkle"></div>
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>לחגוג את הנס באור גדול</h1>
-                    <p>דף מיוחד לחנוכה: ברכות ההדלקה, הנרות הללו, מעוז צור, מנהגים וטיפים להדלקה מהודרת. הכול בסגנון חגיגי עם אווירת אש ונרות.</p>
-                    <div class="hero-cta">
-                        <button class="hero-btn" onclick="document.getElementById('hadlakatNerot').scrollIntoView({behavior:'smooth'});">אל ברכות ההדלקה</button>
-                        <button class="hero-btn secondary" onclick="document.getElementById('lighting-guide').scrollIntoView({behavior:'smooth'});">מדריך מהיר</button>
-                    </div>
-                </div>
-                <div class="candle-row" aria-hidden="true">
-                    <div class="candle tall"><div class="flame"></div></div>
-                    <div class="candle"><div class="flame"></div></div>
-                    <div class="candle tall"><div class="flame"></div></div>
-                    <div class="candle"><div class="flame"></div></div>
-                    <div class="candle tall"><div class="flame"></div></div>
-                    <div class="candle"><div class="flame"></div></div>
-                    <div class="candle tall"><div class="flame"></div></div>
-                    <div class="candle"><div class="flame"></div></div>
-                    <div class="candle tall"><div class="flame"></div></div>
-                </div>
-            </div>
-        </section>
-
         <div class="prayer-sections">
             <div class="prayer-section book-card-mini" id="hadlakatNerot">
                 <h2 class="section-title">
@@ -92,47 +64,26 @@
                 </h2>
                 <div class="prayer-text">
                     <div class="hebrew">
-                        <p>בָּרוּךְ אַתָּה יְיָ אֱ-לֹהֵינוּ מֶלֶךְ הָעוֹלָם, אֲשֶׁר קִדְּשָׁנוּ בְּמִצְוֹתָיו וְצִוָּנוּ לְהַדְלִיק נֵר חֲנֻכָּה.</p>
-                        <p>בָּרוּךְ אַתָּה יְיָ אֱ-לֹהֵינוּ מֶלֶךְ הָעוֹלָם, שֶׁעָשָׂה נִסִּים לַאֲבוֹתֵינוּ בַּיָּמִים הָהֵם בַּזְּמַן הַזֶּה.</p>
-                        <p class="highlight-box">בלילה הראשון מוסיפים: בָּרוּךְ... שֶׁהֶחֱיָנוּ וְקִיְּמָנוּ וְהִגִּיעָנוּ לַזְּמַן הַזֶּה.</p>
+                        <p>בָּרוּךְ... לְהַדְלִיק נֵר חֲנֻכָּה. שֶׁעָשָׂה נִסִּים לַאֲבוֹתֵינוּ...</p>
                     </div>
                     <div class="translation">
-                        <p>אומרים לפני ההדלקה בעמידה. מדליקים תחילה את השמש, ואז את נרות החנוכייה מימין לשמאל – אך מתחילים בהדלקה מצד שמאל (הנר החדש קודם).</p>
-                    </div>
-                    <div class="notes">
-                        <p>לכבות אורות חשמל סביב? נהדר, אך להשאיר מעט אור כדי להימנע מהיתקלות. זמן הדלקה מהשקיעה ועד חצי שעה לאחר צאת הכוכבים, ואם צריך – כל הלילה.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prayer-section book-card-mini" id="hanerotHallalu">
-                <h2 class="section-title">
-                    <span class="section-icon">✨</span>
-                    הַנֵּרוֹת הַלָּלוּ
-                    <div class="section-divider"></div>
-                </h2>
-                <div class="prayer-text">
-                    <div class="hebrew">
-                        <p>הַנֵּרוֹת הַלָּלוּ אֲנַחְנוּ מַדְלִיקִין עַל הַתְּשׁוּעוֹת וְעַל הַנִּסִּים וְעַל הַנִּפְלָאוֹת שֶׁעָשִׂיתָ לַאֲבוֹתֵינוּ, עַל יְדֵי כֹּהֲנֶיךָ הַקְּדֹשִׁים. וְכָל שְׁמוֹנַת יְמֵי חֲנֻכָּה, הַנֵּרוֹת הַלָּלוּ קֹדֶשׁ הֵם וְאֵין לָנוּ רְשׁוּת לְהִשְׁתַּמֵּשׁ בָּהֶם אֶלָּא לִרְאוֹתָם בִּלְבַד, כְּדֵי לְהוֹדוֹת וּלְהַלֵּל לְשִׁמְךָ הַגָּדוֹל עַל נִסֶּיךָ וְעַל נִפְלְאוֹתֶיךָ וְעַל יְשׁוּעוֹתֶיךָ.</p>
-                    </div>
-                    <div class="translation">
-                        <p>נאמר מיד אחרי הברכות בזמן שהנרות דולקות. מזכיר שהאור רק להסתכל – לא לשימוש אחר.</p>
+                        <p>ברכות ההדלקה עם ״הנרות הללו״ וסדר הנחת השמש והנרות.</p>
                     </div>
                 </div>
             </div>
 
             <div class="prayer-section book-card-mini" id="alHanisim">
                 <h2 class="section-title">
-                    <span class="section-icon">🪔</span>
+                    <span class="section-icon">✨</span>
                     על הניסים
                     <div class="section-divider"></div>
                 </h2>
                 <div class="prayer-text">
                     <div class="hebrew">
-                        <p>בִּימֵי מַתִּתְיָהוּ בֶּן יוֹחָנָן כֹּהֵן גָּדוֹל חַשְׁמוֹנָאִי וּבָנָיו, כְּשֶׁעָמְדָה מַלְכוּת יָוָן הָרְשָׁעָה עַל עַמְּךָ יִשְׂרָאֵל לְהַשְׁכִּיחָם תּוֹרָתֶךָ וּלְהַעֲבִירָם מֵחֻקֵּי רְצוֹנֶךָ... וְקָבְעוּ שְׁמוֹנַת יְמֵי חֲנֻכָּה אֵלּוּ לְהוֹדוֹת וּלְהַלֵּל לִשְׁמֶךָ הַגָּדוֹל.</p>
+                        <p>וְעַל הַנִּסִּים וְעַל הַפֻּרְקָן וְעַל הַגְּבוּרוֹת...</p>
                     </div>
                     <div class="notes">
-                        <p>מוסיפים ב"מודים" וב"נודה לך" בברכת המזון. אם שכחו – לא חוזרים, אבל טוב לומר בסוף התפילה כהשלמה.</p>
+                        <p>תוספת בברכת המזון ובעמידה לציון נס פך השמן וניצחון החשמונאים.</p>
                     </div>
                 </div>
             </div>
@@ -140,99 +91,16 @@
             <div class="prayer-section book-card-mini" id="hallel">
                 <h2 class="section-title">
                     <span class="section-icon">🎵</span>
-                    הלל מלא ומעוז צור
+                    הלל מלא
                     <div class="section-divider"></div>
                 </h2>
                 <div class="prayer-text">
                     <div class="hebrew">
-                        <p>הַלְלוּיָהּ! הוֹדוּ לַי-ה כִּי טוֹב כִּי לְעוֹלָם חַסְדּוֹ. — מזמור קי"ג עד קי"ח באמירת הלל מלא בשמונה ימים.</p>
-                        <div class="song-lines">
-                            <p><strong>מעוז צור ישועתי, לך נאה לשבח.</strong> תכון בית תפילתי ושם תודה נזבח.</p>
-                            <p>לעת תכין מטבח מצר המנבח, אז אגמור בשיר מזמור חנוכת המזבח.</p>
-                        </div>
+                        <p>הַלְלוּיָהּ. הוֹדוּ לַי-ה כִּי טוֹב כִּי לְעוֹלָם חַסְדּוֹ.</p>
                     </div>
                     <div class="translation">
-                        <p>הלל נאמר בכל יום לאחר שחרית, בברכה לפני ואחרי. שירת "מעוז צור" נאמרת ליד הנרות להגברת האווירה המשמחת.</p>
+                        <p>אמירת הלל מלא בכל ימי החג לאחר תפילת שחרית.</p>
                     </div>
-                </div>
-            </div>
-
-            <div class="prayer-section book-card-mini" id="lighting-guide">
-                <h2 class="section-title">
-                    <span class="section-icon">📅</span>
-                    מדריך מהיר להדלקה מהודרת
-                    <div class="section-divider"></div>
-                </h2>
-                <div class="info-grid">
-                    <div class="info-card">
-                        <h3>מיקום החנוכייה</h3>
-                        <p class="info-text">מעל טפח, מתחת לעשרה טפחים; סמוך לדלת הפונה לרשות הרבים, או חלון בולט. בבית פרטי – אזור שמרבים לראות.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>זמן</h3>
-                        <p class="info-text">בארץ ישראל: 5–40 דקות אחרי השקיעה. בחו"ל: בצאת הכוכבים. אם פספסת – כל עוד בני הבית ערים.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>סדר ההדלקה</h3>
-                        <p class="info-text">מציבים נרות מימין לשמאל, מדליקים מהנר החדש שמאל→ימין. שמש מובדל – גבוה או מרוחק.</p>
-                    </div>
-                    <div class="info-card">
-                        <h3>שמנים ופתילות</h3>
-                        <p class="info-text">מהדרים בשמן זית צלול; פתילות כותנה/שעווה נקיות. העיקר שידליק היטב ולא יכבה עד חצי שעה.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prayer-section book-card-mini" id="timeline">
-                <h2 class="section-title">
-                    <span class="section-icon">🕰️</span>
-                    סדר הדלקה לכל לילה
-                    <div class="section-divider"></div>
-                </h2>
-                <div class="candle-timeline">
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 1</span> נר אחד בצד ימין. ברכות: להדליק, שעשה נסים, שהחיינו.</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 2</span> שני נרות: מוסיפים נר חדש משמאל ומדליקים אותו ראשון.</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 3</span> שלושה נרות. לומר "הנרות הללו" בכל לילה לאחר הברכות.</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 4</span> ארבעה נרות. שומרים לפחות חצי שעה דליקה – רצוי יותר לבני העיר לראות.</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 5</span> חמישה נרות. מצווה רבה לפרסם הנס – בכניסה, חלון או מרפסת.</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 6</span> שישה נרות. נזהרים שלא להשתמש באור הנרות אלא למבט בלבד.</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 7</span> שבעה נרות. מוסיפים זמירות: "מעוז צור", "מי ימלל", "על הניסים" בנוסח.</p>
-                    </div>
-                    <div class="timeline-card">
-                        <p><span class="tag">לילה 8</span> שמונה נרות. שמחה שלמה – כל הנרות דולקים; להרבות תהילים, תודה ושירה.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prayer-section book-card-mini" id="customs">
-                <h2 class="section-title">
-                    <span class="section-icon">🎁</span>
-                    מנהגים, מאכלים ומנהגי שמחה
-                    <div class="section-divider"></div>
-                </h2>
-                <div class="prayer-text">
-                    <div class="highlight-box">
-                        <p><strong>סביבונים, חלוקת דמי חנוכה, ולימוד תורה לאור הנרות</strong> – רגעים מחברים למשפחה. כדאי להוסיף צדקה בכל לילה לכבוד הנס.</p>
-                    </div>
-                    <ul class="mitzvot-list">
-                        <li>מאכלים בחלב ושמן זית – הדגשה לנס פך השמן וניצחון יהודית.</li>
-                        <li>הימנעות ממלאכה נשים בזמן שהנרות דולקים כהידור.</li>
-                        <li>להרבות באמירת תהילים, במיוחד מזמורי הודיה (ק"ז, קל"ו).</li>
-                        <li>הדלקה בציבור? לשיר יחד, לתת לילדים לברך כשאפשר (גיל מצוות).</li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -250,7 +118,7 @@
             </button>
         </div>
         <div class="progress-bar">
-            <div class="progress" style="width: 16%"></div>
+            <div class="progress" style="width: 25%"></div>
         </div>
     </div>
 
