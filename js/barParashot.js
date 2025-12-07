@@ -1,79 +1,45 @@
 class ParashotBar {
   constructor() {
-    this.parashotData = {
-      בראשית: {
-        chapters: [1, 2, 3, 4, 5, 6],
-        verses: [1, 31],
-        description: "בריאת העולם ותחילת האנושות",
-      },
-      נח: {
-        chapters: [6, 7, 8, 9, 10, 11],
-        verses: [9, 32],
-        description: "סיפור המבול ומגדל בבל",
-      },
-      "לך לך": {
-        chapters: [12, 13, 14, 15, 16, 17],
-        verses: [1, 27],
-        description: "מסעו של אברהם",
-      },
-      וירא: {
-        chapters: [18, 19, 20, 21, 22],
-        verses: [1, 24],
-        description: "העקידה וסיפור סדום ועמורה",
-      },
-      "חיי שרה": {
-        chapters: [23, 24, 25],
-        verses: [1, 18],
-        description: "מות שרה ונישואי יצחק",
-      },
-      תולדות: {
-        chapters: [25, 26, 27, 28],
-        verses: [19, 9],
-        description: "סיפורי יצחק ויעקב ועשו",
-      },
-      ויצא: {
-        chapters: [28, 29, 30, 31, 32],
-        verses: [10, 3],
-        description: "יעקב בבית לבן",
-      },
-      וישלח: {
-        chapters: [32, 33, 34, 35, 36],
-        verses: [4, 43],
-        description: "מפגש יעקב ועשו",
-      },
-      וישב: {
-        chapters: [37, 38, 39, 40],
-        verses: [1, 23],
-        description: "מכירת יוסף",
-      },
-      מקץ: {
-        chapters: [41, 42, 43, 44],
-        verses: [1, 17],
-        description: "חלומות פרעה ועליית יוסף",
-      },
-      ויגש: {
-        chapters: [44, 45, 46, 47],
-        verses: [18, 27],
-        description: "התוודעות יוסף לאחיו",
-      },
-      ויחי: {
-        chapters: [47, 48, 49, 50],
-        verses: [28, 26],
-        description: "ברכות יעקב ומותו",
-      },
-    };
-
+    this.parashotData = [];
     this.activeParasha = null;
     this.highlightedVerses = new Set();
 
     this.init();
   }
 
-  init() {
+  async init() {
+    await this.loadParashotData();
     this.createStyles();
     this.createBar();
     this.attachEventListeners();
     this.setupVerseHighlighting();
+  }
+
+  async loadParashotData() {
+    try {
+      const response = await fetch("../parashiot.md");
+      const text = await response.text();
+      const lines = text.split(/\r?\n/);
+      let current = null;
+
+      lines.forEach((line) => {
+        const nameMatch = line.match(/^\d+\. \*\*(.+?)\*\*/);
+        if (nameMatch) {
+          current = { name: nameMatch[1].trim(), description: "" };
+          this.parashotData.push(current);
+          return;
+        }
+
+        if (!current) return;
+        const descMatch = line.match(/^\s*- \*\*תיאור\*\*: (.+)/);
+        if (descMatch) {
+          current.description = descMatch[1].trim();
+        }
+      });
+    } catch (error) {
+      console.error("Failed to load parashiot:", error);
+      this.parashotData = [];
+    }
   }
 
   createStyles() {
@@ -142,23 +108,27 @@ class ParashotBar {
     // Create main bar
     const bar = document.createElement("div");
     bar.className = "parashot-bar";
+    const parashaItems =
+      this.parashotData.length === 0
+        ? "<li class=\"parasha-item\">לא נמצאו פרשיות</li>"
+        : this.parashotData
+            .map(
+              (parasha) => `
+            <li class="parasha-item" data-parasha="${parasha.name}">
+              <span class="parasha-name">${parasha.name}</span>
+              ${
+                parasha.description
+                  ? `<div class="parasha-description">${parasha.description}</div>`
+                  : ""
+              }
+            </li>
+          `
+            )
+            .join("");
+
     bar.innerHTML = `
       <h3>פרשיות השבוע</h3>
-      <ul class="parashot-list">
-        ${Object.entries(this.parashotData)
-          .map(
-            ([name, data]) => `
-          <li class="parasha-item" data-parasha="${name}">
-            <span class="parasha-name">${name}</span>
-            <span class="parasha-chapters">פרקים ${data.chapters[0]}-${
-              data.chapters[data.chapters.length - 1]
-            }</span>
-            <div class="parasha-description">${data.description}</div>
-          </li>
-        `
-          )
-          .join("")}
-      </ul>
+      <ul class="parashot-list">${parashaItems}</ul>
     `;
 
     // Insert the bar into the parashotContainer
@@ -174,16 +144,13 @@ class ParashotBar {
     // Add verse highlighting functionality
     const verses = document.querySelectorAll(".verse-item");
     verses.forEach((verse) => {
-      const chapterNum = verse.dataset.chapter;
-      const verseNum = verse.dataset.verseNumber;
+      const chapterNum = Number(verse.dataset.chapter);
 
-      // Find which parasha this verse belongs to
-      for (const [parashaName, data] of Object.entries(this.parashotData)) {
-        if (data.chapters.includes(Number(chapterNum))) {
-          verse.dataset.parasha = parashaName;
-          break;
+      this.parashotData.forEach((parasha) => {
+        if (parasha.chapters && parasha.chapters.includes(chapterNum)) {
+          verse.dataset.parasha = parasha.name;
         }
-      }
+      });
     });
   }
 
@@ -197,7 +164,9 @@ class ParashotBar {
   }
 
   highlightParasha(parashaName) {
-    const parashaData = this.parashotData[parashaName];
+    const parashaData = this.parashotData.find(
+      (item) => item.name === parashaName
+    );
     if (!parashaData) return;
 
     // Clear previous highlights
@@ -215,18 +184,19 @@ class ParashotBar {
     }
 
     // Highlight relevant verses
-    parashaData.chapters.forEach((chapter) => {
-      const verses = document.querySelectorAll(
-        `.verse-item[data-chapter="${chapter}"]`
-      );
-      verses.forEach((verse) => {
-        verse.classList.add("verse-highlight");
-        this.highlightedVerses.add(verse);
+    if (parashaData.chapters && parashaData.chapters.length) {
+      parashaData.chapters.forEach((chapter) => {
+        const verses = document.querySelectorAll(
+          `.verse-item[data-chapter="${chapter}"]`
+        );
+        verses.forEach((verse) => {
+          verse.classList.add("verse-highlight");
+          this.highlightedVerses.add(verse);
+        });
       });
-    });
 
-    // Scroll to first chapter
-    this.scrollToChapter(parashaData.chapters[0]);
+      this.scrollToChapter(parashaData.chapters[0]);
+    }
   }
 
   clearHighlights() {
