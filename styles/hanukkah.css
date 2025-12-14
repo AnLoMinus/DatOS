@@ -1,0 +1,343 @@
+:root {
+    --hanukkah-gold: #ffd64d;
+    --hanukkah-amber: #ffb300;
+    --hanukkah-dark: #0b0b1a;
+    --hanukkah-blue: #0d1b3a;
+    --hanukkah-purple: #2b1f3a;
+    --hanukkah-glow: #ffe066;
+    --hanukkah-fire: #ff6b35;
+}
+
+.hanukkah-menu-wrapper {
+    position: relative;
+}
+
+.hanukkah-menu-button {
+    background: radial-gradient(circle at 30% 30%, rgba(255, 214, 77, 0.2), transparent 55%),
+        linear-gradient(135deg, #121212, #1d1d2f);
+    color: var(--hanukkah-glow);
+    border: 2px solid rgba(255, 224, 102, 0.7);
+    border-radius: 14px;
+    padding: 10px 16px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 224, 102, 0.5), 0 0 60px rgba(255, 224, 102, 0.2);
+    text-shadow: 0 0 8px rgba(255, 224, 102, 0.9);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    animation: hanukkahPulse 1.6s infinite;
+}
+
+.hanukkah-menu-button .icon {
+    margin-left: 8px;
+}
+
+.hanukkah-menu-button:hover,
+.hanukkah-menu-button:focus {
+    outline: none;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 0 26px rgba(255, 224, 102, 0.7), 0 0 80px rgba(255, 214, 77, 0.4);
+}
+
+@keyframes hanukkahPulse {
+    0%,
+    100% {
+        box-shadow: 0 0 18px rgba(255, 224, 102, 0.45), 0 0 48px rgba(255, 214, 77, 0.15);
+    }
+
+    50% {
+        box-shadow: 0 0 28px rgba(255, 224, 102, 0.8), 0 0 90px rgba(255, 214, 77, 0.35);
+    }
+}
+
+.hanukkah-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at 20% 20%, rgba(255, 214, 77, 0.08), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(255, 107, 53, 0.08), transparent 45%),
+        linear-gradient(180deg, rgba(13, 27, 58, 0.95), rgba(11, 11, 26, 0.97));
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    overflow: hidden;
+}
+
+.hanukkah-modal-overlay.active {
+    display: flex;
+    animation: fadeIn 0.5s ease;
+}
+
+.hanukkah-modal {
+    width: min(900px, 92vw);
+    max-height: 88vh;
+    padding: 32px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, rgba(20, 24, 46, 0.95), rgba(26, 19, 37, 0.95));
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.45), 0 0 120px rgba(255, 214, 77, 0.2);
+    color: #f8f9fb;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 224, 102, 0.25);
+    animation: slideGlow 0.7s ease;
+}
+
+.hanukkah-modal::before,
+.hanukkah-modal::after {
+    content: "";
+    position: absolute;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(255, 214, 77, 0.07), transparent 60%);
+    filter: blur(8px);
+}
+
+.hanukkah-modal::before {
+    top: -120px;
+    right: -160px;
+}
+
+.hanukkah-modal::after {
+    bottom: -140px;
+    left: -120px;
+}
+
+.hanukkah-close {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background: transparent;
+    color: var(--hanukkah-glow);
+    border: 1px solid rgba(255, 224, 102, 0.5);
+    border-radius: 50%;
+    width: 42px;
+    height: 42px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    box-shadow: 0 0 14px rgba(255, 224, 102, 0.4);
+    transition: transform 0.2s ease;
+}
+
+.hanukkah-close:hover,
+.hanukkah-close:focus {
+    transform: rotate(-4deg) scale(1.05);
+    outline: none;
+}
+
+.hanukkah-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hanukkah-header h2 {
+    margin: 0;
+    font-size: clamp(2rem, 3vw, 2.7rem);
+    color: var(--hanukkah-glow);
+    text-shadow: 0 0 12px rgba(255, 224, 102, 0.8), 0 0 30px rgba(255, 107, 53, 0.35);
+    letter-spacing: 0.04em;
+}
+
+.hanukkah-header p {
+    color: #dce7ff;
+    margin-top: 8px;
+    font-size: 1.1rem;
+    opacity: 0.85;
+}
+
+.hanukkiah {
+    margin: 24px auto 10px;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 24px 0 10px;
+    position: relative;
+}
+
+.hanukkiah::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 420px;
+    max-width: 90%;
+    height: 10px;
+    background: linear-gradient(90deg, rgba(255, 214, 77, 0.4), rgba(255, 224, 102, 0.9), rgba(255, 214, 77, 0.4));
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 224, 102, 0.2);
+}
+
+.candle {
+    width: 18px;
+    height: 120px;
+    background: linear-gradient(180deg, #fdf2e9, #d4c7b0);
+    border-radius: 10px 10px 4px 4px;
+    position: relative;
+    box-shadow: 0 0 18px rgba(255, 224, 102, 0.25);
+}
+
+.candle.center {
+    height: 140px;
+    margin-top: -20px;
+    background: linear-gradient(180deg, #fff2c1, #d8caa6);
+    box-shadow: 0 0 22px rgba(255, 224, 102, 0.35);
+}
+
+.flame {
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 32px;
+    background: radial-gradient(circle at 50% 30%, #fff7d6, transparent 65%),
+        radial-gradient(circle at 50% 60%, #ffb300, transparent 70%),
+        radial-gradient(circle at 50% 90%, #ff6b35, transparent 75%);
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 1.2s infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 224, 102, 0.7));
+}
+
+@keyframes flicker {
+    0%,
+    100% {
+        transform: translateX(-50%) scale(1);
+        opacity: 0.95;
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.08);
+        opacity: 1;
+    }
+}
+
+.hanukkah-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.hanukkah-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 224, 102, 0.18);
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hanukkah-card h3 {
+    margin: 0 0 8px;
+    color: var(--hanukkah-glow);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 1.15rem;
+}
+
+.hanukkah-card p {
+    margin: 0;
+    color: #e3ecff;
+    line-height: 1.6;
+    font-size: 0.98rem;
+}
+
+.sparkle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ffe066, transparent 70%);
+    filter: blur(0.5px);
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: sparkle 2.4s infinite;
+}
+
+.sparkle:nth-child(1) {
+    top: 14%;
+    left: 8%;
+}
+
+.sparkle:nth-child(2) {
+    top: 28%;
+    right: 10%;
+    animation-delay: 0.6s;
+}
+
+.sparkle:nth-child(3) {
+    bottom: 18%;
+    left: 20%;
+    animation-delay: 1.2s;
+}
+
+.sparkle:nth-child(4) {
+    bottom: 8%;
+    right: 24%;
+    animation-delay: 1.8s;
+}
+
+@keyframes sparkle {
+    0%,
+    100% {
+        transform: scale(0.8);
+        opacity: 0.6;
+    }
+
+    50% {
+        transform: scale(1.4);
+        opacity: 1;
+    }
+}
+
+.hanukkah-footer {
+    margin-top: 20px;
+    text-align: center;
+    color: #f5e6ff;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideGlow {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 640px) {
+    .hanukkah-modal {
+        padding: 22px;
+    }
+
+    .hanukkiah {
+        gap: 8px;
+        padding-top: 10px;
+    }
+
+    .candle {
+        width: 14px;
+        height: 110px;
+    }
+
+    .candle.center {
+        height: 125px;
+    }
+}
