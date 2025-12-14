@@ -16,15 +16,76 @@
     <link rel="stylesheet" href="styles/times.css">
     <link rel="stylesheet" href="styles/sections.css">
     <link rel="stylesheet" href="styles/matrix-fx.css">
+    <link rel="stylesheet" href="styles/hanukkah.css">
     <script src="js/datetime.js" defer></script>
     <script src="https://unpkg.com/@hebcal/core"></script>
     <script src="/js/tools.js" defer></script>
     <script src="/daily-learning/daily-learning.js" defer></script>
     <script src="/js/daily-times.js" defer></script>
     <script src="/js/torah-chapters-highlighter.js" defer></script>
+    <script src="/js/hanukkah-modal.js" defer></script>
 </head>
 
 <body>
+    <div class="hanukkah-modal-overlay" role="dialog" aria-label="אור חנוכה" aria-modal="true">
+        <div class="hanukkah-modal">
+            <button class="hanukkah-close" aria-label="סגירה">✕</button>
+            <div class="hanukkah-header">
+                <h2>ניסי חנוכה - אור מול חושך</h2>
+                <p>חג של נרות, אור מתגבר וניצוצות של אמונה בכל פינה ✨🕯️</p>
+            </div>
+
+            <div class="hanukkiah" aria-hidden="true">
+                <div class="candle"><span class="flame"></span></div>
+                <div class="candle"><span class="flame"></span></div>
+                <div class="candle"><span class="flame"></span></div>
+                <div class="candle"><span class="flame"></span></div>
+                <div class="candle center"><span class="flame"></span></div>
+                <div class="candle"><span class="flame"></span></div>
+                <div class="candle"><span class="flame"></span></div>
+                <div class="candle"><span class="flame"></span></div>
+                <div class="candle"><span class="flame"></span></div>
+            </div>
+
+            <div class="hanukkah-grid">
+                <div class="hanukkah-card">
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <h3><span class="icon">🕯️</span>אורות ומתנות</h3>
+                    <p>כל נר מוסיף אור חדש ומזכיר לנו להאיר את הסביבה בקדושה, בשמחה ובתפילה.</p>
+                </div>
+                <div class="hanukkah-card">
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <h3><span class="icon">🛡️</span>גבורה מול חושך</h3>
+                    <p>מעטים מול רבים, ניצחון רוחני שמאיר את כל הלבבות ומזכיר שהאור קטן מגרש הרבה מן החושך.</p>
+                </div>
+                <div class="hanukkah-card">
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <h3><span class="icon">✨</span>אותות ומופתים</h3>
+                    <p>נס פך השמן, שירת המעלות, וסביבון של תקווה שממשיך להסתובב ולהאיר את הדורות.</p>
+                </div>
+                <div class="hanukkah-card">
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <div class="sparkle"></div>
+                    <h3><span class="icon">🔥</span>אור מוּל חושך</h3>
+                    <p>הזמנה פנימית להוסיף עוד ניצוץ של חסד, של לימוד ושל אחדות בכל ערב מחדש.</p>
+                </div>
+            </div>
+
+            <div class="hanukkah-footer">חנוכה שמח! שיהיה תמיד אור בבית ובנשמה ✨</div>
+        </div>
+    </div>
+
     <nav class="nav-bar">
         <div class="nav-container">
             <div class="nav-links">
@@ -61,6 +122,12 @@
                     <span class="icon">📚</span>
                     כתובים
                 </a>
+                <div class="hanukkah-menu-wrapper">
+                    <button class="nav-link hanukkah-menu-button" type="button">
+                        <span class="icon">🕎</span>
+                        אור חנוכה
+                    </button>
+                </div>
             </div>
 
         </div>
